@@ -8,6 +8,7 @@ export type Field =
 export type Section = { key: string; title: string; description: string; fields: Field[] };
 
 const categoryFields: Field[] = [
+  { key: "notice", label: "Notice box (optional, e.g. 'we do not normally list hotels')", type: "textarea" },
   { key: "kicker", label: "Small heading above the title", type: "text" },
   { key: "title", label: "Page title", type: "text" },
   { key: "intro", label: "Intro paragraph", type: "textarea" },

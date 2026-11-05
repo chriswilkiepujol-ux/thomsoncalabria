@@ -8,7 +8,7 @@ export const revalidate = 60;
 export const metadata: Metadata = {
   title: "Private Enquiry — Contact Linda Thomson",
   description:
-    "Contact Thomson Calabria for off-market hotels, restaurants and residences in Sotogrande, Marbella, Italy and Dubai. Strictly confidential. Principals only.",
+    "Contact Linda Thomson about luxury homes for sale and rent in Marbella and Sotogrande, or off-market hotels and restaurants. Every enquiry handled personally.",
   alternates: { canonical: "/contact" },
 };
 
@@ -46,7 +46,7 @@ export default async function ContactPage() {
                 <div>
                   <div className="text-[0.6rem] uppercase tracking-[0.12em] text-mist-2">WhatsApp</div>
                   <a
-                    href={`https://wa.me/${settings.whatsapp}?text=${encodeURIComponent("Hello Linda, I would like to discuss an off-market opportunity.")}`}
+                    href={`https://wa.me/${settings.whatsapp}?text=${encodeURIComponent("Hello Linda, I would like to ask about a property.")}`}
                     target="_blank"
                     rel="noopener"
                     className="link-underline mt-2 inline-block font-display text-2xl"

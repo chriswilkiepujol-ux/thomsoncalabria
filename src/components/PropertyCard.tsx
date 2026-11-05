@@ -34,6 +34,11 @@ export function PropertyCard({ p, priority = false }: { p: Property; priority?: 
           <span className="border border-accent/60 bg-navy-950/60 px-2.5 py-1 text-[0.66rem] uppercase tracking-[0.12em] text-accent-2 backdrop-blur">
             {cat.singular}
           </span>
+          {p.off_market && (
+            <span className="bg-navy-950/70 px-2.5 py-1 text-[0.66rem] uppercase tracking-[0.12em] text-ivory backdrop-blur">
+              Off-market
+            </span>
+          )}
           {p.status !== "available" && (
             <span className="bg-ivory/90 px-2.5 py-1 text-[0.66rem] uppercase tracking-[0.12em] text-navy-950">
               {STATUS[p.status]}
@@ -58,7 +63,7 @@ export function PropertyCard({ p, priority = false }: { p: Property; priority?: 
             </div>
           </div>
           <span className="text-[0.7rem] uppercase tracking-[0.12em] text-accent transition-transform duration-500 group-hover:translate-x-1">
-            Request dossier →
+            {p.off_market ? "Request details →" : p.category === "rental" ? "Check dates →" : "View property →"}
           </span>
         </div>
       </div>

@@ -26,6 +26,7 @@ export function PageHero({
     <section className="dark relative flex min-h-[460px] items-end overflow-hidden bg-navy-950 lg:min-h-[520px]">
       <Image src={image} alt="" fill priority sizes="100vw" className="slowzoom object-cover" />
       <div className="veil absolute inset-0" />
+        <div className="absolute inset-0 bg-gradient-to-r from-navy-950/70 via-navy-950/25 to-transparent" />
       <Container className="hero-text relative z-10 pb-12 pt-32 lg:pb-14">
         <div className="max-w-2xl">
           <div className="kicker rise">{kicker}</div>

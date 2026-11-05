@@ -72,6 +72,14 @@ export async function saveProperty(id: string | null, formData: FormData) {
     price_label: get("price_label") || null,
     key_facts,
     image_url: get("image_url") || null,
+    gallery: (() => {
+      try {
+        return (JSON.parse(get("gallery") || "[]") as string[]).filter(Boolean);
+      } catch {
+        return [];
+      }
+    })(),
+    off_market: formData.get("off_market") === "on",
     featured: formData.get("featured") === "on",
     published: formData.get("published") === "on",
     status: get("status") || "available",

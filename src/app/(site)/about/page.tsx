@@ -72,7 +72,7 @@ export default async function AboutPage() {
               <p className="lede">
                 LT Properties Marbella built its reputation on the Golden Mile, in Puente Romano and the Marbella Club,
                 with holiday rentals and sales that were always handled personally. Thomson Calabria carries that
-                work forward with a sharper focus — exclusively off-market opportunities, three asset classes, and a
+                work forward — homes for sale and rent, a discreet off-market service for hotels and restaurants, and a
                 small number of international destinations — under the same hands and the same standards.
               </p>
               <div className="mt-12 grid gap-6 md:grid-cols-3">

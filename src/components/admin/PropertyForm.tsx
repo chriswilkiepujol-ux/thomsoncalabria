@@ -8,6 +8,8 @@ import { ImageField } from "./ImageField";
 
 export function PropertyForm({ property }: { property: Property | null }) {
   const [facts, setFacts] = useState<KeyFact[]>(property?.key_facts ?? [{ label: "", value: "" }]);
+  const [offMarket, setOffMarket] = useState<boolean>(property?.off_market ?? false);
+  const [gallery, setGallery] = useState<string[]>(property?.gallery ?? []);
   const [error, setError] = useState("");
   const [pending, start] = useTransition();
 
@@ -26,7 +28,7 @@ export function PropertyForm({ property }: { property: Property | null }) {
         <h2 className="font-semibold">The essentials</h2>
         <div className="grid gap-5 md:grid-cols-2">
           <div className="md:col-span-2">
-            <label className="alabel">Title (keep it anonymous — no address)</label>
+            <label className="alabel">Title (for off-market: keep it anonymous — no address)</label>
             <input name="title" className="afield" required defaultValue={property?.title} placeholder="Front-line penthouse, Puente Romano" />
           </div>
           <div>
@@ -76,9 +78,37 @@ export function PropertyForm({ property }: { property: Property | null }) {
       </div>
 
       <div className="acard space-y-5">
-        <h2 className="font-semibold">Image &amp; visibility</h2>
-        <p className="text-xs text-[#6a7490]">Use a mood image (a generic view, an interior detail, the sea). It is shown softly blurred on the property page. Never the real photos.</p>
-        <ImageField name="image_url" label="Mood image" defaultValue={property?.image_url ?? ""} />
+        <h2 className="font-semibold">Photos &amp; visibility</h2>
+        <label className={`flex cursor-pointer items-start gap-3 rounded-lg border p-4 ${offMarket ? "border-[#c9a650] bg-[#faf5e8]" : "border-[#d9d6cc]"}`}>
+          <input type="checkbox" name="off_market" checked={offMarket} onChange={(e) => setOffMarket(e.target.checked)} className="mt-1" />
+          <span className="text-sm">
+            <b>Off-market (private)</b>
+            <span className="block text-[#6a7490]">
+              Tick for hotels, restaurants or private sales. The photo is shown blurred, there is no gallery, and visitors are asked to
+              request details under NDA. Leave unticked for normal listings and rentals.
+            </span>
+          </span>
+        </label>
+        <ImageField
+          name="image_url"
+          label={offMarket ? "Mood image (a generic view — never the real property)" : "Main photo"}
+          defaultValue={property?.image_url ?? ""}
+        />
+        {!offMarket && (
+          <div className="space-y-3">
+            <label className="alabel">Gallery (more photos)</label>
+            {gallery.map((g, i) => (
+              <div key={`${i}-${g}`} className="flex items-start gap-3">
+                <div className="flex-1">
+                  <ImageField label={`Photo ${i + 2}`} defaultValue={g} onChange={(u) => setGallery(gallery.map((x, j) => (j === i ? u : x)))} />
+                </div>
+                <button type="button" className="abtn abtn-secondary mt-6" onClick={() => setGallery(gallery.filter((_, j) => j !== i))}>×</button>
+              </div>
+            ))}
+            <button type="button" className="abtn abtn-secondary" onClick={() => setGallery([...gallery, ""])}>+ Add photo</button>
+          </div>
+        )}
+        <input type="hidden" name="gallery" value={JSON.stringify(gallery.filter(Boolean))} />
         <div className="grid gap-5 md:grid-cols-4">
           <div>
             <label className="alabel">Status</label>

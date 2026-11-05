@@ -55,6 +55,7 @@ export type AboutContent = {
 };
 
 export type CategoryContent = {
+  notice?: string;
   kicker: string;
   title: string;
   intro: string;
@@ -90,6 +91,8 @@ export type Property = {
   price_label: string | null;
   key_facts: KeyFact[];
   image_url: string | null;
+  gallery: string[];
+  off_market: boolean;
   featured: boolean;
   published: boolean;
   status: "available" | "under_offer" | "sold" | "withdrawn";
@@ -141,15 +144,15 @@ export const LOCATIONS: Record<string, LocationContent> = {
     kicker: "Sotogrande · Cádiz",
     title: "Quiet money, polo fields and the Mediterranean.",
     intro:
-      "Sotogrande is where Europe's most discreet families keep a second home. Off-market villas in the Kings & Queens, La Reserva and Marina estates rarely reach the open market; they move through introductions.",
+      "Sotogrande is where Europe's most discreet families keep a second home. We offer villas and apartments for sale and rent here, and handle the finest estates in Kings & Queens, La Reserva and the Marina privately.",
     image:
       "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=2000&q=80",
-    seoTitle: "Off-Market Property in Sotogrande | Thomson Calabria",
+    seoTitle: "Luxury Property for Sale & Rent in Sotogrande | Thomson Calabria",
     seoDescription:
-      "Private access to off-market villas, estates, hotels and restaurants in Sotogrande, Spain. Direct dealings with principals, no agent chains.",
+      "Luxury villas and apartments for sale and rent in Sotogrande, plus discreet off-market sales of estates, hotels and restaurants.",
     body: [
       "Sotogrande occupies the eastern tip of the Costa del Sol: 2,000 hectares of gated estates, two of Europe's top-ranked golf courses (Valderrama and Real Club de Golf Sotogrande), the Santa María Polo Club and a deep-water marina. It is forty minutes from Gibraltar airport and an hour from Málaga.",
-      "The best properties here — the great plots of the Kings & Queens zone, the modern villas of La Reserva and the front-line marina penthouses — are held by families who do not advertise. Our mandate is to know who is open to a conversation, and to bring that conversation to the right principal.",
+      "The best properties here — the great plots of the Kings & Queens zone, the modern villas of La Reserva and the front-line marina penthouses — are often held by families who prefer not to advertise. Alongside our listed homes, we know who is open to a quiet conversation — and bring it to the right buyer.",
     ],
   },
   marbella: {
@@ -158,13 +161,13 @@ export const LOCATIONS: Record<string, LocationContent> = {
     kicker: "Marbella · Golden Mile",
     title: "The Golden Mile, Puente Romano and the Marbella Club.",
     intro:
-      "Our roots are on Marbella's Golden Mile. Fifteen years of handling residences in Puente Romano and around the Marbella Club have given us a private network of owners who sell quietly, and buyers who prefer it that way.",
-    image: "https://kfgzhurkaybmuxkuolxc.supabase.co/storage/v1/object/public/media/site/villa-pool-day.jpg",
-    seoTitle: "Off-Market Property in Marbella & Puente Romano | Thomson Calabria",
+      "Our roots are on Marbella's Golden Mile. For over fifteen years we have sold and rented residences in Puente Romano and around the Marbella Club — and built a network of owners who prefer to sell quietly.",
+    image: "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=2000&q=80",
+    seoTitle: "Luxury Property in Marbella, Puente Romano & Marbella Club | Thomson Calabria",
     seoDescription:
-      "Discreet access to off-market villas, penthouses, hotels and restaurants on Marbella's Golden Mile, Puente Romano and the Marbella Club.",
+      "Luxury villas and apartments for sale and holiday rental on Marbella's Golden Mile, Puente Romano and the Marbella Club, plus discreet hotel and restaurant sales.",
     body: [
-      "Marbella's Golden Mile runs from the old town to Puerto Banús and is anchored by two institutions: the Marbella Club and Puente Romano. Residences inside these resorts are among the most sought-after in southern Europe and trade almost exclusively by private treaty.",
+      "Marbella's Golden Mile runs from the old town to Puerto Banús and is anchored by two institutions: the Marbella Club and Puente Romano. Residences inside these resorts are among the most sought-after in southern Europe, and our holiday rentals at the Marbella Club put guests right at its heart.",
       "Beyond the Mile, we work with owners in Sierra Blanca, La Zagaleta, Guadalmina Baja and Los Monteros, as well as hotel and restaurant proprietors across the municipality who are considering an exit but do not wish it known.",
     ],
   },
@@ -215,23 +218,23 @@ export const DEFAULT_SETTINGS: SiteSettings = {
 };
 
 export const DEFAULT_HOME: HomeContent = {
-  heroKicker: "Off-market property · Private sales",
-  heroTitle: "The properties you will never see advertised.",
+  heroKicker: "Marbella · Sotogrande · International",
+  heroTitle: "Exceptional property, personally handled.",
   heroSubtitle:
-    "We sell hotels, restaurants and luxury homes in Marbella, Sotogrande and select international destinations — privately, and directly to buyers, investors and funds.",
-  heroImage: "https://kfgzhurkaybmuxkuolxc.supabase.co/storage/v1/object/public/media/site/hero-villa.jpg",
+    "Luxury homes for sale and holiday rental in Marbella and Sotogrande — and discreet, off-market sales of hotels and restaurants for buyers, investors and funds.",
+  heroImage: "https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=2000&q=80",
   introKicker: "What we do",
-  introTitle: "We do not list. We introduce.",
+  introTitle: "Listed when it suits. Private when it matters.",
   introBody:
-    "Owners who prefer not to advertise come to us. We match their property with qualified buyers — no portals, no agent chains, no public listings. Tell us what you are looking for and we will tell you, in confidence, what is available.",
+    "We list villas, apartments and holiday rentals with the personal service Linda has been known for since 2009. Alongside them, owners of hotels, restaurants and the most exceptional homes come to us for a discreet sale to qualified buyers. Tell us what you are looking for and we will show you what is available — listed or not.",
   pillars: [
     {
-      title: "Truly off-market",
-      body: "Every opportunity comes directly from the owner. None of it is on a portal or with another agency.",
+      title: "Homes & rentals",
+      body: "Villas and apartments for sale, and our own holiday rentals at the Marbella Club and beyond.",
     },
     {
-      title: "Direct with buyers",
-      body: "We deal with the buyer, investor or fund — not intermediaries. Fewer people, better terms, full discretion.",
+      title: "Off-market hospitality",
+      body: "Hotels and restaurants are rarely listed. We deal privately and directly with buyers, investors and funds.",
     },
     {
       title: "Personal service",
@@ -243,17 +246,17 @@ export const DEFAULT_HOME: HomeContent = {
     {
       step: "01",
       title: "Share your brief",
-      body: "Tell us the type of property, location, budget and timing.",
+      body: "Tell us the type of property, location, budget and timing — or the dates of your stay.",
     },
     {
       step: "02",
-      title: "Confidentiality",
-      body: "We confirm you are a principal and sign a short NDA to protect both sides.",
+      title: "A personal shortlist",
+      body: "Listed homes and, where right, private opportunities. Off-market details follow a short NDA.",
     },
     {
       step: "03",
-      title: "Private details",
-      body: "We send the full dossier — address, photos, financials — and arrange viewings.",
+      title: "Viewings",
+      body: "We arrange viewings in person or by video, and show you the area if you are new to it.",
     },
     {
       step: "04",
@@ -288,15 +291,17 @@ export const DEFAULT_ABOUT: AboutContent = {
   title: "Fifteen years on the Golden Mile.",
   photo: "https://kfgzhurkaybmuxkuolxc.supabase.co/storage/v1/object/public/media/site/linda-thomson.jpg",
   body: [
-    "Linda Thomson founded LT Properties Marbella in 2009 and quickly became known for her professionalism in Marbella's luxury property market, with a particular focus on Puente Romano and the Marbella Club on the Golden Mile. Thomson Calabria is the next chapter: the same relationships and the same standards, applied internationally and exclusively to off-market opportunities.",
+    "Linda Thomson founded LT Properties Marbella in 2009 and quickly became known for her professionalism in Marbella's luxury property market, with a particular focus on Puente Romano and the Marbella Club on the Golden Mile. Thomson Calabria is the next chapter: the same relationships and the same standards, with a wider international reach and a dedicated, discreet service for hotels, restaurants and the most exceptional homes.",
     "Linda works personally with every client. Her approach is tailored to the individual — their lifestyle, their timetable and the way they wish to hold an asset — and is underpinned by deep local knowledge, a long track record and a reputation for integrity and genuine customer care.",
-    "For buyers, she guides the entire process of acquiring property in Spain and abroad, from the first conversation to the notary, and is happy to show newcomers the area: golf, dining, schools, beaches and the rhythm of life on the coast. For owners, she offers a confidential, no-obligation opinion of value and a plan to achieve the best outcome without ever exposing the property publicly.",
+    "For buyers, she guides the entire process of acquiring property in Spain and abroad, from the first conversation to the notary, and is happy to show newcomers the area: golf, dining, schools, beaches and the rhythm of life on the coast. For owners, she offers a confidential, no-obligation opinion of value and a plan to achieve the best outcome — on the open market or, if they prefer, entirely privately.",
   ],
-  quote: "The best properties are never advertised. They are introduced.",
+  quote: "Every client deserves the same care, whether they are renting for a week or buying a hotel.",
 };
 
 export const DEFAULT_CATEGORY: Record<CategoryKey, CategoryContent> = {
   hotel: {
+    notice:
+      "Please note: we do not normally list hotels publicly. Most hotel opportunities are offered privately to qualified buyers, investors and funds. Register your brief below and we will contact you, in confidence, when something suitable becomes available.",
     kicker: "Hotels & Resorts",
     title: "Hospitality assets, acquired in silence.",
     intro:
@@ -347,18 +352,18 @@ export const DEFAULT_CATEGORY: Record<CategoryKey, CategoryContent> = {
     ],
   },
   residential: {
-    kicker: "Private Residences",
-    title: "Villas, penthouses and estates that were never for sale.",
+    kicker: "Residential",
+    title: "Villas, penthouses and apartments for sale.",
     intro:
-      "Front-line Puente Romano penthouses, Sotogrande estates, Capri villas. The owners we work with would rather have one serious conversation than a hundred viewings.",
-    image: "https://kfgzhurkaybmuxkuolxc.supabase.co/storage/v1/object/public/media/site/villa-stair.jpg",
-    seoTitle: "Off-Market Luxury Villas & Penthouses — Marbella, Sotogrande, Capri, Dubai",
+      "Homes on the Golden Mile, in Puente Romano, the Marbella Club and Sotogrande — plus a small number of exceptional residences we offer privately.",
+    image: "https://images.unsplash.com/photo-1602343168117-bb8ffe3e2e9f?auto=format&fit=crop&w=2000&q=80",
+    seoTitle: "Luxury Villas & Apartments for Sale — Marbella, Puente Romano, Sotogrande",
     seoDescription:
-      "Private access to off-market villas, penthouses and estates in Marbella, Puente Romano, Sotogrande, Capri and Dubai. For buyers who value discretion.",
+      "Luxury villas, penthouses and apartments for sale in Marbella, Puente Romano, the Marbella Club and Sotogrande — plus private, off-market residences.",
     highlights: [
       {
         title: "Resort residences",
-        body: "Puente Romano, Marbella Club and Sotogrande Marina — the addresses that rarely trade publicly.",
+        body: "Puente Romano, the Marbella Club and Sotogrande Marina — the addresses we know best."
       },
       {
         title: "Estates & plots",

@@ -53,7 +53,7 @@ export default async function AdminHome() {
       <div className="acard text-sm text-[#4a5670]">
         <h2 className="font-semibold text-[#0a1730]">Quick guide</h2>
         <ul className="mt-3 list-disc space-y-1 pl-5">
-          <li><b>Properties</b> — add an opportunity with a title, short teaser and a mood image. Never upload the real photos; they stay private and go out by email after an NDA.</li>
+          <li><b>Properties</b> — add homes and rentals with photos and a gallery as normal. For hotels, restaurants or private sales tick “Off-market”: the photo is blurred and details are only shared after an NDA.</li>
           <li><b>Pages &amp; copy</b> — change any headline or paragraph on the home page, your bio, the four category pages and the location pages.</li>
           <li><b>Blog</b> — write an Out and About or Property News post. Add an event date for forthcoming events. Untick “Published” to keep a draft.</li>
           <li><b>Enquiries</b> — every form submission lands here, with everything the person told us. Reply from your own email.</li>

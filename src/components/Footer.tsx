@@ -16,9 +16,9 @@ export function Footer({ settings }: { settings: SiteSettings }) {
               <Wordmark size="md" />
             </Link>
             <p className="mt-5 hidden max-w-md text-sm leading-relaxed text-mist sm:block">
-              Off-market hotels, restaurants and private residences in Sotogrande, Marbella and
-              selected international destinations. We deal directly with buyers, investors and
-              family offices. By introduction only.
+              Luxury homes for sale and holiday rental in Marbella and Sotogrande, and discreet,
+              off-market sales of hotels and restaurants in Spain and selected international
+              destinations.
             </p>
           </div>
 

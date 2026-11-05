@@ -10,11 +10,15 @@ export function EnquiryForm({
   sourcePage,
   defaultInterest,
   compact = false,
+  messagePlaceholder,
+  submitLabel,
 }: {
   propertyRef?: string;
   sourcePage?: string;
   defaultInterest?: string;
   compact?: boolean;
+  messagePlaceholder?: string;
+  submitLabel?: string;
 }) {
   const [state, action, pending] = useActionState<EnquiryState, FormData>(submitEnquiry, null);
   const [buyerType, setBuyerType] = useState("");
@@ -144,7 +148,7 @@ export function EnquiryForm({
           name="message"
           rows={compact ? 3 : 5}
           className="field resize-none"
-          placeholder="Asset type, must-haves, how you intend to hold it, anything that helps us match you to the right owner."
+          placeholder={messagePlaceholder ?? "The type of property, must-haves, dates or timing — anything that helps us find the right match."}
         />
       </div>
 
@@ -156,7 +160,7 @@ export function EnquiryForm({
           marketing list. By sending, you agree to our privacy policy.
         </p>
         <button type="submit" disabled={pending} className={`btn btn-solid disabled:opacity-60 ${compact ? "justify-center" : ""}`}>
-          <span>{pending ? "Sending…" : "Send private enquiry"}</span>
+          <span>{pending ? "Sending…" : submitLabel ?? "Send enquiry"}</span>
         </button>
       </div>
     </form>

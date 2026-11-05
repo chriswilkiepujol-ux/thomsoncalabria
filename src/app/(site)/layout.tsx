@@ -23,14 +23,14 @@ export default async function SiteLayout({ children }: { children: React.ReactNo
           alternateName: "Thomson Calabria SL — International Realty / Consultancy",
           url: site,
           logo: `${site}/icon.svg`,
-          image: "https://kfgzhurkaybmuxkuolxc.supabase.co/storage/v1/object/public/media/site/hero-villa.jpg",
+          image: "https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=2000&q=80",
           email: settings.email,
           telephone: settings.phone,
           founder: { "@type": "Person", name: "Linda Thomson" },
           foundingDate: "2009",
           areaServed: ["Marbella", "Sotogrande", "Costa del Sol", "Italy", "Dubai"],
           address: { "@type": "PostalAddress", addressLocality: "Marbella", addressRegion: "Málaga", addressCountry: "ES" },
-          knowsAbout: ["off-market property", "hotel acquisitions", "restaurant sales", "luxury villas", "luxury rentals"],
+          knowsAbout: ["luxury villas for sale", "luxury holiday rentals", "off-market hotels", "restaurant sales", "Puente Romano", "Marbella Club", "Sotogrande"],
           sameAs: ["https://ltpropertiesmarbella.com"],
         }}
       />

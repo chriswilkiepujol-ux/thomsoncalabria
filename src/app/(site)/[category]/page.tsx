@@ -49,6 +49,17 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
 
       <section className="py-12 lg:py-16">
         <Container>
+          {c.notice && (
+            <div className="mb-10 flex gap-4 border-l-4 border-accent bg-white p-5 shadow-[0_10px_30px_-24px_rgba(19,38,74,0.5)] lg:p-6">
+              <div className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-accent text-sm font-bold text-white">i</div>
+              <div>
+                <p className="text-[0.98rem] leading-relaxed text-ivory">{c.notice}</p>
+                <Link href="#enquire" className="mt-2 inline-block text-[0.84rem] font-semibold text-accent hover:underline">
+                  Register your brief →
+                </Link>
+              </div>
+            </div>
+          )}
           <div className="grid gap-10 md:grid-cols-3">
             {c.highlights.map((h) => (
               <div key={h.title}>
@@ -66,11 +77,19 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
           <div className="flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
             <SectionHead
               kicker={`Current ${cat.nounPlural}`}
-              title={props.length ? "Opportunities we can discuss today." : "Opportunities are shared privately."}
+              title={
+                props.length
+                  ? key === "rental" ? "Available to book." : key === "residential" ? "Properties for sale." : "Opportunities we can discuss today."
+                  : key === "rental" || key === "residential" ? "New properties coming soon." : "Opportunities are shared privately."
+              }
               body={
                 props.length
-                  ? "Each listing is deliberately brief. Full dossiers — location, photography, accounts — are released after a short conversation and a confidentiality agreement."
-                  : "We rarely publish what we are handling. Tell us what you are looking for and we will let you know, privately, when something matching your brief becomes available."
+                  ? key === "rental"
+                    ? "Contact us with your dates and we will confirm availability and rates."
+                    : key === "residential"
+                      ? "Some homes are listed in full; others are offered privately, with details shared after a short conversation."
+                      : "Each listing is deliberately brief. Full details — location, photography, accounts — are released after a short conversation and a confidentiality agreement."
+                  : "Tell us what you are looking for and we will let you know as soon as something suitable becomes available."
               }
             />
             <div className="flex flex-wrap gap-2 md:justify-end">
@@ -100,11 +119,14 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
         <Container>
           <div className="grid gap-14 lg:grid-cols-12">
             <div className="lg:col-span-4">
-              <div className="kicker">Register your brief</div>
-              <h2 className="display-md mt-4">Tell us what you would buy.</h2>
-              <p className="mt-5 text-sm leading-relaxed text-mist">
-                Owners come to us before they go to market. If your brief is on file, you hear
-                first. Nothing is ever shared without your consent.
+              <div className="kicker">{key === "rental" ? "Book a stay" : "Register your brief"}</div>
+              <h2 className="display-md mt-3">
+                {key === "rental" ? "Tell us your dates." : "Tell us what you are looking for."}
+              </h2>
+              <p className="mt-3 text-[0.94rem] leading-relaxed text-mist">
+                {key === "rental"
+                  ? "Let us know when you would like to stay and how many guests, and we will confirm availability and rates personally."
+                  : "If your brief is on file, you hear first — including about properties we do not advertise. Nothing is ever shared without your consent."}
               </p>
             </div>
             <div className="lg:col-span-8">

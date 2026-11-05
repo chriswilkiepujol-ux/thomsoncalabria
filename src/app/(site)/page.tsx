@@ -21,7 +21,7 @@ const CATEGORY_TILES = [
   },
   {
     key: "residential",
-    image: "https://kfgzhurkaybmuxkuolxc.supabase.co/storage/v1/object/public/media/site/villa-pool-day.jpg",
+    image: "https://images.unsplash.com/photo-1602343168117-bb8ffe3e2e9f?auto=format&fit=crop&w=1000&q=80",
     blurb: "Villas, penthouses and estates that rarely trade.",
   },
   {
@@ -44,6 +44,7 @@ export default async function HomePage() {
       <section className="dark relative flex min-h-[600px] items-end overflow-hidden bg-navy-950 lg:min-h-[680px]">
         <Image src={home.heroImage} alt="" fill priority sizes="100vw" className="slowzoom object-cover" />
         <div className="veil absolute inset-0" />
+        <div className="absolute inset-0 bg-gradient-to-r from-navy-950/70 via-navy-950/25 to-transparent" />
         <Container className="hero-text relative z-10 pb-14 pt-32 lg:pb-20">
           <div className="max-w-2xl">
             <div className="kicker rise">{home.heroKicker}</div>
@@ -88,7 +89,7 @@ export default async function HomePage() {
         <Container>
           <SectionHead
             kicker="What we handle"
-            title="Four types of property. All of them private."
+            title="Four ways we can help."
           />
           <div className="mt-8 grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">
             {CATEGORY_TILES.map((t) => {
@@ -136,8 +137,8 @@ export default async function HomePage() {
             <div className="flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
               <SectionHead
                 kicker="Current opportunities"
-                title="A glimpse, never the whole picture."
-                body="Addresses, photography and financials are shared privately once we have spoken."
+                title="Featured properties."
+                body="Homes for sale and rent, and a selection of private opportunities — off-market details are shared once we have spoken."
               />
               <Link href="/residential" className="btn btn-ghost btn-sm self-start md:self-auto">
                 View all
