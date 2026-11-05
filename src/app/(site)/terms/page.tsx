@@ -5,10 +5,10 @@ export const metadata: Metadata = { title: "Terms & Conditions", alternates: { c
 
 export default function TermsPage() {
   return (
-    <section className="pt-40 pb-24 lg:pt-52">
+    <section className="pt-28 pb-12 lg:pt-32 lg:pb-16">
       <Container className="max-w-3xl">
         <div className="kicker">Legal</div>
-        <h1 className="display-lg mt-5">Terms &amp; Conditions</h1>
+        <h1 className="display-lg mt-3">Terms &amp; Conditions</h1>
         <div className="lede mt-10 space-y-6 text-base">
           <p>This website is operated by Thomson Calabria SL. Information published here describes opportunities in general terms only; it does not constitute an offer, a valuation or professional advice, and no reliance should be placed on it without independent verification.</p>
           <p>Details of off-market properties are released solely at our discretion, to parties we are satisfied are principals or their mandated advisors, and subject to a confidentiality agreement. Any information so released remains confidential and may not be shared without our written consent.</p>

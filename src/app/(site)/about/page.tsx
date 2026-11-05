@@ -28,7 +28,7 @@ export default async function AboutPage() {
           telephone: settings.phone,
         }}
       />
-      <section className="pt-40 pb-24 lg:pt-52">
+      <section className="pt-28 pb-12 lg:pt-32 lg:pb-16">
         <Container>
           <div className="grid gap-16 lg:grid-cols-12 lg:gap-20">
             <div className="lg:col-span-5">
@@ -43,13 +43,13 @@ export default async function AboutPage() {
             </div>
             <div className="lg:col-span-7">
               <div className="kicker">{about.kicker}</div>
-              <h1 className="display-lg mt-5">{about.title}</h1>
+              <h1 className="display-lg mt-3">{about.title}</h1>
               <div className="mt-10 space-y-6">
                 {about.body.map((p, i) => (
                   <p key={i} className="lede text-[1.1rem]">{p}</p>
                 ))}
               </div>
-              <blockquote className="mt-14 border-l border-accent pl-8 font-display text-3xl font-light italic leading-snug text-ivory/90">
+              <blockquote className="mt-8 border-l border-accent pl-8 font-display text-2xl italic leading-snug text-ivory/90">
                 &ldquo;{about.quote}&rdquo;
               </blockquote>
               <div className="mt-12 flex flex-col gap-3 text-sm text-mist">
@@ -61,7 +61,7 @@ export default async function AboutPage() {
         </Container>
       </section>
 
-      <section className="light py-24">
+      <section className="py-12 lg:py-16">
         <Container>
           <div className="grid gap-14 lg:grid-cols-12">
             <div className="lg:col-span-4">
@@ -78,8 +78,8 @@ export default async function AboutPage() {
               <div className="mt-12 grid gap-6 md:grid-cols-3">
                 {home.testimonials.map((t) => (
                   <figure key={t.name} className="card p-7">
-                    <blockquote className="font-display text-lg font-light leading-relaxed text-ivory/90">&ldquo;{t.quote}&rdquo;</blockquote>
-                    <figcaption className="mt-6 text-[0.7rem] uppercase tracking-[0.26em] text-mist">
+                    <blockquote className="font-display text-lg leading-relaxed text-ivory/90">&ldquo;{t.quote}&rdquo;</blockquote>
+                    <figcaption className="mt-6 text-[0.7rem] uppercase tracking-[0.12em] text-mist">
                       {t.name} <span className="text-accent">·</span> {t.place}
                     </figcaption>
                   </figure>

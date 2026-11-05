@@ -195,50 +195,50 @@ export const DEFAULT_SETTINGS: SiteSettings = {
 };
 
 export const DEFAULT_HOME: HomeContent = {
-  heroKicker: "Off-market · By introduction only",
+  heroKicker: "Off-market property · Private sales",
   heroTitle: "The properties you will never see advertised.",
   heroSubtitle:
-    "Hotels, restaurants and private residences in Sotogrande, Marbella and a handful of the world's finest addresses — offered discreetly, principal to principal.",
+    "We sell hotels, restaurants and luxury homes in Marbella, Sotogrande and select international destinations — privately, and directly to buyers, investors and funds.",
   heroImage: "https://kfgzhurkaybmuxkuolxc.supabase.co/storage/v1/object/public/media/site/hero-villa.jpg",
-  introKicker: "A different kind of realty",
+  introKicker: "What we do",
   introTitle: "We do not list. We introduce.",
   introBody:
-    "Thomson Calabria is an international realty and consultancy practice built on one idea: the most valuable properties are sold quietly. We work directly with owners who prefer not to advertise and with buyers, investors and family offices who prefer not to be marketed to. There are no portals, no agent chains and no photographs of other people's homes on the internet. There is a conversation, and then there is a key.",
+    "Owners who prefer not to advertise come to us. We match their property with qualified buyers — no portals, no agent chains, no public listings. Tell us what you are looking for and we will tell you, in confidence, what is available.",
   pillars: [
     {
-      title: "Genuinely off-market",
-      body: "Every opportunity we handle comes from a direct relationship with the owner. Nothing we present is available through a portal or another agency.",
+      title: "Truly off-market",
+      body: "Every opportunity comes directly from the owner. None of it is on a portal or with another agency.",
     },
     {
-      title: "Principal to principal",
-      body: "We deal with the buyer, the investor or the fund — not with intermediaries. Fewer people in the room means better terms and complete confidentiality.",
+      title: "Direct with buyers",
+      body: "We deal with the buyer, investor or fund — not intermediaries. Fewer people, better terms, full discretion.",
     },
     {
-      title: "Three asset classes, one standard",
-      body: "Hotels, restaurants and residences. Different assets, the same discretion, the same due diligence and the same personal attention from the first call to completion.",
+      title: "Personal service",
+      body: "Linda handles every client herself, from the first call to the day the keys change hands.",
     },
   ],
-  processTitle: "How a conversation becomes a key",
+  processTitle: "Four simple steps.",
   process: [
     {
       step: "01",
-      title: "A brief, not a browse",
-      body: "Tell us what you are looking for — asset type, locations, budget and timing. The more we understand, the more precisely we can match you to an owner.",
+      title: "Share your brief",
+      body: "Tell us the type of property, location, budget and timing.",
     },
     {
       step: "02",
-      title: "Qualification & NDA",
-      body: "We verify that we are speaking with a principal or their mandated advisor. A short confidentiality agreement protects the owner's privacy and yours.",
+      title: "Confidentiality",
+      body: "We confirm you are a principal and sign a short NDA to protect both sides.",
     },
     {
       step: "03",
-      title: "Private disclosure",
-      body: "Only then do we share the full dossier: address, photography, financials and the owner's position. Viewings are arranged personally.",
+      title: "Private details",
+      body: "We send the full dossier — address, photos, financials — and arrange viewings.",
     },
     {
       step: "04",
-      title: "Negotiation to completion",
-      body: "We lead negotiations, coordinate lawyers, notaries and structuring advice in each jurisdiction, and stay with you until the keys change hands.",
+      title: "Through to completion",
+      body: "We negotiate and coordinate lawyers and notaries until the keys are yours.",
     },
   ],
   testimonials: [

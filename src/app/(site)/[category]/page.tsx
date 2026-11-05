@@ -47,7 +47,7 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
       />
       <PageHero kicker={c.kicker} title={c.title} intro={c.intro} image={c.image} />
 
-      <section className="light py-24">
+      <section className="py-12 lg:py-16">
         <Container>
           <div className="grid gap-10 md:grid-cols-3">
             {c.highlights.map((h) => (
@@ -61,7 +61,7 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
         </Container>
       </section>
 
-      <section className="border-t border-line py-24">
+      <section className="border-t border-line py-12 lg:py-16">
         <Container>
           <div className="flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
             <SectionHead
@@ -78,7 +78,7 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
                 <Link
                   key={slug}
                   href={`/locations/${slug}`}
-                  className="border border-line px-3.5 py-1.5 text-[0.7rem] uppercase tracking-[0.22em] text-mist hover:border-accent hover:text-accent-2"
+                  className="border border-line px-3.5 py-1.5 text-[0.7rem] uppercase tracking-[0.12em] text-mist hover:border-accent hover:text-accent-2"
                 >
                   {l.name}
                 </Link>
@@ -87,7 +87,7 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
           </div>
 
           {props.length > 0 && (
-            <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
               {props.map((p) => (
                 <PropertyCard key={p.id} p={p} />
               ))}
@@ -96,7 +96,7 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
         </Container>
       </section>
 
-      <section className="light light-alt py-24" id="enquire">
+      <section className="light-alt py-12 lg:py-16" id="enquire">
         <Container>
           <div className="grid gap-14 lg:grid-cols-12">
             <div className="lg:col-span-4">

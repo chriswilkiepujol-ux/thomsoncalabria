@@ -6,7 +6,7 @@ export function Footer({ settings }: { settings: SiteSettings }) {
   const year = new Date().getFullYear();
   return (
     <footer className="relative border-t border-line bg-navy-950">
-      <div className="mx-auto max-w-[1400px] px-6 py-20 lg:px-10">
+      <div className="mx-auto max-w-[1280px] px-5 py-14 lg:px-8">
         <div className="grid gap-14 lg:grid-cols-12">
           <div className="lg:col-span-5">
             <div className="flex items-center gap-4 text-accent">
@@ -59,9 +59,9 @@ export function Footer({ settings }: { settings: SiteSettings }) {
           </div>
         </div>
 
-        <div className="hairline mt-16" />
+        <div className="hairline mt-10" />
 
-        <div className="mt-8 flex flex-col gap-4 text-[0.68rem] uppercase tracking-[0.2em] text-mist-2 md:flex-row md:items-center md:justify-between">
+        <div className="mt-8 flex flex-col gap-4 text-[0.68rem] uppercase tracking-[0.12em] text-mist-2 md:flex-row md:items-center md:justify-between">
           <div>© {year} Thomson Calabria SL. All rights reserved.</div>
           <div className="flex flex-wrap gap-6">
             <Link href="/privacy" className="hover:text-ivory">Privacy</Link>

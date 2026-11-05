@@ -5,10 +5,10 @@ export const metadata: Metadata = { title: "Privacy Policy", alternates: { canon
 
 export default function PrivacyPage() {
   return (
-    <section className="pt-40 pb-24 lg:pt-52">
+    <section className="pt-28 pb-12 lg:pt-32 lg:pb-16">
       <Container className="max-w-3xl">
         <div className="kicker">Legal</div>
-        <h1 className="display-lg mt-5">Privacy Policy</h1>
+        <h1 className="display-lg mt-3">Privacy Policy</h1>
         <div className="lede mt-10 space-y-6 text-base">
           <p>Thomson Calabria SL (&ldquo;we&rdquo;) is the data controller for personal data submitted through this website. We process your name, contact details and the information you give us about your property requirements solely to respond to your enquiry and, where you ask us to, to keep you informed of opportunities that match your brief.</p>
           <p>We never sell, rent or share your data with third parties for marketing. Your details may be shared with professional advisors (lawyers, notaries, financial institutions) only where necessary to progress a transaction you have asked us to assist with, and only with your knowledge.</p>

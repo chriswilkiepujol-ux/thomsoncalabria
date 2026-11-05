@@ -43,8 +43,8 @@
   --color-accent-deep: var(--accent-deep);
   --color-accent-soft: var(--accent-soft);
   --color-accent-ink: var(--accent-ink);
-  --font-display: var(--font-cormorant), "Cormorant Garamond", Georgia, serif;
-  --font-sans: var(--font-manrope), "Manrope", system-ui, sans-serif;
+  --font-display: var(--font-serif), "EB Garamond", Georgia, serif;
+  --font-sans: var(--font-sans-face), "Inter", system-ui, sans-serif;
 }
 
 html {
@@ -70,41 +70,36 @@ body {
 
 .kicker {
   font-family: var(--font-sans);
-  font-size: 0.74rem;
+  font-size: 0.75rem;
   font-weight: 600;
-  letter-spacing: 0.28em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--accent);
 }
 
-.veil + * h1, .veil + * .lede {
-  text-shadow: 0 2px 24px rgba(13, 27, 53, 0.45);
-}
-
 .display-xl {
   font-family: var(--font-display);
-  font-weight: 300;
-  line-height: 1.02;
-  letter-spacing: -0.01em;
-  font-size: clamp(2.6rem, 6.2vw, 5.6rem);
+  font-weight: 500;
+  line-height: 1.08;
+  letter-spacing: -0.005em;
+  font-size: clamp(2.3rem, 4.6vw, 4rem);
 }
 .display-lg {
   font-family: var(--font-display);
-  font-weight: 300;
-  line-height: 1.06;
-  letter-spacing: -0.01em;
-  font-size: clamp(2.1rem, 4.4vw, 3.8rem);
+  font-weight: 500;
+  line-height: 1.12;
+  font-size: clamp(1.85rem, 3vw, 2.6rem);
 }
 .display-md {
   font-family: var(--font-display);
-  font-weight: 400;
-  line-height: 1.12;
-  font-size: clamp(1.6rem, 2.6vw, 2.3rem);
+  font-weight: 500;
+  line-height: 1.2;
+  font-size: clamp(1.5rem, 2.2vw, 1.9rem);
 }
 
 .lede {
-  font-size: 1.14rem;
-  line-height: 1.8;
+  font-size: 1.06rem;
+  line-height: 1.7;
   color: var(--mist);
   font-weight: 400;
 }
@@ -121,50 +116,53 @@ body {
   background: var(--accent);
 }
 
+@layer components {
 .btn {
-  white-space: nowrap;
   display: inline-flex;
   align-items: center;
-  gap: 0.75rem;
-  font-size: 0.72rem;
-  letter-spacing: 0.26em;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 48px;
+  padding: 0.75rem 1.6rem;
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  line-height: 1.2;
   text-transform: uppercase;
-  padding: 1rem 1.9rem;
+  text-align: center;
   border: 1px solid var(--accent);
-  color: var(--accent-2);
-  transition: all 0.35s ease;
-  position: relative;
-  overflow: hidden;
-}
-.btn::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: var(--accent);
-  transform: translateY(101%);
-  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
-  z-index: 0;
-}
-.btn:hover::before {
-  transform: translateY(0);
+  border-radius: 2px;
+  color: var(--ivory);
+  background: transparent;
+  transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
 }
 .btn:hover {
+  background: var(--accent);
   color: var(--accent-ink);
-}
-.btn > * {
-  position: relative;
-  z-index: 1;
 }
 .btn-solid {
   background: var(--accent);
   color: var(--accent-ink);
 }
-.btn-solid::before {
+.btn-solid:hover {
   background: var(--accent-2);
+  border-color: var(--accent-2);
 }
 .btn-ghost {
-  border-color: var(--line);
-  color: var(--ivory);
+  border-color: var(--mist-2);
+}
+.btn-ghost:hover {
+  background: var(--ivory);
+  border-color: var(--ivory);
+  color: var(--ghost-ink, #0d1b35);
+}
+.btn-sm {
+  min-height: 40px;
+  padding: 0.5rem 1.1rem;
+  font-size: 0.74rem;
+}
+
 }
 
 .link-underline {
@@ -236,7 +234,11 @@ body {
   border-color: rgba(19, 38, 74, 0.1);
   box-shadow: 0 20px 50px -30px rgba(19, 38, 74, 0.35);
 }
-.light .btn-solid {
+.light {
+  --ghost-ink: #ffffff;
+}
+.light .btn-solid,
+.light .btn:hover {
   color: #fff;
 }
 .light select.field option {
@@ -272,8 +274,15 @@ body {
 .dark .absolute .kicker {
   color: var(--accent-2);
 }
-.dark .btn-solid {
+.dark {
+  --ghost-ink: #0d1b35;
+}
+.dark .btn-solid,
+.dark .btn:hover {
   color: var(--accent-ink);
+}
+.dark .btn-ghost:hover {
+  color: #0d1b35;
 }
 
 /* Reveal animation */
@@ -342,8 +351,9 @@ select.field option {
 }
 .flabel {
   display: block;
-  font-size: 0.66rem;
-  letter-spacing: 0.24em;
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--mist-2);
   margin-bottom: 0.1rem;
@@ -411,4 +421,9 @@ select.field option {
   border: 1px solid #e6e3da;
   border-radius: 14px;
   padding: 1.5rem;
+}
+
+.hero-text h1,
+.hero-text .lede {
+  text-shadow: 0 1px 18px rgba(13, 27, 53, 0.5);
 }

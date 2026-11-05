@@ -45,7 +45,7 @@ export default async function LocationPage({ params }: { params: Promise<{ slug:
       />
       <PageHero kicker={l.kicker} title={l.title} intro={l.intro} image={l.image} />
 
-      <section className="light py-24">
+      <section className="py-12 lg:py-16">
         <Container>
           <div className="grid gap-14 lg:grid-cols-12">
             <div className="lg:col-span-4">
@@ -67,7 +67,7 @@ export default async function LocationPage({ params }: { params: Promise<{ slug:
         </Container>
       </section>
 
-      <section className="border-t border-line py-24">
+      <section className="border-t border-line py-12 lg:py-16">
         <Container>
           <SectionHead
             kicker={`${l.name} · Opportunities`}
@@ -79,7 +79,7 @@ export default async function LocationPage({ params }: { params: Promise<{ slug:
             }
           />
           {props.length > 0 && (
-            <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
               {props.map((p) => (
                 <PropertyCard key={p.id} p={p} />
               ))}
@@ -88,7 +88,7 @@ export default async function LocationPage({ params }: { params: Promise<{ slug:
         </Container>
       </section>
 
-      <section className="light light-alt py-24">
+      <section className="light-alt py-12 lg:py-16">
         <Container>
           <div className="grid gap-14 lg:grid-cols-12">
             <div className="lg:col-span-4">

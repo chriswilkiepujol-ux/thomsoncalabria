@@ -43,7 +43,7 @@ export default async function PropertyPage({ params }: { params: Promise<{ slug:
           offers: p.price_label ? { "@type": "Offer", price: p.price_label, availability: "https://schema.org/InStock" } : undefined,
         }}
       />
-      <section className="dark relative flex min-h-[80vh] items-end overflow-hidden bg-navy-950">
+      <section className="dark relative flex min-h-[480px] lg:min-h-[540px] items-end overflow-hidden bg-navy-950">
         {p.image_url ? (
           <div className="private-img absolute inset-0">
             <Image src={p.image_url} alt="" fill priority sizes="100vw" className="object-cover" />
@@ -52,8 +52,8 @@ export default async function PropertyPage({ params }: { params: Promise<{ slug:
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(26,48,89,0.9),rgba(5,11,26,1))]" />
         )}
         <div className="veil absolute inset-0" />
-        <Container className="relative z-10 pb-20 pt-48">
-          <div className="flex flex-wrap items-center gap-3 text-[0.7rem] uppercase tracking-[0.28em] text-mist">
+        <Container className="relative z-10 pb-12 pt-32">
+          <div className="flex flex-wrap items-center gap-3 text-[0.7rem] uppercase tracking-[0.12em] text-mist">
             <Link href={`/${cat.slug}`} className="hover:text-accent">{cat.label}</Link>
             <span className="text-accent">/</span>
             <Link href={`/locations/${p.location}`} className="hover:text-accent">{locationLabel(p.location)}</Link>
@@ -62,13 +62,13 @@ export default async function PropertyPage({ params }: { params: Promise<{ slug:
           </div>
           <h1 className="display-lg rise mt-6 max-w-4xl">{p.title}</h1>
           {p.headline && <p className="lede rise rise-2 mt-6 max-w-2xl">{p.headline}</p>}
-          <div className="rise rise-3 mt-8 inline-flex items-center gap-3 border border-accent/40 bg-navy-950/60 px-4 py-2 text-[0.7rem] uppercase tracking-[0.26em] text-accent-2 backdrop-blur">
+          <div className="rise rise-3 mt-8 inline-flex items-center gap-3 border border-accent/40 bg-navy-950/60 px-4 py-2 text-[0.7rem] uppercase tracking-[0.12em] text-accent-2 backdrop-blur">
             <span className="h-1.5 w-1.5 rounded-full bg-accent" /> Photography and address released under NDA
           </div>
         </Container>
       </section>
 
-      <section className="light py-24">
+      <section className="py-12 lg:py-16">
         <Container>
           <div className="grid gap-16 lg:grid-cols-12">
             <div className="lg:col-span-7">
@@ -80,10 +80,10 @@ export default async function PropertyPage({ params }: { params: Promise<{ slug:
               </div>
 
               {p.key_facts.length > 0 && (
-                <dl className="mt-14 grid grid-cols-2 gap-x-8 gap-y-7 border-t border-line pt-10 md:grid-cols-3">
+                <dl className="mt-8 grid grid-cols-2 gap-x-8 gap-y-7 border-t border-line pt-10 md:grid-cols-3">
                   {p.key_facts.map((f) => (
                     <div key={f.label}>
-                      <dt className="text-[0.68rem] uppercase tracking-[0.26em] text-mist-2">{f.label}</dt>
+                      <dt className="text-[0.68rem] uppercase tracking-[0.12em] text-mist-2">{f.label}</dt>
                       <dd className="mt-1.5 font-display text-2xl text-ivory">{f.value}</dd>
                     </div>
                   ))}
@@ -93,7 +93,7 @@ export default async function PropertyPage({ params }: { params: Promise<{ slug:
 
             <aside className="lg:col-span-5">
               <div className="card sticky top-28 p-8 lg:p-10">
-                <div className="text-[0.68rem] uppercase tracking-[0.26em] text-mist-2">Guide</div>
+                <div className="text-[0.68rem] uppercase tracking-[0.12em] text-mist-2">Guide</div>
                 <div className="mt-2 font-display text-4xl text-accent-2">{p.price_label ?? "On application"}</div>
                 <div className="hairline my-8" />
                 <h2 className="font-display text-2xl">Request the private dossier</h2>
@@ -110,7 +110,7 @@ export default async function PropertyPage({ params }: { params: Promise<{ slug:
       </section>
 
       {related.length > 0 && (
-        <section className="border-t border-line py-24">
+        <section className="border-t border-line py-12 lg:py-16">
           <Container>
             <div className="kicker">Also in {cat.label.toLowerCase()}</div>
             <div className="mt-10 grid gap-6 md:grid-cols-3">

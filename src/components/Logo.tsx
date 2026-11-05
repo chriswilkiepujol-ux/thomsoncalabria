@@ -36,17 +36,17 @@ export function Wordmark({
   tagline?: boolean;
 }) {
   const s = {
-    sm: { name: "text-[1.05rem] tracking-[0.22em]", tag: "text-[0.56rem] tracking-[0.26em]" },
-    md: { name: "text-[1.3rem] tracking-[0.24em]", tag: "text-[0.62rem] tracking-[0.3em]" },
-    lg: { name: "text-[2rem] tracking-[0.26em]", tag: "text-[0.7rem] tracking-[0.38em]" },
+    sm: { name: "text-[1.12rem] tracking-[0.16em]", tag: "text-[0.6rem] tracking-[0.12em]" },
+    md: { name: "text-[1.35rem] tracking-[0.16em]", tag: "text-[0.66rem] tracking-[0.12em]" },
+    lg: { name: "text-[2rem] tracking-[0.18em]", tag: "text-[0.75rem] tracking-[0.14em]" },
   }[size];
   return (
     <div className="leading-none">
-      <div className={`font-display font-medium uppercase text-ivory ${s.name}`}>
+      <div className={`font-display font-semibold uppercase text-ivory ${s.name}`}>
         Thomson Calabria
       </div>
       {tagline && (
-        <div className={`mt-1.5 uppercase text-mist-2 ${s.tag}`}>
+        <div className={`mt-1 font-medium uppercase text-mist ${s.tag}`}>
           International Realty <span className="text-accent/80">/</span> Consultancy
         </div>
       )}

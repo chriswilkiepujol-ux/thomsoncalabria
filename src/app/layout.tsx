@@ -1,20 +1,20 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Manrope } from "next/font/google";
+import { EB_Garamond, Inter } from "next/font/google";
 import { getContent } from "@/lib/content";
 import "./globals.css";
 
-const cormorant = Cormorant_Garamond({
+const serif = EB_Garamond({
   subsets: ["latin"],
-  weight: ["300", "400", "500"],
+  weight: ["400", "500", "600"],
   style: ["normal", "italic"],
-  variable: "--font-cormorant",
+  variable: "--font-serif",
   display: "swap",
 });
 
-const manrope = Manrope({
+const sans = Inter({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600"],
-  variable: "--font-manrope",
+  weight: ["400", "500", "600"],
+  variable: "--font-sans-face",
   display: "swap",
 });
 
@@ -46,7 +46,7 @@ export default async function RootLayout({
     <html
       lang="en"
       data-accent={settings.accent}
-      className={`${cormorant.variable} ${manrope.variable}`}
+      className={`${serif.variable} ${sans.variable}`}
     >
       <body>{children}</body>
     </html>
