@@ -124,7 +124,7 @@ export const LOCATIONS: Record<string, LocationContent> = {
       "Sotogrande is where Europe's most discreet families keep a second home. Off-market villas in the Kings & Queens, La Reserva and Marina estates rarely reach the open market; they move through introductions.",
     image:
       "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=2000&q=80",
-    seoTitle: "Off-Market Property in Sotogrande | Thomson & Calabria",
+    seoTitle: "Off-Market Property in Sotogrande | Thomson Calabria",
     seoDescription:
       "Private access to off-market villas, estates, hotels and restaurants in Sotogrande, Spain. Direct dealings with principals, no agent chains.",
     body: [
@@ -140,7 +140,7 @@ export const LOCATIONS: Record<string, LocationContent> = {
     intro:
       "Our roots are on Marbella's Golden Mile. Fifteen years of handling residences in Puente Romano and around the Marbella Club have given us a private network of owners who sell quietly, and buyers who prefer it that way.",
     image: "https://kfgzhurkaybmuxkuolxc.supabase.co/storage/v1/object/public/media/site/villa-pool-day.jpg",
-    seoTitle: "Off-Market Property in Marbella & Puente Romano | Thomson & Calabria",
+    seoTitle: "Off-Market Property in Marbella & Puente Romano | Thomson Calabria",
     seoDescription:
       "Discreet access to off-market villas, penthouses, hotels and restaurants on Marbella's Golden Mile, Puente Romano and the Marbella Club.",
     body: [
@@ -154,10 +154,10 @@ export const LOCATIONS: Record<string, LocationContent> = {
     kicker: "Italy · Capri, Amalfi & the Lakes",
     title: "Capri, the Amalfi Coast and the Italian lakes.",
     intro:
-      "Through our Calabria partnership we reach a selective set of Italian opportunities: boutique hotels, historic palazzi and clifftop villas in Capri, Positano, Lake Como and beyond — offered only on a confidential basis.",
+      "Through trusted relationships in Italy we reach a selective set of opportunities: boutique hotels, historic palazzi and clifftop villas in Capri, Positano, Lake Como and beyond — offered only on a confidential basis.",
     image:
       "https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=2000&q=80",
-    seoTitle: "Off-Market Property in Italy — Capri, Amalfi, Lake Como | Thomson & Calabria",
+    seoTitle: "Off-Market Property in Italy — Capri, Amalfi, Lake Como | Thomson Calabria",
     seoDescription:
       "Confidential access to off-market hotels, palazzi and villas in Capri, the Amalfi Coast and the Italian Lakes. Principal-to-principal.",
     body: [
@@ -174,7 +174,7 @@ export const LOCATIONS: Record<string, LocationContent> = {
       "For investors and family offices looking to the Gulf, we source signature villas, branded residences and hospitality assets in Dubai through principals we have worked with for years.",
     image:
       "https://images.unsplash.com/photo-1518684079-3c830dcef090?auto=format&fit=crop&w=2000&q=80",
-    seoTitle: "Off-Market Property in Dubai | Thomson & Calabria",
+    seoTitle: "Off-Market Property in Dubai | Thomson Calabria",
     seoDescription:
       "Private access to off-market villas, branded residences and hotel assets in Dubai — Palm Jumeirah, Emirates Hills, Jumeirah Bay. Direct with principals.",
     body: [
@@ -203,7 +203,7 @@ export const DEFAULT_HOME: HomeContent = {
   introKicker: "A different kind of realty",
   introTitle: "We do not list. We introduce.",
   introBody:
-    "Thomson & Calabria is an international realty and consultancy practice built on one idea: the most valuable properties are sold quietly. We work directly with owners who prefer not to advertise and with buyers, investors and family offices who prefer not to be marketed to. There are no portals, no agent chains and no photographs of other people's homes on the internet. There is a conversation, and then there is a key.",
+    "Thomson Calabria is an international realty and consultancy practice built on one idea: the most valuable properties are sold quietly. We work directly with owners who prefer not to advertise and with buyers, investors and family offices who prefer not to be marketed to. There are no portals, no agent chains and no photographs of other people's homes on the internet. There is a conversation, and then there is a key.",
   pillars: [
     {
       title: "Genuinely off-market",
@@ -268,7 +268,7 @@ export const DEFAULT_ABOUT: AboutContent = {
   title: "Fifteen years on the Golden Mile.",
   photo: "https://kfgzhurkaybmuxkuolxc.supabase.co/storage/v1/object/public/media/site/linda-thomson.jpg",
   body: [
-    "Linda Thomson founded LT Properties Marbella in 2009 and quickly became known for her professionalism in Marbella's luxury property market, with a particular focus on Puente Romano and the Marbella Club on the Golden Mile. Thomson & Calabria is the next chapter: the same relationships and the same standards, applied internationally and exclusively to off-market opportunities.",
+    "Linda Thomson founded LT Properties Marbella in 2009 and quickly became known for her professionalism in Marbella's luxury property market, with a particular focus on Puente Romano and the Marbella Club on the Golden Mile. Thomson Calabria is the next chapter: the same relationships and the same standards, applied internationally and exclusively to off-market opportunities.",
     "Linda works personally with every client. Her approach is tailored to the individual — their lifestyle, their timetable and the way they wish to hold an asset — and is underpinned by deep local knowledge, a long track record and a reputation for integrity and genuine customer care.",
     "For buyers, she guides the entire process of acquiring property in Spain and abroad, from the first conversation to the notary, and is happy to show newcomers the area: golf, dining, schools, beaches and the rhythm of life on the coast. For owners, she offers a confidential, no-obligation opinion of value and a plan to achieve the best outcome without ever exposing the property publicly.",
   ],

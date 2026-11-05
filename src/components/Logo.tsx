@@ -43,7 +43,7 @@ export function Wordmark({
   return (
     <div className="leading-none">
       <div className={`font-display font-medium uppercase text-ivory ${s.name}`}>
-        Thomson <span className="text-accent">&amp;</span> Calabria
+        Thomson Calabria
       </div>
       {tagline && (
         <div className={`mt-1.5 uppercase text-mist-2 ${s.tag}`}>

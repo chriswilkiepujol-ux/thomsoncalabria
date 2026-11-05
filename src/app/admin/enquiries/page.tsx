@@ -45,7 +45,7 @@ export default async function EnquiriesPage() {
             </dl>
             {e.message && <p className="mt-4 whitespace-pre-line rounded-lg bg-[#f6f5f1] p-4 text-sm">{e.message}</p>}
             <div className="mt-4 flex gap-2">
-              <a className="abtn !py-1.5 text-xs" href={`mailto:${e.email}?subject=${encodeURIComponent("Thomson & Calabria — your enquiry")}`}>Reply by email</a>
+              <a className="abtn !py-1.5 text-xs" href={`mailto:${e.email}?subject=${encodeURIComponent("Thomson Calabria — your enquiry")}`}>Reply by email</a>
               <form action={markEnquiry.bind(null, e.id, !e.read)}>
                 <button className="abtn abtn-secondary !py-1.5 text-xs">{e.read ? "Mark unread" : "Mark read"}</button>
               </form>

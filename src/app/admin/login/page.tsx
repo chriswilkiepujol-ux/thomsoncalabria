@@ -9,7 +9,7 @@ export default function LoginPage() {
     <div className="flex min-h-screen items-center justify-center p-6">
       <form action={action} className="acard w-full max-w-sm space-y-5">
         <div>
-          <div className="font-display text-2xl font-medium text-[#0a1730]">Thomson &amp; Calabria</div>
+          <div className="font-display text-2xl font-medium text-[#0a1730]">Thomson Calabria</div>
           <div className="text-xs uppercase tracking-[0.2em] text-[#8a93a6]">Admin sign in</div>
         </div>
         <div>

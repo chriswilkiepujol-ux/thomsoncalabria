@@ -52,7 +52,7 @@ html {
 }
 
 body {
-  background: var(--page);
+  background: #f7f3ea;
   color: var(--ivory);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
@@ -244,6 +244,36 @@ body {
 }
 .light-alt {
   background: #efe8da;
+}
+
+/* Dark islands inside light pages (photo heroes, navy bands, text over images) */
+.dark {
+  --ivory: #f7f3ea;
+  --ivory-2: #ece5d6;
+  --mist: rgba(247, 243, 234, 0.86);
+  --mist-2: rgba(247, 243, 234, 0.66);
+  --line: rgba(247, 243, 234, 0.16);
+  --accent: #c9a650;
+  --accent-2: #e6cf86;
+  --accent-soft: rgba(201, 166, 80, 0.14);
+  color: var(--ivory);
+}
+:root[data-accent="silver"] .dark {
+  --accent: #b9c0cb;
+  --accent-2: #e3e8ef;
+  --accent-soft: rgba(185, 192, 203, 0.14);
+}
+.dark .card {
+  background: linear-gradient(180deg, rgba(37, 65, 114, 0.45), rgba(27, 51, 94, 0.6));
+  border-color: var(--line);
+  box-shadow: none;
+}
+.veil ~ * .kicker,
+.dark .absolute .kicker {
+  color: var(--accent-2);
+}
+.dark .btn-solid {
+  color: var(--accent-ink);
 }
 
 /* Reveal animation */

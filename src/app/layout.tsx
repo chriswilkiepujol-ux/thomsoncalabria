@@ -23,14 +23,14 @@ const SITE = process.env.NEXT_PUBLIC_SITE_URL ?? "https://thomsoncalabria.com";
 export const metadata: Metadata = {
   metadataBase: new URL(SITE),
   title: {
-    default: "Thomson & Calabria — Off-Market Hotels, Restaurants & Residences",
-    template: "%s | Thomson & Calabria",
+    default: "Thomson Calabria — Off-Market Hotels, Restaurants & Residences",
+    template: "%s | Thomson Calabria",
   },
   description:
     "International realty and consultancy. Off-market hotels, restaurants and private residences in Sotogrande, Marbella, Italy and Dubai — principal to principal.",
   openGraph: {
     type: "website",
-    siteName: "Thomson & Calabria",
+    siteName: "Thomson Calabria",
     locale: "en_GB",
     images: [{ url: "https://kfgzhurkaybmuxkuolxc.supabase.co/storage/v1/object/public/media/site/hero-villa.jpg", width: 2000, height: 1334 }],
   },

@@ -62,7 +62,7 @@ export function Footer({ settings }: { settings: SiteSettings }) {
         <div className="hairline mt-16" />
 
         <div className="mt-8 flex flex-col gap-4 text-[0.68rem] uppercase tracking-[0.2em] text-mist-2 md:flex-row md:items-center md:justify-between">
-          <div>© {year} Thomson &amp; Calabria SL. All rights reserved.</div>
+          <div>© {year} Thomson Calabria SL. All rights reserved.</div>
           <div className="flex flex-wrap gap-6">
             <Link href="/privacy" className="hover:text-ivory">Privacy</Link>
             <Link href="/terms" className="hover:text-ivory">Terms</Link>

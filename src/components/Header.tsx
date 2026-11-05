@@ -28,16 +28,21 @@ export function Header({ phoneDisplay, phone }: { phoneDisplay: string; phone: s
 
   useEffect(() => setOpen(false), [pathname]);
 
+  // Pages that open with a full-bleed photo can start with a transparent header.
+  const HERO_PAGES = ["/hotels", "/restaurants", "/residential", "/luxury-rentals", "/locations", "/properties/"];
+  const overHero = pathname === "/" || HERO_PAGES.some((p) => pathname.startsWith(p));
+  const solid = scrolled || open || !overHero;
+
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
-        scrolled || open
-          ? "bg-navy-950/85 backdrop-blur-md border-b border-line"
+        solid
+          ? "bg-navy-950/95 backdrop-blur-md shadow-[0_10px_30px_-20px_rgba(0,0,0,0.6)]"
           : "bg-transparent"
       }`}
     >
       <div className="mx-auto flex max-w-[1400px] items-center justify-between px-6 py-4 lg:px-10">
-        <Link href="/" className="flex items-center gap-4 text-accent" aria-label="Thomson & Calabria home">
+        <Link href="/" className="flex items-center gap-4 text-accent" aria-label="Thomson Calabria home">
           <Mark className={`transition-all duration-500 ${scrolled ? "h-9 w-9" : "h-11 w-11"}`} />
           <Wordmark size="sm" />
         </Link>

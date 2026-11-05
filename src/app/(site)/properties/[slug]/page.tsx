@@ -15,7 +15,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   if (!p) return {};
   const title = `${p.title} — Off-Market ${CATEGORIES[p.category].singular} in ${locationLabel(p.location)}`;
   return {
-    title: { absolute: `${title} | Thomson & Calabria` },
+    title: { absolute: `${title} | Thomson Calabria` },
     description: p.headline ?? p.description?.slice(0, 155),
     alternates: { canonical: `/properties/${slug}` },
     openGraph: { title, images: p.image_url ? [{ url: p.image_url }] : undefined },
@@ -43,7 +43,7 @@ export default async function PropertyPage({ params }: { params: Promise<{ slug:
           offers: p.price_label ? { "@type": "Offer", price: p.price_label, availability: "https://schema.org/InStock" } : undefined,
         }}
       />
-      <section className="relative flex min-h-[80vh] items-end overflow-hidden">
+      <section className="dark relative flex min-h-[80vh] items-end overflow-hidden bg-navy-950">
         {p.image_url ? (
           <div className="private-img absolute inset-0">
             <Image src={p.image_url} alt="" fill priority sizes="100vw" className="object-cover" />

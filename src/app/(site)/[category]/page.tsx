@@ -42,7 +42,7 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
           name: c.seoTitle,
           description: c.seoDescription,
           url: `${process.env.NEXT_PUBLIC_SITE_URL}/${category}`,
-          isPartOf: { "@type": "WebSite", name: "Thomson & Calabria", url: process.env.NEXT_PUBLIC_SITE_URL },
+          isPartOf: { "@type": "WebSite", name: "Thomson Calabria", url: process.env.NEXT_PUBLIC_SITE_URL },
         }}
       />
       <PageHero kicker={c.kicker} title={c.title} intro={c.intro} image={c.image} />

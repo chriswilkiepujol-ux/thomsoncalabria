@@ -10,7 +10,7 @@ export default function PrivacyPage() {
         <div className="kicker">Legal</div>
         <h1 className="display-lg mt-5">Privacy Policy</h1>
         <div className="lede mt-10 space-y-6 text-base">
-          <p>Thomson &amp; Calabria SL (&ldquo;we&rdquo;) is the data controller for personal data submitted through this website. We process your name, contact details and the information you give us about your property requirements solely to respond to your enquiry and, where you ask us to, to keep you informed of opportunities that match your brief.</p>
+          <p>Thomson Calabria SL (&ldquo;we&rdquo;) is the data controller for personal data submitted through this website. We process your name, contact details and the information you give us about your property requirements solely to respond to your enquiry and, where you ask us to, to keep you informed of opportunities that match your brief.</p>
           <p>We never sell, rent or share your data with third parties for marketing. Your details may be shared with professional advisors (lawyers, notaries, financial institutions) only where necessary to progress a transaction you have asked us to assist with, and only with your knowledge.</p>
           <p>Data is stored on secure servers within the European Union. You may ask at any time to see, correct or delete the data we hold about you by writing to info@thomsoncalabria.com. We retain enquiry data for as long as needed to serve you and for a reasonable period thereafter to meet legal obligations.</p>
           <p>This website uses only strictly necessary cookies required to operate the site and, for administrators, to maintain a login session. No advertising or tracking cookies are set without consent.</p>

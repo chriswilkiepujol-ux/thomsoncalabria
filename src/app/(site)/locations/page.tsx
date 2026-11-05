@@ -7,7 +7,7 @@ import { LOCATIONS } from "@/lib/content";
 export const metadata: Metadata = {
   title: "Locations — Sotogrande, Marbella, Italy, Dubai",
   description:
-    "Where Thomson & Calabria sources off-market hotels, restaurants and residences: Sotogrande, Marbella's Golden Mile, Capri and the Amalfi Coast, Dubai.",
+    "Where Thomson Calabria sources off-market hotels, restaurants and residences: Sotogrande, Marbella's Golden Mile, Capri and the Amalfi Coast, Dubai.",
   alternates: { canonical: "/locations" },
 };
 

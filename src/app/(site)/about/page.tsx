@@ -8,7 +8,7 @@ export const revalidate = 60;
 export const metadata: Metadata = {
   title: "Linda Thomson — Founder",
   description:
-    "Linda Thomson founded LT Properties Marbella in 2009 and now leads Thomson & Calabria, an international realty and consultancy practice specialising in off-market hotels, restaurants and residences.",
+    "Linda Thomson founded LT Properties Marbella in 2009 and now leads Thomson Calabria, an international realty and consultancy practice specialising in off-market hotels, restaurants and residences.",
   alternates: { canonical: "/about" },
 };
 
@@ -21,9 +21,9 @@ export default async function AboutPage() {
           "@context": "https://schema.org",
           "@type": "Person",
           name: "Linda Thomson",
-          jobTitle: "Founder, Thomson & Calabria",
+          jobTitle: "Founder, Thomson Calabria",
           image: about.photo,
-          worksFor: { "@type": "Organization", name: "Thomson & Calabria" },
+          worksFor: { "@type": "Organization", name: "Thomson Calabria" },
           email: settings.email,
           telephone: settings.phone,
         }}
@@ -35,7 +35,7 @@ export default async function AboutPage() {
               <div className="relative aspect-[3/4] overflow-hidden">
                 <Image src={about.photo} alt="Linda Thomson" fill priority sizes="(max-width:1024px) 100vw, 40vw" className="object-cover object-top" />
                 <div className="absolute inset-0 bg-gradient-to-t from-navy-950/70 to-transparent" />
-                <div className="absolute inset-x-0 bottom-0 p-8">
+                <div className="dark absolute inset-x-0 bottom-0 p-8">
                   <div className="kicker">Founder</div>
                   <div className="mt-2 font-display text-3xl">Linda Thomson</div>
                 </div>
@@ -71,7 +71,7 @@ export default async function AboutPage() {
             <div className="lg:col-span-8">
               <p className="lede">
                 LT Properties Marbella built its reputation on the Golden Mile, in Puente Romano and the Marbella Club,
-                with holiday rentals and sales that were always handled personally. Thomson &amp; Calabria carries that
+                with holiday rentals and sales that were always handled personally. Thomson Calabria carries that
                 work forward with a sharper focus — exclusively off-market opportunities, three asset classes, and a
                 small number of international destinations — under the same hands and the same standards.
               </p>

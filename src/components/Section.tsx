@@ -25,7 +25,7 @@ export function PageHero({
   tall?: boolean;
 }) {
   return (
-    <section className={`relative flex items-end overflow-hidden ${tall ? "min-h-[92vh]" : "min-h-[70vh]"}`}>
+    <section className={`dark relative flex items-end overflow-hidden bg-navy-950 ${tall ? "min-h-[92vh]" : "min-h-[70vh]"}`}>
       <Image
         src={image}
         alt=""
@@ -74,7 +74,7 @@ export function CtaBand({
   body?: string;
 }) {
   return (
-    <section className="relative overflow-hidden border-y border-line bg-navy-900">
+    <section className="dark relative overflow-hidden bg-navy-900">
       <div className="grain absolute inset-0" />
       <Container className="relative py-24">
         <div className="grid items-center gap-10 lg:grid-cols-12">

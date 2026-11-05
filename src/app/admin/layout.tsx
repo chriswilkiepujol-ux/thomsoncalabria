@@ -2,7 +2,7 @@ import Link from "next/link";
 import { createClient } from "@/lib/supabase/server";
 import { signOut } from "./actions";
 
-export const metadata = { title: "Admin — Thomson & Calabria", robots: { index: false, follow: false } };
+export const metadata = { title: "Admin — Thomson Calabria", robots: { index: false, follow: false } };
 
 export default async function AdminLayout({ children }: { children: React.ReactNode }) {
   const supabase = await createClient();
@@ -24,7 +24,7 @@ export default async function AdminLayout({ children }: { children: React.ReactN
       <div className="flex min-h-screen">
         <aside className="hidden w-60 shrink-0 flex-col border-r border-[#e6e3da] bg-white p-6 md:flex">
           <Link href="/admin" className="font-display text-xl font-medium tracking-wide text-[#0a1730]">
-            Thomson &amp; Calabria
+            Thomson Calabria
           </Link>
           <div className="mt-1 text-[0.65rem] uppercase tracking-[0.2em] text-[#8a93a6]">Site admin</div>
           <nav className="mt-10 flex flex-col gap-1">

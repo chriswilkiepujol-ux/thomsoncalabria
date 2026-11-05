@@ -53,7 +53,7 @@ export async function submitEnquiry(_prev: EnquiryState, formData: FormData): Pr
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          from: process.env.ENQUIRY_FROM ?? "Thomson & Calabria <enquiries@thomsoncalabria.com>",
+          from: process.env.ENQUIRY_FROM ?? "Thomson Calabria <enquiries@thomsoncalabria.com>",
           to: [to],
           reply_to: email,
           subject: `New private enquiry — ${name}${row.interest ? ` (${row.interest})` : ""}`,

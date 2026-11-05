@@ -35,7 +35,7 @@ export default async function HomePage() {
   return (
     <>
       {/* HERO */}
-      <section className="relative flex min-h-[100svh] items-end overflow-hidden">
+      <section className="dark relative flex min-h-[100svh] items-end overflow-hidden bg-navy-950">
         <Image src={home.heroImage} alt="" fill priority sizes="100vw" className="slowzoom object-cover" />
         <div className="veil absolute inset-0" />
         <Container className="relative z-10 pb-24 pt-48 lg:pb-32">
@@ -84,7 +84,7 @@ export default async function HomePage() {
       </section>
 
       {/* CATEGORIES */}
-      <section id="portfolio" className="border-t border-line py-24 lg:py-32">
+      <section id="portfolio" className="light-alt py-24 lg:py-32">
         <Container>
           <SectionHead
             kicker="The portfolio"
@@ -109,7 +109,7 @@ export default async function HomePage() {
                     className="object-cover transition-transform duration-[1.6s] ease-out group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-navy-950/95 via-navy-950/35 to-transparent" />
-                  <div className="absolute inset-x-0 bottom-0 p-7">
+                  <div className="dark absolute inset-x-0 bottom-0 p-7">
                     <div className="text-[0.68rem] uppercase tracking-[0.3em] text-accent">0{i + 1}</div>
                     <h3 className="mt-2 font-display text-3xl font-light">{c.label}</h3>
                     <p className="mt-3 max-w-xs text-sm leading-relaxed text-ivory/85">
@@ -126,7 +126,7 @@ export default async function HomePage() {
 
       {/* FEATURED OPPORTUNITIES */}
       {featured.length > 0 && (
-        <section className="border-t border-line bg-navy-900/40 py-24 lg:py-32">
+        <section className="py-24 lg:py-32">
           <Container>
             <div className="flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
               <SectionHead
@@ -148,7 +148,7 @@ export default async function HomePage() {
       )}
 
       {/* LOCATIONS */}
-      <section className="border-t border-line py-24 lg:py-32">
+      <section className="dark bg-navy-950 py-24 lg:py-32">
         <Container>
           <SectionHead
             kicker="Where we work"
@@ -169,7 +169,7 @@ export default async function HomePage() {
                   sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover transition-transform duration-[1.6s] ease-out group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-r from-navy-950/85 via-navy-950/35 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-r from-navy-950/95 via-navy-950/70 to-navy-950/10" />
                 <div className="absolute inset-y-0 left-0 flex max-w-md flex-col justify-end p-8 lg:p-10">
                   <div className="kicker">{l.country}</div>
                   <h3 className="mt-3 font-display text-4xl font-light">{l.name}</h3>

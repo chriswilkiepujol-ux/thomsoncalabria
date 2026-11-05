@@ -19,8 +19,8 @@ export default async function SiteLayout({ children }: { children: React.ReactNo
         data={{
           "@context": "https://schema.org",
           "@type": "RealEstateAgent",
-          name: "Thomson & Calabria",
-          alternateName: "Thomson & Calabria SL — International Realty / Consultancy",
+          name: "Thomson Calabria",
+          alternateName: "Thomson Calabria SL — International Realty / Consultancy",
           url: site,
           logo: `${site}/icon.svg`,
           image: "https://kfgzhurkaybmuxkuolxc.supabase.co/storage/v1/object/public/media/site/hero-villa.jpg",
@@ -35,7 +35,7 @@ export default async function SiteLayout({ children }: { children: React.ReactNo
         }}
       />
       <Header phone={settings.phone} phoneDisplay={settings.phoneDisplay} />
-      <main>{children}</main>
+      <main className="light">{children}</main>
       <Footer settings={settings} />
     </>
   );

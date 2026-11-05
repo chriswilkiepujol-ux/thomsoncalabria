@@ -8,7 +8,7 @@ export const revalidate = 60;
 export const metadata: Metadata = {
   title: "Private Enquiry — Contact Linda Thomson",
   description:
-    "Contact Thomson & Calabria for off-market hotels, restaurants and residences in Sotogrande, Marbella, Italy and Dubai. Strictly confidential. Principals only.",
+    "Contact Thomson Calabria for off-market hotels, restaurants and residences in Sotogrande, Marbella, Italy and Dubai. Strictly confidential. Principals only.",
   alternates: { canonical: "/contact" },
 };
 
@@ -20,7 +20,7 @@ export default async function ContactPage() {
         data={{
           "@context": "https://schema.org",
           "@type": "ContactPage",
-          name: "Private Enquiry — Thomson & Calabria",
+          name: "Private Enquiry — Thomson Calabria",
           url: `${process.env.NEXT_PUBLIC_SITE_URL}/contact`,
         }}
       />
