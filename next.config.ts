@@ -13,7 +13,7 @@ const OLD_PATHS: [string, string][] = [
   ["/puente-romano-properties/:path*", "/locations/marbella"],
   ["/sotogrande", "/locations/sotogrande"],
   ["/sotogrande/:path*", "/locations/sotogrande"],
-  ["/luxury-rentals/:path*", "/luxury-rentals"],
+  ["/luxury-rentals/:path+", "/luxury-rentals"],
   ["/property/:path*", "/residential"],
   ["/contact-us", "/contact"],
   ["/contact-us/:path*", "/contact"],
