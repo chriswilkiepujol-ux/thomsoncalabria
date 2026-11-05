@@ -1,0 +1,126 @@
+import type { Metadata } from "next";
+import Image from "next/image";
+import Link from "next/link";
+import { notFound } from "next/navigation";
+import { Container, JsonLd } from "@/components/Section";
+import { EnquiryForm } from "@/components/EnquiryForm";
+import { PropertyCard } from "@/components/PropertyCard";
+import { CATEGORIES, getProperties, getProperty, locationLabel } from "@/lib/content";
+
+export const revalidate = 60;
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  const p = await getProperty(slug);
+  if (!p) return {};
+  const title = `${p.title} — Off-Market ${CATEGORIES[p.category].singular} in ${locationLabel(p.location)}`;
+  return {
+    title: { absolute: `${title} | Thomson & Calabria` },
+    description: p.headline ?? p.description?.slice(0, 155),
+    alternates: { canonical: `/properties/${slug}` },
+    openGraph: { title, images: p.image_url ? [{ url: p.image_url }] : undefined },
+  };
+}
+
+export default async function PropertyPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const p = await getProperty(slug);
+  if (!p) notFound();
+  const cat = CATEGORIES[p.category];
+  const related = (await getProperties({ category: p.category, limit: 4 })).filter((r) => r.id !== p.id).slice(0, 3);
+
+  return (
+    <>
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": p.category === "rental" ? "LodgingBusiness" : "RealEstateListing",
+          name: p.title,
+          description: p.headline ?? p.description,
+          url: `${process.env.NEXT_PUBLIC_SITE_URL}/properties/${p.slug}`,
+          image: p.image_url,
+          address: { "@type": "PostalAddress", addressLocality: locationLabel(p.location), addressCountry: p.country },
+          offers: p.price_label ? { "@type": "Offer", price: p.price_label, availability: "https://schema.org/InStock" } : undefined,
+        }}
+      />
+      <section className="relative flex min-h-[80vh] items-end overflow-hidden">
+        {p.image_url ? (
+          <div className="private-img absolute inset-0">
+            <Image src={p.image_url} alt="" fill priority sizes="100vw" className="object-cover" />
+          </div>
+        ) : (
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(26,48,89,0.9),rgba(5,11,26,1))]" />
+        )}
+        <div className="veil absolute inset-0" />
+        <Container className="relative z-10 pb-20 pt-48">
+          <div className="flex flex-wrap items-center gap-3 text-[0.62rem] uppercase tracking-[0.28em] text-mist">
+            <Link href={`/${cat.slug}`} className="hover:text-accent">{cat.label}</Link>
+            <span className="text-accent">/</span>
+            <Link href={`/locations/${p.location}`} className="hover:text-accent">{locationLabel(p.location)}</Link>
+            <span className="text-accent">/</span>
+            <span>Ref. {p.slug.slice(0, 8).toUpperCase()}</span>
+          </div>
+          <h1 className="display-lg rise mt-6 max-w-4xl">{p.title}</h1>
+          {p.headline && <p className="lede rise rise-2 mt-6 max-w-2xl">{p.headline}</p>}
+          <div className="rise rise-3 mt-8 inline-flex items-center gap-3 border border-accent/40 bg-navy-950/60 px-4 py-2 text-[0.62rem] uppercase tracking-[0.26em] text-accent-2 backdrop-blur">
+            <span className="h-1.5 w-1.5 rounded-full bg-accent" /> Photography and address released under NDA
+          </div>
+        </Container>
+      </section>
+
+      <section className="py-24">
+        <Container>
+          <div className="grid gap-16 lg:grid-cols-12">
+            <div className="lg:col-span-7">
+              <div className="kicker">The opportunity</div>
+              <div className="mt-6 space-y-5">
+                {(p.description ?? "").split(/\n{2,}/).map((para, i) => (
+                  <p key={i} className="lede text-[1.08rem]">{para}</p>
+                ))}
+              </div>
+
+              {p.key_facts.length > 0 && (
+                <dl className="mt-14 grid grid-cols-2 gap-x-8 gap-y-7 border-t border-line pt-10 md:grid-cols-3">
+                  {p.key_facts.map((f) => (
+                    <div key={f.label}>
+                      <dt className="text-[0.6rem] uppercase tracking-[0.26em] text-mist-2">{f.label}</dt>
+                      <dd className="mt-1.5 font-display text-2xl text-ivory">{f.value}</dd>
+                    </div>
+                  ))}
+                </dl>
+              )}
+            </div>
+
+            <aside className="lg:col-span-5">
+              <div className="card sticky top-28 p-8 lg:p-10">
+                <div className="text-[0.6rem] uppercase tracking-[0.26em] text-mist-2">Guide</div>
+                <div className="mt-2 font-display text-4xl text-accent-2">{p.price_label ?? "On application"}</div>
+                <div className="hairline my-8" />
+                <h2 className="font-display text-2xl">Request the private dossier</h2>
+                <p className="mt-3 text-sm leading-relaxed text-mist">
+                  Tell us who you are and we will arrange a call before releasing the full details.
+                </p>
+                <div className="mt-8">
+                  <EnquiryForm compact propertyRef={`${p.title} (${p.slug})`} sourcePage={`/properties/${p.slug}`} />
+                </div>
+              </div>
+            </aside>
+          </div>
+        </Container>
+      </section>
+
+      {related.length > 0 && (
+        <section className="border-t border-line py-24">
+          <Container>
+            <div className="kicker">Also in {cat.label.toLowerCase()}</div>
+            <div className="mt-10 grid gap-6 md:grid-cols-3">
+              {related.map((r) => (
+                <PropertyCard key={r.id} p={r} />
+              ))}
+            </div>
+          </Container>
+        </section>
+      )}
+    </>
+  );
+}

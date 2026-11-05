@@ -1,36 +1,27 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Thomson & Calabria — thomsoncalabria.com
 
-## Getting Started
+International realty / consultancy site. Next.js 16 (App Router) + Tailwind v4 + Supabase (content, properties, enquiries, admin auth, media storage). Deployed on Vercel.
 
-First, run the development server:
+## Structure
+- `src/app/(site)` — public pages: home, `/hotels`, `/restaurants`, `/residential`, `/luxury-rentals`, `/locations/*`, `/properties/[slug]`, `/about`, `/contact`
+- `src/app/admin` — Linda's admin (Supabase Auth): properties, page copy, enquiries
+- `src/lib/content.ts` — default copy for every page (used until edited in the admin) + data access
+- `src/lib/contentSchemas.ts` — the fields the admin editor shows for each page
+- `next.config.ts` — 301 redirects from the old ltpropertiesmarbella.com URL structure
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Environment variables
+```
+NEXT_PUBLIC_SUPABASE_URL=
+NEXT_PUBLIC_SUPABASE_ANON_KEY=
+NEXT_PUBLIC_SITE_URL=https://thomsoncalabria.com
+# optional — email notification of enquiries via Resend
+RESEND_API_KEY=
+ENQUIRY_TO=info@thomsoncalabria.com
+ENQUIRY_FROM="Thomson & Calabria <enquiries@thomsoncalabria.com>"
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Palette preview
+Append `?accent=silver` or `?accent=gold` to any page to preview the alternative accent. The permanent choice is set in Admin → Pages & copy → Contact details & look.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Migrating ltpropertiesmarbella.com
+Add `ltpropertiesmarbella.com` (and `www`) as additional domains on the Vercel project and point its DNS at Vercel. The redirect map in `next.config.ts` then sends every old URL to its new equivalent with a 301, carrying the SEO equity over.
