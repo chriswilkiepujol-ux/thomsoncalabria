@@ -23,7 +23,7 @@ export default async function SiteLayout({ children }: { children: React.ReactNo
           alternateName: "Thomson & Calabria SL — International Realty / Consultancy",
           url: site,
           logo: `${site}/icon.svg`,
-          image: `${site}/images/hero-villa.jpg`,
+          image: "https://kfgzhurkaybmuxkuolxc.supabase.co/storage/v1/object/public/media/site/hero-villa.jpg",
           email: settings.email,
           telephone: settings.phone,
           founder: { "@type": "Person", name: "Linda Thomson" },

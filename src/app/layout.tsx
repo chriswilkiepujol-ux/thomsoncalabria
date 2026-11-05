@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     type: "website",
     siteName: "Thomson & Calabria",
     locale: "en_GB",
-    images: [{ url: "/images/hero-villa.jpg", width: 2000, height: 1334 }],
+    images: [{ url: "https://kfgzhurkaybmuxkuolxc.supabase.co/storage/v1/object/public/media/site/hero-villa.jpg", width: 2000, height: 1334 }],
   },
   twitter: { card: "summary_large_image" },
   robots: { index: true, follow: true, "max-image-preview": "large" },

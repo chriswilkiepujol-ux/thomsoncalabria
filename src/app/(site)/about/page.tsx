@@ -22,7 +22,7 @@ export default async function AboutPage() {
           "@type": "Person",
           name: "Linda Thomson",
           jobTitle: "Founder, Thomson & Calabria",
-          image: `${process.env.NEXT_PUBLIC_SITE_URL}${about.photo}`,
+          image: about.photo,
           worksFor: { "@type": "Organization", name: "Thomson & Calabria" },
           email: settings.email,
           telephone: settings.phone,

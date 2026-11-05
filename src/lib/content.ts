@@ -139,7 +139,7 @@ export const LOCATIONS: Record<string, LocationContent> = {
     title: "The Golden Mile, Puente Romano and the Marbella Club.",
     intro:
       "Our roots are on Marbella's Golden Mile. Fifteen years of handling residences in Puente Romano and around the Marbella Club have given us a private network of owners who sell quietly, and buyers who prefer it that way.",
-    image: "/images/villa-pool-day.jpg",
+    image: "https://kfgzhurkaybmuxkuolxc.supabase.co/storage/v1/object/public/media/site/villa-pool-day.jpg",
     seoTitle: "Off-Market Property in Marbella & Puente Romano | Thomson & Calabria",
     seoDescription:
       "Discreet access to off-market villas, penthouses, hotels and restaurants on Marbella's Golden Mile, Puente Romano and the Marbella Club.",
@@ -199,7 +199,7 @@ export const DEFAULT_HOME: HomeContent = {
   heroTitle: "The properties you will never see advertised.",
   heroSubtitle:
     "Hotels, restaurants and private residences in Sotogrande, Marbella and a handful of the world's finest addresses — offered discreetly, principal to principal.",
-  heroImage: "/images/hero-villa.jpg",
+  heroImage: "https://kfgzhurkaybmuxkuolxc.supabase.co/storage/v1/object/public/media/site/hero-villa.jpg",
   introKicker: "A different kind of realty",
   introTitle: "We do not list. We introduce.",
   introBody:
@@ -266,7 +266,7 @@ export const DEFAULT_HOME: HomeContent = {
 export const DEFAULT_ABOUT: AboutContent = {
   kicker: "Linda Thomson · Founder",
   title: "Fifteen years on the Golden Mile.",
-  photo: "/images/linda-thomson.jpg",
+  photo: "https://kfgzhurkaybmuxkuolxc.supabase.co/storage/v1/object/public/media/site/linda-thomson.jpg",
   body: [
     "Linda Thomson founded LT Properties Marbella in 2009 and quickly became known for her professionalism in Marbella's luxury property market, with a particular focus on Puente Romano and the Marbella Club on the Golden Mile. Thomson & Calabria is the next chapter: the same relationships and the same standards, applied internationally and exclusively to off-market opportunities.",
     "Linda works personally with every client. Her approach is tailored to the individual — their lifestyle, their timetable and the way they wish to hold an asset — and is underpinned by deep local knowledge, a long track record and a reputation for integrity and genuine customer care.",
@@ -331,7 +331,7 @@ export const DEFAULT_CATEGORY: Record<CategoryKey, CategoryContent> = {
     title: "Villas, penthouses and estates that were never for sale.",
     intro:
       "Front-line Puente Romano penthouses, Sotogrande estates, Capri villas. The owners we work with would rather have one serious conversation than a hundred viewings.",
-    image: "/images/villa-stair.jpg",
+    image: "https://kfgzhurkaybmuxkuolxc.supabase.co/storage/v1/object/public/media/site/villa-stair.jpg",
     seoTitle: "Off-Market Luxury Villas & Penthouses — Marbella, Sotogrande, Capri, Dubai",
     seoDescription:
       "Private access to off-market villas, penthouses and estates in Marbella, Puente Romano, Sotogrande, Capri and Dubai. For buyers who value discretion.",

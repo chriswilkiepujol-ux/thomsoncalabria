@@ -19,7 +19,7 @@ const CATEGORY_TILES = [
   },
   {
     key: "residential",
-    image: "/images/villa-pool-day.jpg",
+    image: "https://kfgzhurkaybmuxkuolxc.supabase.co/storage/v1/object/public/media/site/villa-pool-day.jpg",
     blurb: "Front-line penthouses, estates and plots in addresses that rarely trade.",
   },
   {
