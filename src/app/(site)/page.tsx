@@ -2,6 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { Container, CtaBand, SectionHead } from "@/components/Section";
 import { PropertyCard } from "@/components/PropertyCard";
+import { PostCard } from "@/components/PostCard";
+import { getPosts } from "@/lib/blog";
 import { getContent, getProperties, LOCATIONS, CATEGORIES } from "@/lib/content";
 
 export const revalidate = 60;
@@ -30,7 +32,11 @@ const CATEGORY_TILES = [
 ] as const;
 
 export default async function HomePage() {
-  const [home, featured] = await Promise.all([getContent("home"), getProperties({ featured: true, limit: 3 })]);
+  const [home, featured, posts] = await Promise.all([
+    getContent("home"),
+    getProperties({ featured: true, limit: 3 }),
+    getPosts({ limit: 3 }),
+  ]);
 
   return (
     <>
@@ -108,6 +114,18 @@ export default async function HomePage() {
               );
             })}
           </div>
+          <Link
+            href="/consultancy"
+            className="group mt-4 flex flex-col gap-2 border border-line bg-white/60 p-5 transition-colors hover:border-accent sm:flex-row sm:items-center sm:justify-between"
+          >
+            <div>
+              <span className="font-display text-xl">Consultancy</span>
+              <span className="mt-1 block text-[0.94rem] text-mist sm:ml-3 sm:mt-0 sm:inline">
+                Advice for owners, investors and operators — acquisition, valuation and hospitality.
+              </span>
+            </div>
+            <span className="text-[0.8rem] font-semibold text-accent">Find out more →</span>
+          </Link>
         </Container>
       </section>
 
@@ -177,6 +195,25 @@ export default async function HomePage() {
           </ol>
         </Container>
       </section>
+
+      {/* BLOG */}
+      {posts.length > 0 && (
+        <section className="py-14 lg:py-20">
+          <Container>
+            <div className="flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
+              <SectionHead kicker="From the blog" title="Out and about, and property news." />
+              <Link href="/blog" className="btn btn-ghost btn-sm self-start md:self-auto">
+                All posts
+              </Link>
+            </div>
+            <div className="mt-8 grid gap-5 md:grid-cols-3">
+              {posts.map((p) => (
+                <PostCard key={p.id} p={p} />
+              ))}
+            </div>
+          </Container>
+        </section>
+      )}
 
       {/* TESTIMONIALS */}
       <section className="light-alt py-14 lg:py-20">

@@ -27,6 +27,8 @@ export function Footer({ settings }: { settings: SiteSettings }) {
               <li><Link className="link-underline" href="/restaurants">Restaurants</Link></li>
               <li><Link className="link-underline" href="/residential">Residential</Link></li>
               <li><Link className="link-underline" href="/luxury-rentals">Luxury Rentals</Link></li>
+              <li><Link className="link-underline" href="/consultancy">Consultancy</Link></li>
+              <li><Link className="link-underline" href="/blog">Blog</Link></li>
             </ul>
           </div>
 

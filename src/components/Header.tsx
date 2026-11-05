@@ -10,12 +10,14 @@ const NAV = [
   { href: "/restaurants", label: "Restaurants" },
   { href: "/residential", label: "Residential" },
   { href: "/luxury-rentals", label: "Rentals" },
+  { href: "/consultancy", label: "Consultancy" },
   { href: "/locations", label: "Locations" },
+  { href: "/blog", label: "Blog" },
   { href: "/about", label: "About" },
 ];
 
 // Pages that open with a full-bleed photo can start with a transparent header.
-const HERO_PAGES = ["/hotels", "/restaurants", "/residential", "/luxury-rentals", "/locations", "/properties/"];
+const HERO_PAGES = ["/hotels", "/restaurants", "/residential", "/luxury-rentals", "/consultancy", "/locations", "/properties/"];
 
 export function Header({ phoneDisplay, phone }: { phoneDisplay: string; phone: string }) {
   const [scrolled, setScrolled] = useState(false);
@@ -46,14 +48,14 @@ export function Header({ phoneDisplay, phone }: { phoneDisplay: string; phone: s
           <Wordmark size="sm" />
         </Link>
 
-        <nav className="hidden items-center gap-7 xl:flex" aria-label="Main">
+        <nav className="hidden items-center gap-6 xl:flex" aria-label="Main">
           {NAV.map((n) => {
             const active = pathname.startsWith(n.href);
             return (
               <Link
                 key={n.href}
                 href={n.href}
-                className={`relative py-2 text-[0.84rem] font-medium transition-colors ${
+                className={`relative py-2 text-[0.82rem] font-medium transition-colors ${
                   active ? "text-accent-2" : "text-ivory/85 hover:text-ivory"
                 }`}
               >
@@ -65,7 +67,7 @@ export function Header({ phoneDisplay, phone }: { phoneDisplay: string; phone: s
         </nav>
 
         <div className="hidden items-center gap-5 xl:flex">
-          <a href={`tel:${phone}`} className="text-[0.84rem] font-medium text-ivory/85 hover:text-ivory">
+          <a href={`tel:${phone}`} className="hidden text-[0.82rem] font-medium text-ivory/85 hover:text-ivory 2xl:inline">
             {phoneDisplay}
           </a>
           <Link href="/contact" className="btn btn-solid btn-sm">

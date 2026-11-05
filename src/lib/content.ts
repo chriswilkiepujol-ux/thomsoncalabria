@@ -26,6 +26,26 @@ export type HomeContent = {
   testimonials: { quote: string; name: string; place: string }[];
 };
 
+export type ConsultancyContent = {
+  kicker: string;
+  title: string;
+  intro: string;
+  image: string;
+  services: { title: string; body: string }[];
+  body: string[];
+  author: string;
+  seoTitle: string;
+  seoDescription: string;
+};
+
+export type BlogContent = {
+  kicker: string;
+  title: string;
+  intro: string;
+  seoTitle: string;
+  seoDescription: string;
+};
+
 export type AboutContent = {
   kicker: string;
   title: string;
@@ -377,8 +397,40 @@ export const DEFAULT_CATEGORY: Record<CategoryKey, CategoryContent> = {
   },
 };
 
+export const DEFAULT_CONSULTANCY: ConsultancyContent = {
+  kicker: "Consultancy",
+  title: "Advice for owners, investors and operators.",
+  intro:
+    "Beyond buying and selling, we advise on how to acquire, hold, reposition or exit luxury and hospitality property in Spain and abroad — with the same discretion we bring to every off-market sale.",
+  image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=2000&q=80",
+  services: [
+    { title: "Acquisition strategy", body: "Defining the brief, the locations and the structure before a search begins." },
+    { title: "Valuation & pricing", body: "A confidential view of value and the right moment to sell — without going to market." },
+    { title: "Hospitality advisory", body: "Hotel and restaurant acquisitions, operator introductions and repositioning." },
+    { title: "Investment & structuring", body: "Working alongside lawyers, tax advisors and notaries in each jurisdiction." },
+  ],
+  body: [
+    "Every engagement is tailored and confidential. Tell us what you are trying to achieve and we will tell you, candidly, how we can help.",
+  ],
+  author: "",
+  seoTitle: "Luxury Property & Hospitality Consultancy — Marbella, Sotogrande | Thomson Calabria",
+  seoDescription:
+    "Discreet consultancy for investors, owners and operators: acquisition strategy, valuation, hotel and restaurant advisory and structuring in Marbella, Sotogrande and beyond.",
+};
+
+export const DEFAULT_BLOG: BlogContent = {
+  kicker: "Blog",
+  title: "Out and about, and what is happening in property.",
+  intro: "Notes from Linda on forthcoming events, places worth knowing, and the luxury property market.",
+  seoTitle: "Blog — Events in Marbella & Sotogrande and Luxury Property News | Thomson Calabria",
+  seoDescription:
+    "Linda Thomson's blog: forthcoming events and the best restaurants in Marbella, Sotogrande and London, plus news and insight on the luxury property market.",
+};
+
 type ContentMap = {
   settings: SiteSettings;
+  consultancy: ConsultancyContent;
+  blog: BlogContent;
   home: HomeContent;
   about: AboutContent;
   "category:hotel": CategoryContent;
@@ -395,6 +447,8 @@ export function defaultFor<K extends keyof ContentMap>(key: K): ContentMap[K] {
   if (key === "settings") return DEFAULT_SETTINGS as ContentMap[K];
   if (key === "home") return DEFAULT_HOME as ContentMap[K];
   if (key === "about") return DEFAULT_ABOUT as ContentMap[K];
+  if (key === "consultancy") return DEFAULT_CONSULTANCY as ContentMap[K];
+  if (key === "blog") return DEFAULT_BLOG as ContentMap[K];
   if (key.startsWith("category:")) {
     return DEFAULT_CATEGORY[key.slice(9) as CategoryKey] as ContentMap[K];
   }

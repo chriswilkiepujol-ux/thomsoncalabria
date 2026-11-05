@@ -107,3 +107,36 @@ export async function deleteEnquiry(id: string) {
   await supabase.from("enquiries").delete().eq("id", id);
   revalidatePath("/admin/enquiries");
 }
+
+export async function savePost(id: string | null, formData: FormData) {
+  const supabase = await requireUser();
+  const get = (k: string) => formData.get(k)?.toString().trim() ?? "";
+  const title = get("title");
+  if (!title) return { error: "Please add a title." };
+  const row = {
+    title,
+    slug: get("slug") ? slugify(get("slug")) : slugify(title),
+    category: get("category") || "out-and-about",
+    excerpt: get("excerpt") || null,
+    body: formData.get("body")?.toString() ?? null,
+    image_url: get("image_url") || null,
+    event_date: get("event_date") || null,
+    event_location: get("event_location") || null,
+    published: formData.get("published") === "on",
+    published_at: get("published_at") ? new Date(get("published_at")).toISOString() : new Date().toISOString(),
+  };
+  const q = id
+    ? supabase.from("posts").update(row).eq("id", id).select("id").single()
+    : supabase.from("posts").insert(row).select("id").single();
+  const { data, error } = await q;
+  if (error) return { error: error.message.includes("duplicate") ? "Another post already uses that web address." : error.message };
+  revalidateAll();
+  redirect(`/admin/blog/${data.id}?saved=1`);
+}
+
+export async function deletePost(id: string) {
+  const supabase = await requireUser();
+  await supabase.from("posts").delete().eq("id", id);
+  revalidateAll();
+  redirect("/admin/blog");
+}

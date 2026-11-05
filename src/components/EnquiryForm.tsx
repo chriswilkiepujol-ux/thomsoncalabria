@@ -88,7 +88,8 @@ export function EnquiryForm({
               <option value="restaurant">Restaurant or venue</option>
               <option value="residential">Villa, penthouse or estate</option>
               <option value="rental">Luxury short-term rental</option>
-              <option value="other">Other / advice</option>
+              <option value="consultancy">Consultancy / advice</option>
+              <option value="other">Other</option>
             </select>
           </div>
           <div>
