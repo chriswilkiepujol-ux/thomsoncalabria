@@ -36,8 +36,8 @@ export function Wordmark({
   tagline?: boolean;
 }) {
   const s = {
-    sm: { name: "text-[1.05rem] tracking-[0.22em]", tag: "text-[0.52rem] tracking-[0.3em]" },
-    md: { name: "text-[1.3rem] tracking-[0.24em]", tag: "text-[0.58rem] tracking-[0.34em]" },
+    sm: { name: "text-[1.05rem] tracking-[0.22em]", tag: "text-[0.56rem] tracking-[0.26em]" },
+    md: { name: "text-[1.3rem] tracking-[0.24em]", tag: "text-[0.62rem] tracking-[0.3em]" },
     lg: { name: "text-[2rem] tracking-[0.26em]", tag: "text-[0.7rem] tracking-[0.38em]" },
   }[size];
   return (

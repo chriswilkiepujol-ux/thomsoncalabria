@@ -45,7 +45,7 @@ export default async function LocationPage({ params }: { params: Promise<{ slug:
       />
       <PageHero kicker={l.kicker} title={l.title} intro={l.intro} image={l.image} />
 
-      <section className="py-24">
+      <section className="light py-24">
         <Container>
           <div className="grid gap-14 lg:grid-cols-12">
             <div className="lg:col-span-4">
@@ -88,7 +88,7 @@ export default async function LocationPage({ params }: { params: Promise<{ slug:
         </Container>
       </section>
 
-      <section className="border-t border-line bg-navy-900/40 py-24">
+      <section className="light light-alt py-24">
         <Container>
           <div className="grid gap-14 lg:grid-cols-12">
             <div className="lg:col-span-4">

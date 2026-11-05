@@ -149,12 +149,12 @@ export function EnquiryForm({
 
       {state?.error && <p className="text-sm text-red-300">{state.error}</p>}
 
-      <div className="flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
+      <div className={`flex flex-col gap-5 ${compact ? "" : "md:flex-row md:items-center md:justify-between"}`}>
         <p className="max-w-md text-xs leading-relaxed text-mist-2">
           Strictly confidential. Your details are never shared with third parties or added to a
           marketing list. By sending, you agree to our privacy policy.
         </p>
-        <button type="submit" disabled={pending} className="btn btn-solid disabled:opacity-60">
+        <button type="submit" disabled={pending} className={`btn btn-solid disabled:opacity-60 ${compact ? "justify-center" : ""}`}>
           <span>{pending ? "Sending…" : "Send private enquiry"}</span>
         </button>
       </div>

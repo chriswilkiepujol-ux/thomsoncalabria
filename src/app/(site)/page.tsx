@@ -54,13 +54,13 @@ export default async function HomePage() {
           </div>
         </Container>
         <div className="absolute bottom-10 right-10 hidden flex-col items-center gap-3 text-mist-2 lg:flex">
-          <span className="text-[0.58rem] uppercase tracking-[0.34em] [writing-mode:vertical-rl]">Scroll</span>
+          <span className="text-[0.66rem] uppercase tracking-[0.34em] [writing-mode:vertical-rl]">Scroll</span>
           <span className="h-16 w-px bg-gradient-to-b from-accent to-transparent" />
         </div>
       </section>
 
       {/* INTRO */}
-      <section className="relative py-28 lg:py-36">
+      <section className="light relative py-28 lg:py-36">
         <Container>
           <div className="grid gap-16 lg:grid-cols-12">
             <div className="lg:col-span-5">
@@ -108,11 +108,11 @@ export default async function HomePage() {
                     sizes="(max-width: 768px) 100vw, 25vw"
                     className="object-cover transition-transform duration-[1.6s] ease-out group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-950/40 to-navy-950/10" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-navy-950/95 via-navy-950/35 to-transparent" />
                   <div className="absolute inset-x-0 bottom-0 p-7">
-                    <div className="text-[0.6rem] uppercase tracking-[0.3em] text-accent">0{i + 1}</div>
+                    <div className="text-[0.68rem] uppercase tracking-[0.3em] text-accent">0{i + 1}</div>
                     <h3 className="mt-2 font-display text-3xl font-light">{c.label}</h3>
-                    <p className="mt-3 max-w-xs text-sm leading-relaxed text-mist opacity-0 transition-all duration-500 group-hover:opacity-100">
+                    <p className="mt-3 max-w-xs text-sm leading-relaxed text-ivory/85">
                       {t.blurb}
                     </p>
                     <div className="mt-4 h-px w-10 bg-accent transition-all duration-500 group-hover:w-20" />
@@ -169,12 +169,12 @@ export default async function HomePage() {
                   sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover transition-transform duration-[1.6s] ease-out group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-r from-navy-950/90 via-navy-950/40 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-r from-navy-950/85 via-navy-950/35 to-transparent" />
                 <div className="absolute inset-y-0 left-0 flex max-w-md flex-col justify-end p-8 lg:p-10">
                   <div className="kicker">{l.country}</div>
                   <h3 className="mt-3 font-display text-4xl font-light">{l.name}</h3>
                   <p className="mt-3 text-sm leading-relaxed text-mist">{l.intro.split(". ")[0]}.</p>
-                  <span className="mt-5 text-[0.62rem] uppercase tracking-[0.28em] text-accent transition-transform duration-500 group-hover:translate-x-1">
+                  <span className="mt-5 text-[0.7rem] uppercase tracking-[0.28em] text-accent transition-transform duration-500 group-hover:translate-x-1">
                     Explore {l.name} →
                   </span>
                 </div>
@@ -185,8 +185,7 @@ export default async function HomePage() {
       </section>
 
       {/* PROCESS */}
-      <section className="relative overflow-hidden border-t border-line bg-navy-900 py-24 lg:py-32">
-        <div className="grain absolute inset-0" />
+      <section className="light light-alt relative overflow-hidden py-24 lg:py-32">
         <Container className="relative">
           <SectionHead kicker="The process" title={home.processTitle} align="center" />
           <div className="mt-20 grid gap-10 md:grid-cols-2 lg:grid-cols-4">
@@ -203,7 +202,7 @@ export default async function HomePage() {
       </section>
 
       {/* TESTIMONIALS */}
-      <section className="border-t border-line py-24 lg:py-32">
+      <section className="light py-24 lg:py-32">
         <Container>
           <SectionHead kicker="In their words" title="Clients who came by introduction." align="center" />
           <div className="mt-16 grid gap-6 lg:grid-cols-3">

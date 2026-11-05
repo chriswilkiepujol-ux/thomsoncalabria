@@ -61,7 +61,7 @@ export default async function AboutPage() {
         </Container>
       </section>
 
-      <section className="border-t border-line bg-navy-900/40 py-24">
+      <section className="light py-24">
         <Container>
           <div className="grid gap-14 lg:grid-cols-12">
             <div className="lg:col-span-4">
@@ -79,7 +79,7 @@ export default async function AboutPage() {
                 {home.testimonials.map((t) => (
                   <figure key={t.name} className="card p-7">
                     <blockquote className="font-display text-lg font-light leading-relaxed text-ivory/90">&ldquo;{t.quote}&rdquo;</blockquote>
-                    <figcaption className="mt-6 text-[0.62rem] uppercase tracking-[0.26em] text-mist">
+                    <figcaption className="mt-6 text-[0.7rem] uppercase tracking-[0.26em] text-mist">
                       {t.name} <span className="text-accent">·</span> {t.place}
                     </figcaption>
                   </figure>

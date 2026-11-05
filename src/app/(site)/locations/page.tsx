@@ -20,7 +20,7 @@ export default function LocationsPage() {
         intro="We are deliberately narrow. Two home markets where we know every street, and a short list of international destinations served through partners we have worked with for years."
         image="https://images.unsplash.com/photo-1414609245224-afa02bfb3fda?auto=format&fit=crop&w=2000&q=80"
       />
-      <section className="py-24">
+      <section className="light py-24">
         <Container>
           <div className="space-y-6">
             {Object.entries(LOCATIONS).map(([slug, l], i) => (
@@ -36,7 +36,7 @@ export default function LocationsPage() {
                   <div className="kicker">{l.kicker}</div>
                   <h2 className="mt-4 font-display text-4xl font-light">{l.title}</h2>
                   <p className="lede mt-5">{l.intro}</p>
-                  <span className="mt-6 text-[0.62rem] uppercase tracking-[0.28em] text-accent">Explore {l.name} →</span>
+                  <span className="mt-6 text-[0.7rem] uppercase tracking-[0.28em] text-accent">Explore {l.name} →</span>
                 </div>
               </Link>
             ))}

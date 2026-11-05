@@ -53,7 +53,7 @@ export default async function PropertyPage({ params }: { params: Promise<{ slug:
         )}
         <div className="veil absolute inset-0" />
         <Container className="relative z-10 pb-20 pt-48">
-          <div className="flex flex-wrap items-center gap-3 text-[0.62rem] uppercase tracking-[0.28em] text-mist">
+          <div className="flex flex-wrap items-center gap-3 text-[0.7rem] uppercase tracking-[0.28em] text-mist">
             <Link href={`/${cat.slug}`} className="hover:text-accent">{cat.label}</Link>
             <span className="text-accent">/</span>
             <Link href={`/locations/${p.location}`} className="hover:text-accent">{locationLabel(p.location)}</Link>
@@ -62,13 +62,13 @@ export default async function PropertyPage({ params }: { params: Promise<{ slug:
           </div>
           <h1 className="display-lg rise mt-6 max-w-4xl">{p.title}</h1>
           {p.headline && <p className="lede rise rise-2 mt-6 max-w-2xl">{p.headline}</p>}
-          <div className="rise rise-3 mt-8 inline-flex items-center gap-3 border border-accent/40 bg-navy-950/60 px-4 py-2 text-[0.62rem] uppercase tracking-[0.26em] text-accent-2 backdrop-blur">
+          <div className="rise rise-3 mt-8 inline-flex items-center gap-3 border border-accent/40 bg-navy-950/60 px-4 py-2 text-[0.7rem] uppercase tracking-[0.26em] text-accent-2 backdrop-blur">
             <span className="h-1.5 w-1.5 rounded-full bg-accent" /> Photography and address released under NDA
           </div>
         </Container>
       </section>
 
-      <section className="py-24">
+      <section className="light py-24">
         <Container>
           <div className="grid gap-16 lg:grid-cols-12">
             <div className="lg:col-span-7">
@@ -83,7 +83,7 @@ export default async function PropertyPage({ params }: { params: Promise<{ slug:
                 <dl className="mt-14 grid grid-cols-2 gap-x-8 gap-y-7 border-t border-line pt-10 md:grid-cols-3">
                   {p.key_facts.map((f) => (
                     <div key={f.label}>
-                      <dt className="text-[0.6rem] uppercase tracking-[0.26em] text-mist-2">{f.label}</dt>
+                      <dt className="text-[0.68rem] uppercase tracking-[0.26em] text-mist-2">{f.label}</dt>
                       <dd className="mt-1.5 font-display text-2xl text-ivory">{f.value}</dd>
                     </div>
                   ))}
@@ -93,7 +93,7 @@ export default async function PropertyPage({ params }: { params: Promise<{ slug:
 
             <aside className="lg:col-span-5">
               <div className="card sticky top-28 p-8 lg:p-10">
-                <div className="text-[0.6rem] uppercase tracking-[0.26em] text-mist-2">Guide</div>
+                <div className="text-[0.68rem] uppercase tracking-[0.26em] text-mist-2">Guide</div>
                 <div className="mt-2 font-display text-4xl text-accent-2">{p.price_label ?? "On application"}</div>
                 <div className="hairline my-8" />
                 <h2 className="font-display text-2xl">Request the private dossier</h2>

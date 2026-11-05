@@ -51,7 +51,7 @@ export function Footer({ settings }: { settings: SiteSettings }) {
               </li>
               <li className="text-mist">{settings.address}</li>
               <li className="pt-3">
-                <Link href="/contact" className="btn text-[0.62rem] !px-5 !py-2.5">
+                <Link href="/contact" className="btn text-[0.7rem] !px-5 !py-2.5">
                   <span>Start a conversation</span>
                 </Link>
               </li>

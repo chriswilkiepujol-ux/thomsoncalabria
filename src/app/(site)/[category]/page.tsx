@@ -47,7 +47,7 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
       />
       <PageHero kicker={c.kicker} title={c.title} intro={c.intro} image={c.image} />
 
-      <section className="py-24">
+      <section className="light py-24">
         <Container>
           <div className="grid gap-10 md:grid-cols-3">
             {c.highlights.map((h) => (
@@ -78,7 +78,7 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
                 <Link
                   key={slug}
                   href={`/locations/${slug}`}
-                  className="border border-line px-3.5 py-1.5 text-[0.62rem] uppercase tracking-[0.22em] text-mist hover:border-accent hover:text-accent-2"
+                  className="border border-line px-3.5 py-1.5 text-[0.7rem] uppercase tracking-[0.22em] text-mist hover:border-accent hover:text-accent-2"
                 >
                   {l.name}
                 </Link>
@@ -96,7 +96,7 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
         </Container>
       </section>
 
-      <section className="border-t border-line bg-navy-900/40 py-24" id="enquire">
+      <section className="light light-alt py-24" id="enquire">
         <Container>
           <div className="grid gap-14 lg:grid-cols-12">
             <div className="lg:col-span-4">

@@ -1,15 +1,16 @@
 @import "tailwindcss";
 
 :root {
-  --navy-950: #050b1a;
-  --navy-900: #0a1730;
-  --navy-800: #112245;
-  --navy-700: #1a3059;
-  --ivory: #f3efe6;
-  --ivory-2: #e9e3d6;
-  --mist: rgba(243, 239, 230, 0.62);
-  --mist-2: rgba(243, 239, 230, 0.38);
-  --line: rgba(243, 239, 230, 0.12);
+  --navy-950: #0d1b35;
+  --navy-900: #13264a;
+  --navy-800: #1b335e;
+  --navy-700: #254172;
+  --ivory: #f7f3ea;
+  --ivory-2: #ece5d6;
+  --mist: rgba(247, 243, 234, 0.84);
+  --mist-2: rgba(247, 243, 234, 0.62);
+  --line: rgba(247, 243, 234, 0.16);
+  --page: #0d1b35;
 
   /* Gold accent (default) */
   --accent: #c9a650;
@@ -51,7 +52,7 @@ html {
 }
 
 body {
-  background: var(--navy-950);
+  background: var(--page);
   color: var(--ivory);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
@@ -69,10 +70,15 @@ body {
 
 .kicker {
   font-family: var(--font-sans);
-  font-size: 0.68rem;
-  letter-spacing: 0.32em;
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.28em;
   text-transform: uppercase;
   color: var(--accent);
+}
+
+.veil + * h1, .veil + * .lede {
+  text-shadow: 0 2px 24px rgba(13, 27, 53, 0.45);
 }
 
 .display-xl {
@@ -97,10 +103,10 @@ body {
 }
 
 .lede {
-  font-size: 1.08rem;
-  line-height: 1.75;
+  font-size: 1.14rem;
+  line-height: 1.8;
   color: var(--mist);
-  font-weight: 300;
+  font-weight: 400;
 }
 
 .hairline {
@@ -184,14 +190,15 @@ body {
 .veil {
   background: linear-gradient(
     180deg,
-    rgba(5, 11, 26, 0.35) 0%,
-    rgba(5, 11, 26, 0.55) 45%,
-    rgba(5, 11, 26, 0.98) 100%
+    rgba(13, 27, 53, 0.6) 0%,
+    rgba(13, 27, 53, 0.18) 22%,
+    rgba(13, 27, 53, 0.32) 50%,
+    rgba(13, 27, 53, 0.92) 100%
   );
 }
 
 .card {
-  background: linear-gradient(180deg, rgba(17, 34, 69, 0.55), rgba(10, 23, 48, 0.75));
+  background: linear-gradient(180deg, rgba(37, 65, 114, 0.45), rgba(27, 51, 94, 0.6));
   border: 1px solid var(--line);
   backdrop-filter: blur(6px);
 }
@@ -204,6 +211,39 @@ body {
   opacity: 0.08;
   mix-blend-mode: overlay;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Light ivory sections — flips the palette tokens so every component reads dark-on-light */
+.light {
+  --ivory: #13264a;
+  --ivory-2: #1b335e;
+  --mist: rgba(19, 38, 74, 0.82);
+  --mist-2: rgba(19, 38, 74, 0.6);
+  --line: rgba(19, 38, 74, 0.14);
+  --accent: #9a7a2c;
+  --accent-2: #7d6223;
+  --accent-soft: rgba(154, 122, 44, 0.1);
+  background: #f7f3ea;
+  color: var(--ivory);
+}
+:root[data-accent="silver"] .light {
+  --accent: #5f6875;
+  --accent-2: #4a525e;
+  --accent-soft: rgba(95, 104, 117, 0.1);
+}
+.light .card {
+  background: #ffffff;
+  border-color: rgba(19, 38, 74, 0.1);
+  box-shadow: 0 20px 50px -30px rgba(19, 38, 74, 0.35);
+}
+.light .btn-solid {
+  color: #fff;
+}
+.light select.field option {
+  background: #fff;
+}
+.light-alt {
+  background: #efe8da;
 }
 
 /* Reveal animation */

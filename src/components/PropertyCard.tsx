@@ -24,24 +24,24 @@ export function PropertyCard({ p, priority = false }: { p: Property; priority?: 
             fill
             sizes="(max-width: 768px) 100vw, 33vw"
             priority={priority}
-            className="object-cover opacity-80 transition-transform duration-[1.4s] group-hover:scale-105"
+            className="object-cover transition-transform duration-[1.4s] group-hover:scale-105"
           />
         ) : (
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(26,48,89,0.9),rgba(5,11,26,1))]" />
         )}
         <div className="absolute inset-0 bg-gradient-to-t from-navy-950/90 via-navy-950/20 to-transparent" />
         <div className="absolute left-5 top-5 flex items-center gap-2">
-          <span className="border border-accent/60 bg-navy-950/60 px-2.5 py-1 text-[0.58rem] uppercase tracking-[0.26em] text-accent-2 backdrop-blur">
+          <span className="border border-accent/60 bg-navy-950/60 px-2.5 py-1 text-[0.66rem] uppercase tracking-[0.26em] text-accent-2 backdrop-blur">
             {cat.singular}
           </span>
           {p.status !== "available" && (
-            <span className="bg-ivory/90 px-2.5 py-1 text-[0.58rem] uppercase tracking-[0.26em] text-navy-950">
+            <span className="bg-ivory/90 px-2.5 py-1 text-[0.66rem] uppercase tracking-[0.26em] text-navy-950">
               {STATUS[p.status]}
             </span>
           )}
         </div>
         <div className="absolute bottom-5 left-5 right-5">
-          <div className="text-[0.62rem] uppercase tracking-[0.28em] text-mist">
+          <div className="text-[0.7rem] uppercase tracking-[0.28em] text-mist">
             {locationLabel(p.location)} · {p.country}
           </div>
         </div>
@@ -52,12 +52,12 @@ export function PropertyCard({ p, priority = false }: { p: Property; priority?: 
         {p.headline && <p className="mt-3 text-sm leading-relaxed text-mist">{p.headline}</p>}
         <div className="mt-auto flex items-end justify-between pt-6">
           <div>
-            <div className="text-[0.58rem] uppercase tracking-[0.26em] text-mist-2">Guide</div>
+            <div className="text-[0.66rem] uppercase tracking-[0.26em] text-mist-2">Guide</div>
             <div className="mt-1 font-display text-xl text-accent-2">
               {p.price_label ?? "On application"}
             </div>
           </div>
-          <span className="text-[0.62rem] uppercase tracking-[0.26em] text-accent transition-transform duration-500 group-hover:translate-x-1">
+          <span className="text-[0.7rem] uppercase tracking-[0.26em] text-accent transition-transform duration-500 group-hover:translate-x-1">
             Request dossier →
           </span>
         </div>
