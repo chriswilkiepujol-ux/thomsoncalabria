@@ -42,9 +42,10 @@ export default async function HomePage() {
     <>
       {/* HERO */}
       <section className="dark relative flex min-h-[600px] items-end overflow-hidden bg-navy-950 lg:min-h-[680px]">
-        <Image src={home.heroImage} alt="" fill priority sizes="100vw" className="slowzoom object-cover" />
-        <div className="veil absolute inset-0" />
-        <div className="absolute inset-0 bg-gradient-to-r from-navy-950/70 via-navy-950/25 to-transparent" />
+        <Image src={home.heroImage} alt="" fill priority quality={90} sizes="100vw" className="object-cover" />
+        <div className="absolute inset-0 bg-gradient-to-b from-navy-950/55 via-transparent via-30% to-navy-950/85" />
+        <div className="absolute inset-0 bg-gradient-to-r from-navy-950/60 via-navy-950/10 via-50% to-transparent" />
+        <div className="absolute inset-0 bg-navy-950/35 sm:hidden" />
         <Container className="hero-text relative z-10 pb-14 pt-32 lg:pb-20">
           <div className="max-w-2xl">
             <div className="kicker rise">{home.heroKicker}</div>

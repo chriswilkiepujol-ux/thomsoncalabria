@@ -222,7 +222,7 @@ export const DEFAULT_HOME: HomeContent = {
   heroTitle: "Exceptional property, personally handled.",
   heroSubtitle:
     "Luxury homes for sale and holiday rental in Marbella and Sotogrande — and discreet, off-market sales of hotels and restaurants for buyers, investors and funds.",
-  heroImage: "https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=2000&q=80",
+  heroImage: "https://kfgzhurkaybmuxkuolxc.supabase.co/storage/v1/object/public/media/site/hero-villa-sharp.jpg",
   introKicker: "What we do",
   introTitle: "Listed when it suits. Private when it matters.",
   introBody:
