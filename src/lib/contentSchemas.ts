@@ -28,7 +28,7 @@ const locationFields: Field[] = [
   { key: "seoDescription", label: "Google description (SEO)", type: "textarea" },
 ];
 
-export const SECTIONS: Section[] = [
+const ALL_SECTIONS: Section[] = [
   {
     key: "settings",
     title: "Contact details & look",
@@ -62,7 +62,7 @@ export const SECTIONS: Section[] = [
   },
   {
     key: "about",
-    title: "About Linda",
+    title: "About page",
     description: "Your photo, bio and the quote.",
     fields: [
       { key: "kicker", label: "Small heading", type: "text" },
@@ -88,18 +88,6 @@ export const SECTIONS: Section[] = [
       { key: "seoDescription", label: "Google description (SEO)", type: "textarea" },
     ],
   },
-  {
-    key: "blog",
-    title: "Blog page heading",
-    description: "The title and intro at the top of the Blog page.",
-    fields: [
-      { key: "kicker", label: "Small heading", type: "text" },
-      { key: "title", label: "Title", type: "text" },
-      { key: "intro", label: "Intro", type: "textarea" },
-      { key: "seoTitle", label: "Google title (SEO)", type: "text" },
-      { key: "seoDescription", label: "Google description (SEO)", type: "textarea" },
-    ],
-  },
   { key: "category:hotel", title: "Hotels page", description: "", fields: categoryFields },
   { key: "category:restaurant", title: "Restaurants page", description: "", fields: categoryFields },
   { key: "category:residential", title: "Residential page", description: "", fields: categoryFields },
@@ -109,3 +97,20 @@ export const SECTIONS: Section[] = [
   { key: "location:italy", title: "Italy page", description: "", fields: locationFields },
   { key: "location:dubai", title: "Dubai page", description: "", fields: locationFields },
 ];
+
+// Same order as the website menu.
+const ORDER = [
+  "home",
+  "category:hotel",
+  "category:restaurant",
+  "consultancy",
+  "category:residential",
+  "category:rental",
+  "about",
+  "settings",
+  "location:marbella",
+  "location:sotogrande",
+  "location:italy",
+  "location:dubai",
+];
+export const SECTIONS: Section[] = ORDER.map((k) => ALL_SECTIONS.find((s) => s.key === k)).filter((s): s is Section => !!s);

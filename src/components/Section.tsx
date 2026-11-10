@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { dict, href, type Lang } from "@/lib/i18n";
 
 export function Container({
   children,
@@ -58,27 +59,22 @@ export function SectionHead({
   );
 }
 
-export function CtaBand({
-  title = "Tell us what you are looking for.",
-  body = "Every enquiry is read personally by Linda Thomson and answered within one working day, in complete confidence.",
-}: {
-  title?: string;
-  body?: string;
-}) {
+export function CtaBand({ lang, title, body }: { lang: Lang; title?: string; body?: string }) {
+  const t = dict(lang).cta;
   return (
     <section className="dark bg-navy-900">
       <Container className="py-14 lg:py-16">
         <div className="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
           <div className="max-w-2xl">
-            <h2 className="display-lg">{title}</h2>
-            <p className="lede mt-3">{body}</p>
+            <h2 className="display-lg">{title ?? t.title}</h2>
+            <p className="lede mt-3">{body ?? t.body}</p>
           </div>
           <div className="flex flex-col gap-3 sm:flex-row lg:shrink-0">
-            <Link href="/contact" className="btn btn-solid">
-              Start a conversation
+            <Link href={href(lang, "/contact")} className="btn btn-solid">
+              {t.start}
             </Link>
-            <Link href="/contact#call" className="btn btn-ghost">
-              Request a call
+            <Link href={`${href(lang, "/contact")}#call`} className="btn btn-ghost">
+              {t.call}
             </Link>
           </div>
         </div>

@@ -4,34 +4,41 @@ import { notFound } from "next/navigation";
 import { Container, CtaBand, JsonLd, PageHero, SectionHead } from "@/components/Section";
 import { PropertyCard } from "@/components/PropertyCard";
 import { EnquiryForm } from "@/components/EnquiryForm";
-import { CATEGORIES, categoryFromSlug, getContent, getProperties, LOCATIONS } from "@/lib/content";
+import { CATEGORIES, catText, categoryFromSlug, getContent, getProperties, LOCATIONS, locationLabel } from "@/lib/content";
+import { alternates, dict, href, isLang, LANGS, type Lang } from "@/lib/i18n";
 
 export const revalidate = 60;
 
 export function generateStaticParams() {
-  return Object.values(CATEGORIES).map((c) => ({ category: c.slug }));
+  return LANGS.flatMap((lang) => Object.values(CATEGORIES).map((c) => ({ lang, category: c.slug })));
 }
 
-export async function generateMetadata({ params }: { params: Promise<{ category: string }> }): Promise<Metadata> {
-  const { category } = await params;
+export async function generateMetadata({ params }: { params: Promise<{ lang: string; category: string }> }): Promise<Metadata> {
+  const { lang: l, category } = await params;
+  const lang: Lang = isLang(l) ? l : "en";
   const key = categoryFromSlug(category);
   if (!key) return {};
-  const c = await getContent(`category:${key}` as const);
+  const c = await getContent(`category:${key}` as const, lang);
   return {
     title: { absolute: c.seoTitle },
     description: c.seoDescription,
-    alternates: { canonical: `/${category}` },
+    alternates: alternates(lang, `/${category}`),
     openGraph: { title: c.seoTitle, description: c.seoDescription, images: [{ url: c.image }] },
   };
 }
 
-export default async function CategoryPage({ params }: { params: Promise<{ category: string }> }) {
-  const { category } = await params;
+export default async function CategoryPage({ params }: { params: Promise<{ lang: string; category: string }> }) {
+  const { lang: l, category } = await params;
+  if (!isLang(l)) notFound();
+  const lang = l;
   const key = categoryFromSlug(category);
   if (!key) notFound();
 
-  const [c, props] = await Promise.all([getContent(`category:${key}` as const), getProperties({ category: key })]);
-  const cat = CATEGORIES[key];
+  const [c, props] = await Promise.all([getContent(`category:${key}` as const, lang), getProperties({ category: key, lang })]);
+  const cat = catText(lang, key);
+  const d = dict(lang);
+  const t = d.category;
+  const listed = key === "rental" || key === "residential";
 
   return (
     <>
@@ -41,7 +48,8 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
           "@type": "CollectionPage",
           name: c.seoTitle,
           description: c.seoDescription,
-          url: `${process.env.NEXT_PUBLIC_SITE_URL}/${category}`,
+          inLanguage: lang,
+          url: `${process.env.NEXT_PUBLIC_SITE_URL}${href(lang, `/${category}`)}`,
           isPartOf: { "@type": "WebSite", name: "Thomson Calabria", url: process.env.NEXT_PUBLIC_SITE_URL },
         }}
       />
@@ -55,7 +63,7 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
               <div>
                 <p className="text-[0.98rem] leading-relaxed text-ivory">{c.notice}</p>
                 <Link href="#enquire" className="mt-2 inline-block text-[0.84rem] font-semibold text-accent hover:underline">
-                  Register your brief →
+                  {t.registerBrief}
                 </Link>
               </div>
             </div>
@@ -76,30 +84,26 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
         <Container>
           <div className="flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
             <SectionHead
-              kicker={`Current ${cat.nounPlural}`}
+              kicker={`${t.current} · ${cat.nounPlural}`}
               title={
                 props.length
-                  ? key === "rental" ? "Available to book." : key === "residential" ? "Properties for sale." : "Opportunities we can discuss today."
-                  : key === "rental" || key === "residential" ? "New properties coming soon." : "Opportunities are shared privately."
+                  ? key === "rental" ? t.titleRental : key === "residential" ? t.titleResidential : t.titleDefault
+                  : listed ? t.titleEmptyListed : t.titleEmptyPrivate
               }
               body={
                 props.length
-                  ? key === "rental"
-                    ? "Contact us with your dates and we will confirm availability and rates."
-                    : key === "residential"
-                      ? "Some homes are listed in full; others are offered privately, with details shared after a short conversation."
-                      : "Each listing is deliberately brief. Full details — location, photography, accounts — are released after a short conversation and a confidentiality agreement."
-                  : "Tell us what you are looking for and we will let you know as soon as something suitable becomes available."
+                  ? key === "rental" ? t.bodyRental : key === "residential" ? t.bodyResidential : t.bodyDefault
+                  : t.bodyEmpty
               }
             />
             <div className="flex flex-wrap gap-2 md:justify-end">
-              {Object.entries(LOCATIONS).map(([slug, l]) => (
+              {Object.keys(LOCATIONS).map((slug) => (
                 <Link
                   key={slug}
-                  href={`/locations/${slug}`}
+                  href={href(lang, `/locations/${slug}`)}
                   className="border border-line px-3.5 py-1.5 text-[0.7rem] uppercase tracking-[0.12em] text-mist hover:border-accent hover:text-accent-2"
                 >
-                  {l.name}
+                  {locationLabel(slug, lang)}
                 </Link>
               ))}
             </div>
@@ -108,7 +112,7 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
           {props.length > 0 && (
             <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
               {props.map((p) => (
-                <PropertyCard key={p.id} p={p} />
+                <PropertyCard key={p.id} p={p} lang={lang} />
               ))}
             </div>
           )}
@@ -119,24 +123,18 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
         <Container>
           <div className="grid gap-14 lg:grid-cols-12">
             <div className="lg:col-span-4">
-              <div className="kicker">{key === "rental" ? "Book a stay" : "Register your brief"}</div>
-              <h2 className="display-md mt-3">
-                {key === "rental" ? "Tell us your dates." : "Tell us what you are looking for."}
-              </h2>
-              <p className="mt-3 text-[0.94rem] leading-relaxed text-mist">
-                {key === "rental"
-                  ? "Let us know when you would like to stay and how many guests, and we will confirm availability and rates personally."
-                  : "If your brief is on file, you hear first — including about properties we do not advertise. Nothing is ever shared without your consent."}
-              </p>
+              <div className="kicker">{key === "rental" ? t.bookKicker : t.briefKicker}</div>
+              <h2 className="display-md mt-3">{key === "rental" ? t.bookTitle : t.briefTitle}</h2>
+              <p className="mt-3 text-[0.94rem] leading-relaxed text-mist">{key === "rental" ? t.bookBody : t.briefBody}</p>
             </div>
             <div className="lg:col-span-8">
-              <EnquiryForm defaultInterest={key} sourcePage={`/${category}`} />
+              <EnquiryForm lang={lang} defaultInterest={key} sourcePage={href(lang, `/${category}`)} />
             </div>
           </div>
         </Container>
       </section>
 
-      <CtaBand title="Prefer to talk?" body="Call or email Linda directly. There is no switchboard and no sales team — just one conversation." />
+      <CtaBand lang={lang} title={d.cta.talkTitle} body={d.cta.talkBody} />
     </>
   );
 }

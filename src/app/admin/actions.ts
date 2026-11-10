@@ -71,6 +71,17 @@ export async function saveProperty(id: string | null, formData: FormData) {
     description: get("description") || null,
     price_label: get("price_label") || null,
     key_facts,
+    title_es: get("title_es") || null,
+    headline_es: get("headline_es") || null,
+    description_es: get("description_es") || null,
+    price_label_es: get("price_label_es") || null,
+    key_facts_es: (() => {
+      try {
+        return JSON.parse(get("key_facts_es") || "[]") as { label: string; value: string }[];
+      } catch {
+        return [];
+      }
+    })(),
     image_url: get("image_url") || null,
     gallery: (() => {
       try {

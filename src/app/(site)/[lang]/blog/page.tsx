@@ -13,6 +13,7 @@ export async function generateMetadata(): Promise<Metadata> {
     title: { absolute: c.seoTitle },
     description: c.seoDescription,
     alternates: { canonical: "/blog" },
+    robots: { index: false, follow: true },
   };
 }
 
@@ -75,7 +76,7 @@ export default async function BlogPage({ searchParams }: { searchParams: Promise
           )}
         </Container>
       </section>
-      <CtaBand />
+      <CtaBand lang="en" />
     </>
   );
 }

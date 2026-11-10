@@ -32,13 +32,17 @@ export function Wordmark({
   size = "md",
   tagline = true,
 }: {
-  size?: "sm" | "md" | "lg";
+  size?: "sm" | "md" | "lg" | "nav";
   tagline?: boolean;
 }) {
   const s = {
     sm: { name: "text-[1.12rem] tracking-[0.16em]", tag: "text-[0.6rem] tracking-[0.12em]" },
     md: { name: "text-[1.35rem] tracking-[0.16em]", tag: "text-[0.66rem] tracking-[0.12em]" },
     lg: { name: "text-[2rem] tracking-[0.18em]", tag: "text-[0.75rem] tracking-[0.14em]" },
+    nav: {
+      name: "whitespace-nowrap text-[0.95rem] tracking-[0.1em] max-[380px]:text-[0.84rem] max-[380px]:tracking-[0.08em] sm:text-[1.25rem] lg:text-[1.6rem] lg:tracking-[0.15em]",
+      tag: "whitespace-nowrap text-[0.5rem] tracking-[0.1em] max-[380px]:text-[0.44rem] max-[380px]:tracking-[0.06em] sm:text-[0.6rem] lg:text-[0.74rem] lg:tracking-[0.12em]",
+    },
   }[size];
   return (
     <div className="leading-none">

@@ -55,7 +55,7 @@ export default async function AdminHome() {
         <ul className="mt-3 list-disc space-y-1 pl-5">
           <li><b>Properties</b> — add homes and rentals with photos and a gallery as normal. For hotels, restaurants or private sales tick “Off-market”: the photo is blurred and details are only shared after an NDA.</li>
           <li><b>Pages &amp; copy</b> — change any headline or paragraph on the home page, your bio, the four category pages and the location pages.</li>
-          <li><b>Blog</b> — write an Out and About or Property News post. Add an event date for forthcoming events. Untick “Published” to keep a draft.</li>
+          <li><b>Spanish</b> — every page has an <b>English | Español</b> tab, and each property has a Spanish section. Anything left blank in Spanish shows the English text.</li>
           <li><b>Enquiries</b> — every form submission lands here, with everything the person told us. Reply from your own email.</li>
           <li>Changes are live within a minute.</li>
         </ul>

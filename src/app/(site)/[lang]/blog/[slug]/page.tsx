@@ -16,6 +16,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     title: p.title,
     description: p.excerpt ?? undefined,
     alternates: { canonical: `/blog/${p.slug}` },
+    robots: { index: false, follow: true },
     openGraph: { type: "article", title: p.title, description: p.excerpt ?? undefined, images: p.image_url ? [{ url: p.image_url }] : undefined },
   };
 }
@@ -121,7 +122,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
           </Container>
         </section>
       )}
-      <CtaBand />
+      <CtaBand lang="en" />
     </>
   );
 }

@@ -2,10 +2,12 @@
 
 import { useActionState, useState } from "react";
 import { submitEnquiry, type EnquiryState } from "@/app/actions/enquiry";
+import { DICTS, type Lang } from "@/lib/i18n";
 
-const LOCS = ["Sotogrande", "Marbella", "Italy / Capri", "Dubai", "Elsewhere"];
+const EN = DICTS.en.form;
 
 export function EnquiryForm({
+  lang,
   propertyRef,
   sourcePage,
   defaultInterest,
@@ -13,6 +15,7 @@ export function EnquiryForm({
   messagePlaceholder,
   submitLabel,
 }: {
+  lang: Lang;
   propertyRef?: string;
   sourcePage?: string;
   defaultInterest?: string;
@@ -22,101 +25,81 @@ export function EnquiryForm({
 }) {
   const [state, action, pending] = useActionState<EnquiryState, FormData>(submitEnquiry, null);
   const [buyerType, setBuyerType] = useState("");
+  const t = DICTS[lang].form;
 
   if (state?.ok) {
     return (
       <div className="card p-10 text-center">
-        <div className="kicker">Received</div>
-        <h3 className="display-md mt-4">Thank you. We will be in touch shortly.</h3>
-        <p className="lede mt-4">
-          Linda reads every enquiry personally and replies within one working day. If your
-          matter is urgent, please call us directly.
-        </p>
+        <div className="kicker">{t.received}</div>
+        <h3 className="display-md mt-4">{t.thanksTitle}</h3>
+        <p className="lede mt-4">{t.thanksBody}</p>
       </div>
     );
   }
+
+  // Values are always stored in English so the admin list stays consistent; labels follow the page language.
+  const options = (values: readonly string[], labels: readonly string[]) =>
+    values.map((v, i) => (
+      <option key={v} value={v}>
+        {labels[i]}
+      </option>
+    ));
 
   return (
     <form action={action} className="space-y-8">
       <input type="text" name="company_website" className="hidden" tabIndex={-1} autoComplete="off" />
       <input type="hidden" name="property_ref" value={propertyRef ?? ""} />
       <input type="hidden" name="source_page" value={sourcePage ?? ""} />
+      <input type="hidden" name="lang" value={lang} />
 
       <div className="grid gap-8 md:grid-cols-2">
         <div>
-          <label className="flabel" htmlFor="name">Name</label>
-          <input id="name" name="name" required className="field" placeholder="Your full name" />
+          <label className="flabel" htmlFor="name">{t.name}</label>
+          <input id="name" name="name" required className="field" placeholder={t.namePh} />
         </div>
         <div>
-          <label className="flabel" htmlFor="email">Email</label>
+          <label className="flabel" htmlFor="email">{t.email}</label>
           <input id="email" name="email" type="email" required className="field" placeholder="name@domain.com" />
         </div>
         <div>
-          <label className="flabel" htmlFor="phone">Telephone (with country code)</label>
-          <input id="phone" name="phone" className="field" placeholder="+44 …" />
+          <label className="flabel" htmlFor="phone">{t.phone}</label>
+          <input id="phone" name="phone" className="field" placeholder="+34 …" />
         </div>
         <div>
-          <label className="flabel" htmlFor="buyer_type">I am</label>
-          <select
-            id="buyer_type"
-            name="buyer_type"
-            className="field"
-            value={buyerType}
-            onChange={(e) => setBuyerType(e.target.value)}
-          >
-            <option value="">Select…</option>
-            <option>A private buyer</option>
-            <option>An investor</option>
-            <option>A family office or fund</option>
-            <option>A hotel or restaurant operator</option>
-            <option>An owner considering a discreet sale</option>
-            <option>Looking for a luxury rental</option>
-            <option>An agent or intermediary</option>
+          <label className="flabel" htmlFor="buyer_type">{t.iAm}</label>
+          <select id="buyer_type" name="buyer_type" className="field" value={buyerType} onChange={(e) => setBuyerType(e.target.value)}>
+            <option value="">{t.select}</option>
+            {options(EN.buyerTypes, t.buyerTypes)}
           </select>
-          {buyerType === "An agent or intermediary" && (
-            <p className="mt-2 text-xs leading-relaxed text-accent-2/80">
-              We work directly with principals. If you are mandated by a buyer, please tell us who
-              you represent and we will be glad to speak.
-            </p>
-          )}
+          {buyerType === EN.buyerTypes[6] && <p className="mt-2 text-xs leading-relaxed text-accent-2/80">{t.agentNote}</p>}
         </div>
       </div>
 
       {!compact && (
         <div className="grid gap-8 md:grid-cols-3">
           <div>
-            <label className="flabel" htmlFor="interest">Asset type</label>
+            <label className="flabel" htmlFor="interest">{t.assetType}</label>
             <select id="interest" name="interest" className="field" defaultValue={defaultInterest ?? ""}>
-              <option value="">Select…</option>
-              <option value="hotel">Hotel or resort</option>
-              <option value="restaurant">Restaurant or venue</option>
-              <option value="residential">Villa, penthouse or estate</option>
-              <option value="rental">Luxury short-term rental</option>
-              <option value="consultancy">Consultancy / advice</option>
-              <option value="other">Other</option>
+              <option value="">{t.select}</option>
+              {(Object.keys(t.assets) as (keyof typeof t.assets)[]).map((k) => (
+                <option key={k} value={k}>
+                  {t.assets[k]}
+                </option>
+              ))}
             </select>
           </div>
           <div>
-            <label className="flabel" htmlFor="budget">Budget</label>
+            <label className="flabel" htmlFor="budget">{t.budget}</label>
             <select id="budget" name="budget" className="field" defaultValue="">
-              <option value="">Select…</option>
-              <option>Under €2 million</option>
-              <option>€2 – 5 million</option>
-              <option>€5 – 10 million</option>
-              <option>€10 – 25 million</option>
-              <option>€25 – 50 million</option>
-              <option>Over €50 million</option>
-              <option>Rental budget (per week)</option>
+              <option value="">{t.select}</option>
+              {options(EN.budgets, t.budgets)}
             </select>
           </div>
           <div>
-            <label className="flabel" htmlFor="timeframe">Timeframe</label>
+            <label className="flabel" htmlFor="timeframe">{t.timeframe}</label>
             <select id="timeframe" name="timeframe" className="field" defaultValue="">
-              <option value="">Select…</option>
-              <option>Immediately</option>
-              <option>Within 3 months</option>
-              <option>Within 12 months</option>
-              <option>Exploring options</option>
+              <option value="">{t.select}</option>
+              {options(EN.timeframes, t.timeframes)}
             </select>
           </div>
         </div>
@@ -124,15 +107,15 @@ export function EnquiryForm({
 
       {!compact && (
         <div>
-          <div className="flabel">Locations of interest</div>
+          <div className="flabel">{t.locations}</div>
           <div className="mt-3 flex flex-wrap gap-3">
-            {LOCS.map((l) => (
+            {EN.locationOptions.map((v, i) => (
               <label
-                key={l}
-                className="cursor-pointer border border-line px-4 py-2 text-xs tracking-[0.18em] uppercase text-ivory/80 transition has-[:checked]:border-accent has-[:checked]:bg-accent-soft has-[:checked]:text-accent-2"
+                key={v}
+                className="cursor-pointer border border-line px-4 py-2 text-xs font-medium uppercase tracking-[0.1em] text-ivory/80 transition has-[:checked]:border-accent has-[:checked]:bg-accent-soft has-[:checked]:text-accent-2"
               >
-                <input type="checkbox" name="locations" value={l} className="sr-only" />
-                {l}
+                <input type="checkbox" name="locations" value={v} className="sr-only" />
+                {t.locationOptions[i]}
               </label>
             ))}
           </div>
@@ -140,27 +123,16 @@ export function EnquiryForm({
       )}
 
       <div>
-        <label className="flabel" htmlFor="message">
-          Tell us about what you are looking for
-        </label>
-        <textarea
-          id="message"
-          name="message"
-          rows={compact ? 3 : 5}
-          className="field resize-none"
-          placeholder={messagePlaceholder ?? "The type of property, must-haves, dates or timing — anything that helps us find the right match."}
-        />
+        <label className="flabel" htmlFor="message">{t.message}</label>
+        <textarea id="message" name="message" rows={compact ? 3 : 5} className="field resize-none" placeholder={messagePlaceholder ?? t.messagePh} />
       </div>
 
-      {state?.error && <p className="text-sm text-red-300">{state.error}</p>}
+      {state?.error && <p className="text-sm text-red-700">{state.error}</p>}
 
       <div className={`flex flex-col gap-5 ${compact ? "" : "md:flex-row md:items-center md:justify-between"}`}>
-        <p className="max-w-md text-xs leading-relaxed text-mist-2">
-          Strictly confidential. Your details are never shared with third parties or added to a
-          marketing list. By sending, you agree to our privacy policy.
-        </p>
+        <p className="max-w-md text-xs leading-relaxed text-mist-2">{t.privacy}</p>
         <button type="submit" disabled={pending} className={`btn btn-solid disabled:opacity-60 ${compact ? "justify-center" : ""}`}>
-          <span>{pending ? "Sending…" : submitLabel ?? "Send enquiry"}</span>
+          <span>{pending ? t.sending : submitLabel ?? t.send}</span>
         </button>
       </div>
     </form>

@@ -7,7 +7,7 @@ import { ImageField } from "./ImageField";
 
 type Obj = Record<string, unknown>;
 
-export function ContentEditor({ section, initial }: { section: Section; initial: Obj }) {
+export function ContentEditor({ section, saveKey, initial }: { section: Section; saveKey: string; initial: Obj }) {
   const [value, setValue] = useState<Obj>(initial);
   const [msg, setMsg] = useState("");
   const [pending, start] = useTransition();
@@ -17,7 +17,13 @@ export function ContentEditor({ section, initial }: { section: Section; initial:
   function save() {
     start(async () => {
       setMsg("");
-      const res = await saveContent(section.key, value);
+      // Spanish saves leave unchanged photos out, so photos changed in English keep flowing through.
+      let toSave: Obj = value;
+      if (saveKey.endsWith(":es")) {
+        const imageKeys = section.fields.filter((f) => f.type === "image").map((f) => f.key);
+        toSave = Object.fromEntries(Object.entries(value).filter(([k, v]) => !imageKeys.includes(k) || v !== initial[k]));
+      }
+      const res = await saveContent(saveKey, toSave);
       setMsg(res.error ? `Error: ${res.error}` : "Saved. Live within a minute.");
     });
   }

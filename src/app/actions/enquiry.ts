@@ -12,7 +12,13 @@ export async function submitEnquiry(_prev: EnquiryState, formData: FormData): Pr
   const name = get("name");
   const email = get("email");
   if (!name || !email || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {
-    return { ok: false, error: "Please give us your name and a valid email address." };
+    return {
+      ok: false,
+      error:
+        formData.get("lang") === "es"
+          ? "Indíquenos su nombre y un email válido."
+          : "Please give us your name and a valid email address.",
+    };
   }
 
   const locations = formData.getAll("locations").map(String).join(", ");
@@ -35,7 +41,10 @@ export async function submitEnquiry(_prev: EnquiryState, formData: FormData): Pr
   const { error } = await supabase.from("enquiries").insert(row);
   if (error) {
     console.error("enquiry insert failed", error);
-    return { ok: false, error: "Something went wrong. Please email us directly." };
+    return {
+      ok: false,
+      error: formData.get("lang") === "es" ? "Algo ha fallado. Escríbanos directamente por email." : "Something went wrong. Please email us directly.",
+    };
   }
 
   // Optional email notification via Resend (set RESEND_API_KEY + ENQUIRY_TO in Vercel).

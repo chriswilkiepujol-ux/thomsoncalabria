@@ -1,7 +1,7 @@
 import { createServerClient } from "@supabase/ssr";
 import { NextResponse, type NextRequest } from "next/server";
 
-export async function proxy(request: NextRequest) {
+async function adminGuard(request: NextRequest) {
   let response = NextResponse.next({ request });
 
   const supabase = createServerClient(
@@ -13,13 +13,9 @@ export async function proxy(request: NextRequest) {
           return request.cookies.getAll();
         },
         setAll(cookiesToSet) {
-          cookiesToSet.forEach(({ name, value }) =>
-            request.cookies.set(name, value)
-          );
+          cookiesToSet.forEach(({ name, value }) => request.cookies.set(name, value));
           response = NextResponse.next({ request });
-          cookiesToSet.forEach(({ name, value, options }) =>
-            response.cookies.set(name, value, options)
-          );
+          cookiesToSet.forEach(({ name, value, options }) => response.cookies.set(name, value, options));
         },
       },
     }
@@ -30,10 +26,9 @@ export async function proxy(request: NextRequest) {
   } = await supabase.auth.getUser();
 
   const path = request.nextUrl.pathname;
-  const isAdmin = path.startsWith("/admin");
   const isLogin = path === "/admin/login";
 
-  if (isAdmin && !isLogin && !user) {
+  if (!isLogin && !user) {
     const url = request.nextUrl.clone();
     url.pathname = "/admin/login";
     return NextResponse.redirect(url);
@@ -46,6 +41,28 @@ export async function proxy(request: NextRequest) {
   return response;
 }
 
+export async function proxy(request: NextRequest) {
+  const path = request.nextUrl.pathname;
+
+  if (path === "/admin" || path.startsWith("/admin/")) return adminGuard(request);
+
+  // Spanish lives under /es — served by the [lang] segment directly.
+  if (path === "/es" || path.startsWith("/es/")) return NextResponse.next();
+
+  // English has no prefix publicly; send any /en URL to its clean form.
+  if (path === "/en" || path.startsWith("/en/")) {
+    const url = request.nextUrl.clone();
+    url.pathname = path.slice(3) || "/";
+    return NextResponse.redirect(url, 308);
+  }
+
+  // Everything else is English: rewrite internally to the [lang]=en pages.
+  const url = request.nextUrl.clone();
+  url.pathname = `/en${path === "/" ? "" : path}`;
+  return NextResponse.rewrite(url);
+}
+
 export const config = {
-  matcher: ["/admin/:path*"],
+  // Skip Next internals, API routes and any file with an extension (sitemap.xml, robots.txt, icon.svg, images).
+  matcher: ["/((?!_next|api|.*\\..*).*)"],
 };

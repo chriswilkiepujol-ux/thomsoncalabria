@@ -10,6 +10,9 @@ export function PropertyForm({ property }: { property: Property | null }) {
   const [facts, setFacts] = useState<KeyFact[]>(property?.key_facts ?? [{ label: "", value: "" }]);
   const [offMarket, setOffMarket] = useState<boolean>(property?.off_market ?? false);
   const [gallery, setGallery] = useState<string[]>(property?.gallery ?? []);
+  const [factsEs, setFactsEs] = useState<KeyFact[]>(
+    property?.key_facts_es?.length ? property.key_facts_es : (property?.key_facts ?? []).map((f) => ({ label: "", value: f.value }))
+  );
   const [error, setError] = useState("");
   const [pending, start] = useTransition();
 
@@ -75,6 +78,43 @@ export function PropertyForm({ property }: { property: Property | null }) {
         ))}
         <button type="button" className="abtn abtn-secondary" onClick={() => setFacts([...facts, { label: "", value: "" }])}>+ Add fact</button>
         <input type="hidden" name="key_facts" value={JSON.stringify(facts.filter((f) => f.label && f.value))} />
+      </div>
+
+      <div className="acard space-y-5">
+        <h2 className="font-semibold">🇪🇸 Spanish version</h2>
+        <p className="text-xs text-[#6a7490]">
+          Shown on the Spanish site (/es). Anything left blank shows the English text instead.
+        </p>
+        <div className="grid gap-5 md:grid-cols-2">
+          <div className="md:col-span-2">
+            <label className="alabel">Título</label>
+            <input name="title_es" className="afield" defaultValue={property?.title_es ?? ""} placeholder="Hotel boutique en la Milla de Oro" />
+          </div>
+          <div className="md:col-span-2">
+            <label className="alabel">Resumen en una línea</label>
+            <input name="headline_es" className="afield" defaultValue={property?.headline_es ?? ""} />
+          </div>
+          <div>
+            <label className="alabel">Precio (texto)</label>
+            <input name="price_label_es" className="afield" defaultValue={property?.price_label_es ?? ""} placeholder="A consultar · 3,2 millones € · Desde 18.000 € / semana" />
+          </div>
+          <div className="md:col-span-2">
+            <label className="alabel">Descripción (línea en blanco entre párrafos)</label>
+            <textarea name="description_es" rows={6} className="afield" defaultValue={property?.description_es ?? ""} />
+          </div>
+        </div>
+        <div className="space-y-3">
+          <label className="alabel">Datos clave (Spanish labels — e.g. Dormitorios, Parcela, Habitaciones)</label>
+          {factsEs.map((f, i) => (
+            <div key={i} className="flex gap-3">
+              <input className="afield" placeholder="Etiqueta" value={f.label} onChange={(e) => setFactsEs(factsEs.map((x, j) => (j === i ? { ...x, label: e.target.value } : x)))} />
+              <input className="afield" placeholder="Valor" value={f.value} onChange={(e) => setFactsEs(factsEs.map((x, j) => (j === i ? { ...x, value: e.target.value } : x)))} />
+              <button type="button" className="abtn abtn-secondary" onClick={() => setFactsEs(factsEs.filter((_, j) => j !== i))}>×</button>
+            </div>
+          ))}
+          <button type="button" className="abtn abtn-secondary" onClick={() => setFactsEs([...factsEs, { label: "", value: "" }])}>+ Añadir dato</button>
+          <input type="hidden" name="key_facts_es" value={JSON.stringify(factsEs.filter((f) => f.label && f.value))} />
+        </div>
       </div>
 
       <div className="acard space-y-5">
