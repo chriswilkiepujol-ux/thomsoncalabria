@@ -94,8 +94,7 @@ const ALL_SECTIONS: Section[] = [
   { key: "category:rental", title: "Luxury Rentals page", description: "", fields: categoryFields },
   { key: "location:sotogrande", title: "Sotogrande page", description: "", fields: locationFields },
   { key: "location:marbella", title: "Marbella page", description: "", fields: locationFields },
-  { key: "location:italy", title: "Italy page", description: "", fields: locationFields },
-  { key: "location:dubai", title: "Dubai page", description: "", fields: locationFields },
+  { key: "location:international", title: "International page", description: "", fields: locationFields },
 ];
 
 // Same order as the website menu.
@@ -110,7 +109,6 @@ const ORDER = [
   "settings",
   "location:marbella",
   "location:sotogrande",
-  "location:italy",
-  "location:dubai",
+  "location:international",
 ];
 export const SECTIONS: Section[] = ORDER.map((k) => ALL_SECTIONS.find((s) => s.key === k)).filter((s): s is Section => !!s);

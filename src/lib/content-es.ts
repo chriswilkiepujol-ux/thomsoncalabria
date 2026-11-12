@@ -10,7 +10,7 @@ import type {
 } from "./content";
 
 export const CATEGORY_TEXT_ES: Record<CategoryKey, CategoryText> = {
-  hotel: { label: "Hoteles", singular: "Hotel", nounPlural: "hoteles y resorts" },
+  hotel: { label: "Hoteles", singular: "Hotel", nounPlural: "hoteles" },
   restaurant: { label: "Restaurantes", singular: "Restaurante", nounPlural: "restaurantes y locales" },
   residential: { label: "Residencial", singular: "Residencia", nounPlural: "villas y apartamentos" },
   rental: { label: "Alquileres de lujo", singular: "Alquiler de lujo", nounPlural: "alquileres de lujo" },
@@ -49,36 +49,20 @@ export const LOCATIONS_ES: Record<string, LocationContent> = {
       "Más allá de la Milla, trabajamos con propietarios de hoteles y restaurantes de todo el municipio que valoran una salida sin que se sepa, y con propietarios en Sierra Blanca, La Zagaleta, Guadalmina Baja y Los Monteros.",
     ],
   },
-  italy: {
-    name: "Italia",
-    country: "Italia",
-    kicker: "Italia · Capri, Amalfi y los Lagos",
-    title: "Capri, la Costa Amalfitana y los lagos italianos.",
+  international: {
+    name: "Internacional",
+    country: "Internacional",
+    kicker: "Internacional · Off-market",
+    title: "Una selección de oportunidades off-market fuera de España.",
     intro:
-      "Gracias a relaciones de confianza en Italia accedemos a una selección de oportunidades: hoteles boutique, palacios históricos y villas sobre el mar en Capri, Positano, el lago de Como y otros lugares, ofrecidas siempre con total confidencialidad.",
-    image: "https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=2000&q=80",
-    seoTitle: "Hoteles y propiedades off-market en Italia — Capri, Amalfi, Como | Thomson Calabria",
+      "Más allá de Marbella y Sotogrande, presentamos una pequeña selección de hoteles y propiedades off-market a nivel internacional — a través de propietarios y socios que conocemos desde hace años, y siempre con total confidencialidad.",
+    image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=2000&q=80",
+    seoTitle: "Hoteles y propiedades off-market internacionales en venta | Thomson Calabria",
     seoDescription:
-      "Acceso confidencial a hoteles, palacios y villas off-market en Capri, la Costa Amalfitana y los lagos italianos. Trato directo con los propietarios.",
+      "Una selección confidencial de hoteles y propiedades off-market en venta a nivel internacional. Trato directo con los propietarios y detalles completos bajo acuerdo de confidencialidad.",
     body: [
-      "Las direcciones más codiciadas de Italia cambian de manos entre familias y conocidos. Lo que se publica es una pequeña parte de lo que realmente está en venta. Nuestras relaciones en Italia nos dan acceso a hoteles boutique, restaurantes con historia y residencias en lugares donde ya no se permite construir.",
-      "Le asistimos en las particularidades de una adquisición en Italia — protección patrimonial, derechos de tanteo y la estructuración de activos hoteleros — junto a notarios y asesores locales de confianza.",
-    ],
-  },
-  dubai: {
-    name: "Dubái",
-    country: "Emiratos Árabes Unidos",
-    kicker: "Dubái · Palm Jumeirah y Emirates Hills",
-    title: "Activos emblemáticos en la capital del Golfo.",
-    intro:
-      "Para inversores y family offices que miran al Golfo, buscamos activos hoteleros, residencias de marca y villas exclusivas en Dubái a través de propietarios con los que trabajamos desde hace años.",
-    image: "https://images.unsplash.com/photo-1518684079-3c830dcef090?auto=format&fit=crop&w=2000&q=80",
-    seoTitle: "Hoteles y propiedades off-market en Dubái | Thomson Calabria",
-    seoDescription:
-      "Acceso privado a activos hoteleros, residencias de marca y villas off-market en Dubái — Palm Jumeirah, Emirates Hills, Jumeirah Bay. Trato directo con los propietarios.",
-    body: [
-      "El mercado prime de Dubái se mueve rápido y gran parte en privado. Activos hoteleros, primera línea en Palm Jumeirah y fincas en Emirates Hills cambian de manos entre propietarios antes de llegar a ningún portal.",
-      "Trabajamos con socios consolidados en Dubái para presentar oportunidades cualificadas a nuestros clientes y para poner en contacto a compradores internacionales con vendedores que valoran la discreción.",
+      "Algunos de los mejores hoteles y residencias cambian de manos sin anunciarse nunca. Gracias a relaciones de muchos años podemos presentar una selección de estas oportunidades a compradores, inversores y fondos cualificados.",
+      "Los detalles se comparten en privado, bajo acuerdo de confidencialidad. Cuéntenos qué busca y dónde, y le diremos con franqueza qué podemos ofrecerle.",
     ],
   },
 };
@@ -87,12 +71,12 @@ export const DEFAULT_HOME_ES: HomeContent = {
   heroKicker: "Hoteles · Restaurantes · Consultoría · Residencias",
   heroTitle: "Hostelería y propiedades de lujo, con total discreción.",
   heroSubtitle:
-    "Venta off-market de hoteles y restaurantes, consultoría hotelera y branding — además de una selección de villas, apartamentos y alquileres de lujo en el Marbella Club.",
+    "Venta off-market de hoteles y restaurantes, consultoría hotelera y branding — además de una selección de villas y apartamentos, y residencias privadas de lujo dentro del Marbella Club.",
   heroImage: "https://kfgzhurkaybmuxkuolxc.supabase.co/storage/v1/object/public/media/site/hero-villa-sharp.jpg",
   introKicker: "Qué hacemos",
   introTitle: "Hoteles y restaurantes off-market. Asesoramiento hotelero experto.",
   introBody:
-    "Thomson Calabria pone en contacto a compradores, inversores y fondos con propietarios de hoteles y restaurantes que prefieren vender en privado. En cada operación asesoramos sobre la estrategia hotelera — desde la valoración y el reposicionamiento hasta la incorporación de una marca hotelera internacional. También ofrecemos una pequeña selección de villas y apartamentos en venta, y alquileres de lujo en el Marbella Club.",
+    "Thomson Calabria pone en contacto a compradores, inversores y fondos con propietarios de hoteles y restaurantes que prefieren vender en privado. En cada operación asesoramos sobre la estrategia hotelera — desde la valoración y el reposicionamiento hasta la incorporación de una marca hotelera internacional. También ofrecemos una pequeña selección de villas y apartamentos en venta, y residencias privadas de lujo en alquiler dentro del Marbella Club.",
   pillars: [
     {
       title: "Hoteles y restaurantes off-market",
@@ -104,7 +88,7 @@ export const DEFAULT_HOME_ES: HomeContent = {
     },
     {
       title: "Residencias y alquileres",
-      body: "Una selección de villas y apartamentos, y alquileres vacacionales de lujo en el Marbella Club.",
+      body: "Una selección de villas y apartamentos, y residencias privadas de lujo en alquiler dentro del Marbella Club.",
     },
   ],
   processTitle: "Cuatro pasos sencillos.",
@@ -141,9 +125,9 @@ export const DEFAULT_ABOUT_ES: AboutContent = {
   title: "Quince años en la Milla de Oro.",
   photo: "https://kfgzhurkaybmuxkuolxc.supabase.co/storage/v1/object/public/media/site/linda-thomson.jpg",
   body: [
-    "Linda Thomson fundó LT Properties Marbella en 2009 y pronto se ganó una reputación de profesionalidad en el mercado inmobiliario de lujo de Marbella, especialmente en Puente Romano y el Marbella Club, en la Milla de Oro. Thomson Calabria es el siguiente capítulo: las mismas relaciones y la misma exigencia, ahora centradas en la venta off-market de hoteles y restaurantes y en la consultoría hotelera, incluido el branding hotelero.",
+    "Linda Thomson fundó LT Properties Marbella en 2009 y pronto se ganó una reputación de profesionalidad en el mercado inmobiliario de lujo de Marbella, especialmente en Puente Romano y el Marbella Club, en la Milla de Oro. Thomson Calabria es el siguiente capítulo: Linda, ahora junto a su equipo, aporta las mismas relaciones y la misma exigencia a la venta off-market de hoteles y restaurantes y a la consultoría hotelera, incluido el branding hotelero.",
     "Cada cliente recibe una atención personal. Nuestro enfoque se adapta a cada persona — sus objetivos, sus plazos y la forma en que desea tener un activo — y se apoya en un profundo conocimiento local, una larga trayectoria y una reputación de integridad y discreción.",
-    "Junto a nuestro trabajo en hostelería, seguimos ofreciendo una selección de villas y apartamentos en venta, y nuestros propios alquileres de lujo en el Marbella Club.",
+    "Junto a nuestro trabajo en hostelería, seguimos ofreciendo una selección de villas y apartamentos en venta, y nuestras propias residencias privadas de lujo en alquiler dentro del Marbella Club.",
   ],
   quote: "Cada cliente merece el mismo cuidado, tanto si alquila una semana como si compra un hotel.",
 };
@@ -152,17 +136,17 @@ export const DEFAULT_CATEGORY_ES: Record<CategoryKey, CategoryContent> = {
   hotel: {
     notice:
       "Tenga en cuenta que normalmente no publicamos los hoteles. La mayoría de las oportunidades hoteleras se ofrecen en privado a compradores, inversores y fondos cualificados. Registre su búsqueda más abajo y le contactaremos, con total confidencialidad, cuando surja algo adecuado.",
-    kicker: "Hoteles y resorts",
+    kicker: "Hoteles",
     title: "Hoteles en venta, con total confidencialidad.",
     intro:
-      "Hoteles boutique en la Milla de Oro, resorts en Sotogrande, propiedades históricas en Italia. Los propietarios acuden a nosotros cuando buscan un comprador serio y no un proceso de venta público, y los inversores, por activos que no encontrarán en el mercado.",
+      "Una selección de hoteles off-market en Marbella, Sotogrande y a nivel internacional. Los propietarios acuden a nosotros cuando buscan un comprador serio y no un proceso de venta público, y los inversores, por hoteles que no encontrarán en el mercado.",
     image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=2000&q=80",
-    seoTitle: "Hoteles en venta off-market — Marbella, Sotogrande, Italia, Dubái",
+    seoTitle: "Hoteles en venta off-market — Marbella, Sotogrande e internacional",
     seoDescription:
-      "Acceso confidencial a hoteles y resorts off-market en Marbella, Sotogrande, Italia y Dubái. Para inversores, fondos y operadores que tratan directamente con los propietarios.",
+      "Acceso confidencial a una selección de hoteles off-market en Marbella, Sotogrande y a nivel internacional. Cifras completas bajo NDA y carta de intenciones, para inversores, fondos y operadores.",
     highlights: [
-      { title: "Hoteles y resorts en funcionamiento", body: "Activos de 20 a más de 300 habitaciones, con cifras completas bajo acuerdo de confidencialidad." },
-      { title: "Reconversión y desarrollo", body: "Palacios, fincas y parcelas con licencia aptas para hostelería boutique." },
+      { title: "Hoteles en funcionamiento", body: "Hoteles de 20 a más de 300 habitaciones, con cifras completas bajo acuerdo de confidencialidad (NDA) y carta de intenciones (LOI)." },
+      { title: "Reconversión y desarrollo", body: "Parcelas con licencia aptas para uso hotelero." },
       { title: "Branding y gestión", body: "Le asesoramos para conseguir la marca u operador adecuados, antes o después de la compra." },
     ],
   },
@@ -170,14 +154,14 @@ export const DEFAULT_CATEGORY_ES: Record<CategoryKey, CategoryContent> = {
     kicker: "Restaurantes y locales",
     title: "La ubicación, la licencia, la terraza.",
     intro:
-      "Beach clubs, restaurantes de alta cocina y locales de hostelería en lugares donde conseguir una nueva licencia es casi imposible. Vendidos con discreción, para que plantilla, proveedores y clientes no se enteren por la prensa.",
+      "Beach clubs, restaurantes de alta cocina y locales de hostelería en ubicaciones prime. Vendidos con discreción.",
     image: "https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=2000&q=80",
-    seoTitle: "Restaurantes y beach clubs en venta off-market — Marbella, Sotogrande, Italia",
+    seoTitle: "Restaurantes y beach clubs en venta off-market — Marbella y Sotogrande",
     seoDescription:
-      "Venta discreta de restaurantes, beach clubs y locales de hostelería en Marbella, Sotogrande, Italia y Dubái. Locales en propiedad, traspasos y negocios en marcha, directamente con los propietarios.",
+      "Venta discreta de restaurantes, beach clubs y locales de hostelería en ubicaciones prime de Marbella, Sotogrande y a nivel internacional. Directamente con los propietarios.",
     highlights: [
       { title: "Negocios en marcha", body: "Restaurantes y beach clubs consolidados, con historial, licencias y equipo." },
-      { title: "Locales en propiedad", body: "Locales en primera línea y en puertos deportivos, donde el inmueble es el verdadero valor." },
+      { title: "Locales en propiedad", body: "Locales en primera línea y ubicaciones prime, donde el inmueble es el verdadero valor." },
       { title: "Conceptos en busca de ubicación", body: "También asesoramos a operadores y grupos que buscan el local adecuado para crecer." },
     ],
   },
@@ -185,30 +169,30 @@ export const DEFAULT_CATEGORY_ES: Record<CategoryKey, CategoryContent> = {
     kicker: "Residencial",
     title: "Una selección de villas y apartamentos.",
     intro:
-      "Una pequeña y cuidada selección de viviendas en la Milla de Oro, Puente Romano, el Marbella Club y Sotogrande — algunas publicadas, otras ofrecidas en privado.",
-    image: "https://images.unsplash.com/photo-1602343168117-bb8ffe3e2e9f?auto=format&fit=crop&w=2000&q=80",
-    seoTitle: "Villas y apartamentos de lujo en venta — Marbella, Puente Romano, Sotogrande",
+      "Una pequeña y cuidada selección de viviendas en Marbella — en la Milla de Oro, Puente Romano, el Marbella Club y La Zagaleta — y en Sotogrande, incluido Kings & Queens. Algunas publicadas, otras ofrecidas en privado.",
+    image: "/images/residential-la-zagaleta.jpg",
+    seoTitle: "Villas y apartamentos de lujo en venta — Marbella, Milla de Oro, La Zagaleta, Sotogrande",
     seoDescription:
-      "Una selección de villas, áticos y apartamentos de lujo en venta en Marbella, Puente Romano, el Marbella Club y Sotogrande.",
+      "Una selección de villas, áticos y apartamentos de lujo en venta en Marbella, la Milla de Oro, Puente Romano, el Marbella Club, La Zagaleta y Sotogrande.",
     highlights: [
-      { title: "Residencias en resorts", body: "Puente Romano, el Marbella Club y el puerto de Sotogrande — las direcciones que mejor conocemos." },
-      { title: "Fincas y parcelas", body: "Grandes parcelas en La Zagaleta, Kings & Queens y La Reserva para quien desee construir." },
+      { title: "Residencias en resorts", body: "La Milla de Oro, Puente Romano, el Marbella Club y Sotogrande — las direcciones que mejor conocemos." },
+      { title: "Fincas y parcelas", body: "Parcelas en La Zagaleta, Kings & Queens y La Reserva para quien desee construir." },
       { title: "Cuéntenos qué busca", body: "Si no ve lo que desea, pregúntenos: muchas viviendas se venden antes de publicarse." },
     ],
   },
   rental: {
     kicker: "Alquileres de lujo",
-    title: "Su residencia privada en el Marbella Club.",
+    title: "Su residencia privada de lujo en el Marbella Club Hotel Resort.",
     intro:
-      "Nuestra propia colección de residencias de lujo en el Marbella Club, disponibles por semanas o temporadas — atendidas personalmente, con la playa, el spa y los restaurantes del resort a la puerta.",
-    image: "https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=2000&q=80",
-    seoTitle: "Alquileres de lujo en el Marbella Club — villas y apartamentos | Thomson Calabria",
+      "Nuestra propia colección de residencias privadas de lujo en alquiler dentro del recinto del Marbella Club Hotel. Disponibles por semanas o temporadas — atendidas personalmente, con la playa, el spa y los restaurantes del resort a la puerta.",
+    image: "/images/rental-casa-tanya.jpg",
+    seoTitle: "Alquileres de lujo dentro del Marbella Club — villas y apartamentos | Thomson Calabria",
     seoDescription:
       "Alquileres vacacionales de lujo en el Marbella Club, en la Milla de Oro de Marbella. Villas y apartamentos atendidos personalmente, por semanas o temporadas.",
     highlights: [
-      { title: "Dentro del Marbella Club", body: "Residencias en el propio resort, con acceso a su beach club, spa y restaurantes." },
-      { title: "Atención personal", body: "Limpieza, chef y conserjería bajo petición." },
-      { title: "Pruebe antes de comprar", body: "Muchos de nuestros compradores primero alquilaron con nosotros. Le organizamos una estancia en la zona que le interese." },
+      { title: "Dentro del recinto del Marbella Club Hotel", body: "Residencias privadas en el propio resort, con acceso a su beach club, spa y restaurantes." },
+      { title: "Atención personal", body: "Limpieza, servicio doméstico y chef privado, todo bajo petición." },
+      { title: "Pruebe antes de comprar", body: "Muchos de nuestros compradores primero alquilaron con nosotros. Si necesita un alquiler mientras busca comprar, le encontramos el alojamiento adecuado en la zona." },
     ],
   },
 };
@@ -218,7 +202,7 @@ export const DEFAULT_CONSULTANCY_ES: ConsultancyContent = {
   title: "Consultoría hotelera y branding hotelero.",
   intro:
     "Asesoramiento para propietarios de hoteles y restaurantes, inversores y operadores — desde la valoración y el reposicionamiento hasta la incorporación de una marca hotelera internacional — con la misma discreción que aplicamos a cada venta off-market.",
-  image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=2000&q=80",
+  image: "/images/consultancy-la-villa.jpg",
   services: [
     { title: "Branding hotelero", body: "Conseguir la marca internacional, colección soft-brand o contrato de gestión adecuados para su hotel." },
     { title: "Compra y venta", body: "Estrategia, precio y un proceso confidencial, tanto si compra como si vende." },

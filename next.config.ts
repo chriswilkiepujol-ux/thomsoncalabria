@@ -30,6 +30,10 @@ const OLD_PATHS: [string, string][] = [
   ["/cookie-policy", "/privacy"],
   ["/privacy-policy", "/privacy"],
   ["/html/:path*", "/"],
+  ["/locations/italy", "/locations/international"],
+  ["/locations/dubai", "/locations/international"],
+  ["/es/locations/italy", "/es/locations/international"],
+  ["/es/locations/dubai", "/es/locations/international"],
 ];
 
 const nextConfig: NextConfig = {

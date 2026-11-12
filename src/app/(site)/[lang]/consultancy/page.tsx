@@ -36,7 +36,7 @@ export default async function ConsultancyPage({ params }: { params: Promise<{ la
           description: c.seoDescription,
           inLanguage: lang,
           provider: { "@type": "Organization", name: "Thomson Calabria" },
-          areaServed: ["Marbella", "Sotogrande", "Italy", "Dubai"],
+          areaServed: ["Marbella", "Sotogrande", "Spain", "International"],
         }}
       />
       <PageHero kicker={c.kicker} title={c.title} intro={c.intro} image={c.image} />

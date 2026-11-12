@@ -37,7 +37,7 @@ export function Footer({ settings, lang }: { settings: SiteSettings; lang: Lang 
           <div className="lg:col-span-2">
             <div className="kicker mb-3 lg:mb-5">{t.locations}</div>
             <ul className="space-y-2 text-[0.84rem] text-ivory/80 lg:space-y-2.5 lg:text-sm">
-              {["sotogrande", "marbella", "italy", "dubai"].map((l) => (
+              {["sotogrande", "marbella", "international"].map((l) => (
                 <li key={l}><Link className={linkCls} href={L(`/locations/${l}`)}>{locationLabel(l, lang)}</Link></li>
               ))}
             </ul>

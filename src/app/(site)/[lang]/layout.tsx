@@ -42,7 +42,7 @@ export default async function SiteLayout({
           telephone: settings.phone,
           founder: { "@type": "Person", name: "Linda Thomson" },
           foundingDate: "2009",
-          areaServed: ["Marbella", "Sotogrande", "Costa del Sol", "Italy", "Dubai"],
+          areaServed: ["Marbella", "Sotogrande", "Costa del Sol", "Spain"],
           address: { "@type": "PostalAddress", addressLocality: "Marbella", addressRegion: "Málaga", addressCountry: "ES" },
           knowsAbout: [
             "off-market hotels for sale",
