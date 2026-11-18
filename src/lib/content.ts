@@ -334,7 +334,7 @@ export const DEFAULT_CONSULTANCY: ConsultancyContent = {
   title: "Hospitality consultancy and hotel branding.",
   intro:
     "Advice for hotel and restaurant owners, investors and operators — from valuation and repositioning to securing an international hotel brand — with the same discretion we bring to every off-market sale.",
-  image: "/images/consultancy-la-villa.jpg",
+  image: "",
   services: [
     { title: "Hotel branding", body: "Securing the right international brand, soft-brand collection or management agreement for your hotel." },
     { title: "Acquisition & disposal", body: "Strategy, pricing and a confidential process — whether you are buying or selling." },

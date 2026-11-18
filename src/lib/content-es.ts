@@ -202,7 +202,7 @@ export const DEFAULT_CONSULTANCY_ES: ConsultancyContent = {
   title: "Consultoría hotelera y branding hotelero.",
   intro:
     "Asesoramiento para propietarios de hoteles y restaurantes, inversores y operadores — desde la valoración y el reposicionamiento hasta la incorporación de una marca hotelera internacional — con la misma discreción que aplicamos a cada venta off-market.",
-  image: "/images/consultancy-la-villa.jpg",
+  image: "",
   services: [
     { title: "Branding hotelero", body: "Conseguir la marca internacional, colección soft-brand o contrato de gestión adecuados para su hotel." },
     { title: "Compra y venta", body: "Estrategia, precio y un proceso confidencial, tanto si compra como si vende." },

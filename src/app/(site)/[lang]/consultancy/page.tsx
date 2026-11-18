@@ -15,7 +15,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     title: { absolute: c.seoTitle },
     description: c.seoDescription,
     alternates: alternates(lang, "/consultancy"),
-    openGraph: { title: c.seoTitle, description: c.seoDescription, images: [{ url: c.image }] },
+    openGraph: { title: c.seoTitle, description: c.seoDescription, images: [{ url: c.image || "/images/consultancy-la-villa.jpg" }] },
   };
 }
 

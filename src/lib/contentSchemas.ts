@@ -80,7 +80,7 @@ const ALL_SECTIONS: Section[] = [
       { key: "kicker", label: "Small heading", type: "text" },
       { key: "title", label: "Page title", type: "text" },
       { key: "intro", label: "Intro paragraph", type: "textarea" },
-      { key: "image", label: "Hero image", type: "image" },
+      { key: "image", label: "Hero image (optional)", type: "image", hint: "Leave empty for the plain navy background." },
       { key: "services", label: "Services", type: "list", fields: [{ key: "title", label: "Service", type: "text" }, { key: "body", label: "Short description", type: "textarea" }] },
       { key: "body", label: "Further paragraphs", type: "paragraphs" },
       { key: "author", label: "Signed by (optional, e.g. John …)", type: "text" },
