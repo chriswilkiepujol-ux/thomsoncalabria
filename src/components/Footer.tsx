@@ -82,8 +82,8 @@ export function Footer({ settings, lang }: { settings: SiteSettings; lang: Lang 
               <Link href="/admin" className={linkCls}>Admin</Link>
               <span>
                 {t.poweredBy}{" "}
-                <a href="https://impulsomedia.es" target="_blank" rel="noopener" className="font-semibold text-ivory/80 hover:text-accent-2">
-                  impulsomedia.es
+                <a href="https://impulsomedia.es" target="_blank" rel="noopener" className="font-semibold text-ivory/80 underline-offset-2 hover:text-accent-2 hover:underline">
+                  ImpulsoMedia
                 </a>
               </span>
             </div>

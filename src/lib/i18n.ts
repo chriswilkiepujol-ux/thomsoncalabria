@@ -249,7 +249,7 @@ const es: Dict = {
     rights: "Antes LT Properties Marbella",
     privacy: "Privacidad",
     terms: "Condiciones",
-    poweredBy: "Desarrollado por",
+    poweredBy: "Powered by",
   },
   cta: {
     title: "Cuéntenos qué está buscando.",
