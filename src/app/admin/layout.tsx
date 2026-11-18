@@ -2,7 +2,7 @@ import Link from "next/link";
 import { createClient } from "@/lib/supabase/server";
 import { signOut } from "./actions";
 
-export const metadata = { title: "Admin — Thomson Calabria", robots: { index: false, follow: false } };
+export const metadata = { title: "Admin | Thomson Calabria", robots: { index: false, follow: false } };
 
 export default async function AdminLayout({ children }: { children: React.ReactNode }) {
   const supabase = await createClient();

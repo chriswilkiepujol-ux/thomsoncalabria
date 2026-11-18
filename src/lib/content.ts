@@ -145,14 +145,14 @@ export const LOCATIONS: Record<string, LocationContent> = {
     kicker: "Sotogrande · Cádiz",
     title: "Quiet money, polo fields and the Mediterranean.",
     intro:
-      "Sotogrande is where Europe's most discreet families keep a second home — and a growing market for boutique hospitality. We handle hotels, restaurants and the finest estates here privately, alongside a select number of homes for sale.",
+      "Sotogrande is where Europe's most discreet families keep a second home, and a growing market for boutique hospitality. We handle hotels, restaurants and the finest estates here privately, alongside a select number of homes for sale.",
     image: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=2000&q=80",
     seoTitle: "Hotels, Restaurants & Luxury Property in Sotogrande | Thomson Calabria",
     seoDescription:
       "Off-market hotels, restaurants and luxury estates in Sotogrande, plus a select collection of villas and apartments for sale.",
     body: [
       "Sotogrande occupies the eastern tip of the Costa del Sol: 2,000 hectares of gated estates, two of Europe's top-ranked golf courses (Valderrama and Real Club de Golf Sotogrande), the Santa María Polo Club and a deep-water marina. It is forty minutes from Gibraltar airport and an hour from Málaga.",
-      "The best assets here — marina restaurants, boutique hospitality and the great plots of Kings & Queens and La Reserva — are often held by owners who prefer not to advertise. We know who is open to a quiet conversation, and bring it to the right buyer.",
+      "The best assets here, from marina restaurants and boutique hospitality to the great plots of Kings & Queens and La Reserva, are often held by owners who prefer not to advertise. We know who is open to a quiet conversation, and bring it to the right buyer.",
     ],
   },
   marbella: {
@@ -161,7 +161,7 @@ export const LOCATIONS: Record<string, LocationContent> = {
     kicker: "Marbella · Golden Mile",
     title: "The Golden Mile, Puente Romano and the Marbella Club.",
     intro:
-      "Our roots are on Marbella's Golden Mile. Over fifteen years we have built a network of hotel, restaurant and property owners who prefer to sell quietly — and we offer our own luxury rentals at the Marbella Club.",
+      "Our roots are on Marbella's Golden Mile. Over fifteen years we have built a network of hotel, restaurant and property owners who prefer to sell quietly. We also offer our own luxury rentals at the Marbella Club.",
     image: "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=2000&q=80",
     seoTitle: "Hotels, Restaurants & Luxury Property in Marbella | Thomson Calabria",
     seoDescription:
@@ -177,7 +177,7 @@ export const LOCATIONS: Record<string, LocationContent> = {
     kicker: "International · Off-market",
     title: "A selection of off-market opportunities beyond Spain.",
     intro:
-      "Beyond Marbella and Sotogrande, we present a small selection of off-market hotels and properties internationally — through owners and partners we have known for years, and only ever in confidence.",
+      "Beyond Marbella and Sotogrande, we present a small selection of off-market hotels and properties internationally, through owners and partners we have known for years and only ever in confidence.",
     image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=2000&q=80",
     seoTitle: "International Off-Market Hotels & Property for Sale | Thomson Calabria",
     seoDescription:
@@ -203,12 +203,12 @@ export const DEFAULT_HOME: HomeContent = {
   heroKicker: "Hotels · Restaurants · Consultancy · Residences",
   heroTitle: "Hospitality and luxury property, discreetly handled.",
   heroSubtitle:
-    "Off-market sales of hotels and restaurants, hospitality consultancy and branding — plus a select collection of villas and apartments, and luxury private residences within the Marbella Club.",
+    "Off-market sales of hotels and restaurants, hospitality consultancy and branding, plus a select collection of villas and apartments and luxury private residences within the Marbella Club.",
   heroImage: "https://kfgzhurkaybmuxkuolxc.supabase.co/storage/v1/object/public/media/site/hero-villa-sharp.jpg",
   introKicker: "What we do",
   introTitle: "Off-market hotels and restaurants. Expert hospitality advice.",
   introBody:
-    "Thomson Calabria brings together buyers, investors and funds with owners of hotels and restaurants who prefer to sell privately. Alongside each transaction we advise on hospitality strategy — from valuation and repositioning to securing an international hotel brand. We also offer a small collection of villas and apartments for sale, and luxury private residences to rent within the Marbella Club.",
+    "Thomson Calabria brings together buyers, investors and funds with owners of hotels and restaurants who prefer to sell privately. Alongside each transaction we advise on hospitality strategy, from valuation and repositioning to securing an international hotel brand. We also offer a small collection of villas and apartments for sale, and luxury private residences to rent within the Marbella Club.",
   pillars: [
     {
       title: "Off-market hotels & restaurants",
@@ -216,7 +216,7 @@ export const DEFAULT_HOME: HomeContent = {
     },
     {
       title: "Hospitality consultancy",
-      body: "Valuation, repositioning, operator introductions and hotel branding — advice from people who know the sector.",
+      body: "Valuation, repositioning, operator introductions and hotel branding: advice from people who know the sector.",
     },
     {
       title: "Residences & rentals",
@@ -225,9 +225,9 @@ export const DEFAULT_HOME: HomeContent = {
   ],
   processTitle: "Four simple steps.",
   process: [
-    { step: "01", title: "Share your brief", body: "Tell us what you are looking for — the asset, location, budget and timing." },
+    { step: "01", title: "Share your brief", body: "Tell us what you are looking for: the asset, location, budget and timing." },
     { step: "02", title: "Confidentiality", body: "For off-market opportunities we confirm you are a principal and sign a short NDA." },
-    { step: "03", title: "Full details", body: "We share the dossier — location, photography, financials — and arrange viewings." },
+    { step: "03", title: "Full details", body: "We share the full dossier with location, photography and financials, and arrange viewings." },
     { step: "04", title: "Through to completion", body: "We negotiate and coordinate lawyers, notaries and advisors until the deal is done." },
   ],
   testimonials: [
@@ -258,7 +258,7 @@ export const DEFAULT_ABOUT: AboutContent = {
   photo: "https://kfgzhurkaybmuxkuolxc.supabase.co/storage/v1/object/public/media/site/linda-thomson.jpg",
   body: [
     "Linda Thomson founded LT Properties Marbella in 2009 and quickly became known for her professionalism in Marbella's luxury property market, with a particular focus on Puente Romano and the Marbella Club on the Golden Mile. Thomson Calabria is the next chapter: Linda, now with her team, brings the same relationships and standards to the off-market sale of hotels and restaurants and to hospitality consultancy, including hotel branding.",
-    "Every client is looked after personally. Our approach is tailored to the individual — their objectives, their timetable and the way they wish to hold an asset — and is underpinned by deep local knowledge, a long track record and a reputation for integrity and discretion.",
+    "Every client is looked after personally. Our approach is tailored to each client's objectives, timetable and the way they wish to hold an asset. It is underpinned by deep local knowledge, a long track record and a reputation for integrity and discretion.",
     "Alongside our hospitality work we continue to offer a select collection of villas and apartments for sale, and our own luxury private residences to rent within the Marbella Club.",
   ],
   quote: "Every client deserves the same care, whether they are renting for a week or buying a hotel.",
@@ -271,15 +271,15 @@ export const DEFAULT_CATEGORY: Record<CategoryKey, CategoryContent> = {
     kicker: "Hotels",
     title: "Hotels for sale, handled in confidence.",
     intro:
-      "A selection of off-market hotels in Marbella, Sotogrande and internationally. Owners come to us when they want a serious buyer, not a public sale process — and investors come to us for hotels they will not find on the market.",
+      "A selection of off-market hotels in Marbella, Sotogrande and internationally. Owners come to us when they want a serious buyer, not a public sale process, and investors come to us for hotels they will not find on the market.",
     image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=2000&q=80",
-    seoTitle: "Off-Market Hotels for Sale — Marbella, Sotogrande & International",
+    seoTitle: "Off-Market Hotels for Sale in Marbella, Sotogrande & International",
     seoDescription:
       "Confidential access to a selection of off-market hotels in Marbella, Sotogrande and internationally. Full financials under NDA and LOI, for investors, funds and operators.",
     highlights: [
       { title: "Operating hotels", body: "Trading hotels from 20 to 300+ keys, with full financials shared under NDA and LOI (letter of intent)." },
       { title: "Conversion & development", body: "Licensed plots suitable for hospitality." },
-      { title: "Branding & management", body: "We advise on securing the right brand or operator — before or after acquisition." },
+      { title: "Branding & management", body: "We advise on securing the right brand or operator, before or after acquisition." },
     ],
   },
   restaurant: {
@@ -288,7 +288,7 @@ export const DEFAULT_CATEGORY: Record<CategoryKey, CategoryContent> = {
     intro:
       "Beach clubs, fine-dining restaurants and hospitality venues in prime locations. Sold discreetly.",
     image: "https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=2000&q=80",
-    seoTitle: "Off-Market Restaurants & Beach Clubs for Sale — Marbella & Sotogrande",
+    seoTitle: "Off-Market Restaurants & Beach Clubs for Sale in Marbella & Sotogrande",
     seoDescription:
       "Discreet sale of restaurants, beach clubs and hospitality venues in prime locations in Marbella, Sotogrande and internationally. Direct with owners.",
     highlights: [
@@ -301,24 +301,24 @@ export const DEFAULT_CATEGORY: Record<CategoryKey, CategoryContent> = {
     kicker: "Residential",
     title: "A select collection of villas and apartments.",
     intro:
-      "A small, carefully chosen selection of homes in Marbella — on the Golden Mile, in Puente Romano, the Marbella Club and La Zagaleta — and in Sotogrande, including Kings & Queens. Some listed, some offered privately.",
+      "A small, carefully chosen selection of homes in Marbella (the Golden Mile, Puente Romano, the Marbella Club and La Zagaleta) and in Sotogrande, including Kings & Queens. Some listed, some offered privately.",
     image: "/images/residential-la-zagaleta.jpg",
-    seoTitle: "Luxury Villas & Apartments for Sale — Marbella, Golden Mile, La Zagaleta, Sotogrande",
+    seoTitle: "Luxury Villas & Apartments for Sale in Marbella, Golden Mile, La Zagaleta & Sotogrande",
     seoDescription:
       "A select collection of luxury villas, penthouses and apartments for sale in Marbella, the Golden Mile, Puente Romano, the Marbella Club, La Zagaleta and Sotogrande.",
     highlights: [
-      { title: "Resort residences", body: "The Golden Mile, Puente Romano, the Marbella Club and Sotogrande — the addresses we know best." },
+      { title: "Resort residences", body: "The Golden Mile, Puente Romano, the Marbella Club and Sotogrande: the addresses we know best." },
       { title: "Estates & plots", body: "Plots in La Zagaleta, Kings & Queens and La Reserva for those who wish to build." },
-      { title: "Tell us your brief", body: "If what you want is not shown, ask us — many homes are sold before they are ever listed." },
+      { title: "Tell us your brief", body: "If what you want is not shown, ask us. Many homes are sold before they are ever listed." },
     ],
   },
   rental: {
     kicker: "Luxury Rentals",
     title: "Your luxury private residence at the Marbella Club Hotel Resort.",
     intro:
-      "Our own collection of private luxury residences to rent within the grounds of the Marbella Club Hotel. Available for weekly or seasonal stays — personally looked after, with the resort's beach, spa and restaurants on your doorstep.",
+      "Our own collection of private luxury residences to rent within the grounds of the Marbella Club Hotel. Available for weekly or seasonal stays, personally looked after, with the resort's beach, spa and restaurants on your doorstep.",
     image: "/images/rental-casa-tanya.jpg",
-    seoTitle: "Luxury Rentals within the Marbella Club — Villas & Apartments | Thomson Calabria",
+    seoTitle: "Luxury Villa & Apartment Rentals within the Marbella Club | Thomson Calabria",
     seoDescription:
       "Luxury holiday rentals at the Marbella Club on Marbella's Golden Mile. Personally managed villas and apartments for weekly or seasonal stays.",
     highlights: [
@@ -333,11 +333,11 @@ export const DEFAULT_CONSULTANCY: ConsultancyContent = {
   kicker: "Consultancy",
   title: "Hospitality consultancy and hotel branding.",
   intro:
-    "Advice for hotel and restaurant owners, investors and operators — from valuation and repositioning to securing an international hotel brand — with the same discretion we bring to every off-market sale.",
+    "Advice for hotel and restaurant owners, investors and operators, from valuation and repositioning to securing an international hotel brand, with the same discretion we bring to every off-market sale.",
   image: "",
   services: [
     { title: "Hotel branding", body: "Securing the right international brand, soft-brand collection or management agreement for your hotel." },
-    { title: "Acquisition & disposal", body: "Strategy, pricing and a confidential process — whether you are buying or selling." },
+    { title: "Acquisition & disposal", body: "Strategy, pricing and a confidential process, whether you are buying or selling." },
     { title: "Valuation & repositioning", body: "A clear view of value and how to grow it: concept, positioning and capital works." },
     { title: "Operators & partners", body: "Introductions to operators, lenders, lawyers and advisors in each jurisdiction." },
   ],
@@ -345,7 +345,7 @@ export const DEFAULT_CONSULTANCY: ConsultancyContent = {
     "Every engagement is tailored and confidential. Tell us what you are trying to achieve and we will tell you, candidly, how we can help.",
   ],
   author: "",
-  seoTitle: "Hospitality Consultancy & Hotel Branding — Marbella, Sotogrande | Thomson Calabria",
+  seoTitle: "Hospitality Consultancy & Hotel Branding in Marbella & Sotogrande | Thomson Calabria",
   seoDescription:
     "Hospitality consultancy for hotel and restaurant owners and investors: hotel branding, valuation, repositioning, acquisitions and disposals in Marbella, Sotogrande and beyond.",
 };
@@ -354,7 +354,7 @@ export const DEFAULT_BLOG: BlogContent = {
   kicker: "Blog",
   title: "Out and about, and what is happening in property.",
   intro: "Notes on forthcoming events, places worth knowing, and the luxury property market.",
-  seoTitle: "Blog — Events in Marbella & Sotogrande and Luxury Property News | Thomson Calabria",
+  seoTitle: "Blog: Events in Marbella & Sotogrande and Luxury Property News | Thomson Calabria",
   seoDescription:
     "Forthcoming events and the best restaurants in Marbella, Sotogrande and London, plus news and insight on the luxury property market.",
 };

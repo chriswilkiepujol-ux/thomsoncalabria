@@ -12,13 +12,13 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const lang: Lang = isLang(l) ? l : "en";
   return lang === "es"
     ? {
-        title: "Contacto — Consulta privada",
+        title: "Contacto: consulta privada",
         description:
           "Contacte con Thomson Calabria sobre hoteles y restaurantes off-market, consultoría hotelera, villas en venta o alquileres de lujo en el Marbella Club.",
         alternates: alternates(lang, "/contact"),
       }
     : {
-        title: "Contact — Private Enquiry",
+        title: "Contact: Private Enquiry",
         description:
           "Contact Thomson Calabria about off-market hotels and restaurants, hospitality consultancy, villas for sale or luxury rentals at the Marbella Club.",
         alternates: alternates(lang, "/contact"),

@@ -65,7 +65,7 @@ export async function submitEnquiry(_prev: EnquiryState, formData: FormData): Pr
           from: process.env.ENQUIRY_FROM ?? "Thomson Calabria <enquiries@thomsoncalabria.com>",
           to: [to],
           reply_to: email,
-          subject: `New private enquiry — ${name}${row.interest ? ` (${row.interest})` : ""}`,
+          subject: `New private enquiry: ${name}${row.interest ? ` (${row.interest})` : ""}`,
           text: lines,
         }),
       });

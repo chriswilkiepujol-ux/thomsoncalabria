@@ -36,7 +36,7 @@ const en = {
   },
   footer: {
     blurb:
-      "Off-market sales of hotels and restaurants, hospitality consultancy and branding — plus a select collection of villas, apartments and luxury rentals at the Marbella Club.",
+      "Off-market sales of hotels and restaurants, hospitality consultancy and branding, plus a select collection of villas, apartments and luxury rentals at the Marbella Club.",
     portfolio: "What we do",
     locations: "Locations",
     contact: "Contact",
@@ -55,7 +55,7 @@ const en = {
     start: "Start a conversation",
     call: "Request a call",
     talkTitle: "Prefer to talk?",
-    talkBody: "Call or email us directly. There is no switchboard and no sales team — just one conversation.",
+    talkBody: "Call or email us directly. There is no switchboard and no sales team. Just one conversation.",
   },
   card: {
     offMarket: "Off-market",
@@ -105,7 +105,7 @@ const en = {
     locations: "Locations of interest",
     locationOptions: ["Sotogrande", "Marbella", "International"],
     message: "Tell us about what you are looking for",
-    messagePh: "The type of property, must-haves, dates or timing — anything that helps us find the right match.",
+    messagePh: "The type of property, must-haves, dates or timing. Anything that helps us find the right match.",
     privacy: "Strictly confidential. Your details are never shared with third parties or added to a marketing list. By sending, you agree to our privacy policy.",
     send: "Send enquiry",
     sending: "Sending…",
@@ -143,14 +143,14 @@ const en = {
     titleEmptyPrivate: "Opportunities are shared privately.",
     bodyRental: "Contact us with your dates and we will confirm availability and rates.",
     bodyResidential: "Some homes are listed in full; others are offered privately, with details shared after a short conversation.",
-    bodyDefault: "Each listing is deliberately brief. Full details — location, photography, accounts — are released after a short conversation and a confidentiality agreement.",
+    bodyDefault: "Each listing is deliberately brief. Full details such as location, photography and accounts are released after a short conversation and a confidentiality agreement.",
     bodyEmpty: "Tell us what you are looking for and we will let you know as soon as something suitable becomes available.",
     bookKicker: "Book a stay",
     briefKicker: "Register your brief",
     bookTitle: "Tell us your dates.",
     briefTitle: "Tell us what you are looking for.",
     bookBody: "Let us know when you would like to stay and how many guests, and we will confirm availability and rates personally.",
-    briefBody: "If your brief is on file, you hear first — including about properties we do not advertise. Nothing is ever shared without your consent.",
+    briefBody: "If your brief is on file, you hear first, including about properties we do not advertise. Nothing is ever shared without your consent.",
   },
   property: {
     offMarketBadge: "Off-market · Photography and address released under NDA",
@@ -181,7 +181,7 @@ const en = {
   contact: {
     kicker: "Private enquiry",
     title: "One conversation is all it takes.",
-    intro: "Tell us as much as you can — the type of property, where, the budget and the timing. The more complete your brief, the faster we can find the right match. Every enquiry is handled personally.",
+    intro: "Tell us as much as you can: the type of property, where, the budget and the timing. The more complete your brief, the faster we can find the right match. Every enquiry is handled personally.",
     telephone: "Telephone",
     whatsapp: "WhatsApp",
     whatsappCta: "Message on WhatsApp",
@@ -195,7 +195,7 @@ const en = {
     fromLt: "From LT Properties Marbella",
     fromLtTitle: "Same relationships. A wider horizon.",
     fromLtBody:
-      "LT Properties Marbella built its reputation on the Golden Mile, in Puente Romano and the Marbella Club, with holiday rentals and sales that were always handled personally. Thomson Calabria carries that work forward — with a focus on off-market hotels and restaurants, hospitality consultancy and branding, alongside a select collection of residences and luxury rentals.",
+      "LT Properties Marbella built its reputation on the Golden Mile, in Puente Romano and the Marbella Club, with holiday rentals and sales that were always handled personally. Thomson Calabria carries that work forward, with a focus on off-market hotels and restaurants, hospitality consultancy and branding, alongside a select collection of residences and luxury rentals.",
   },
   locations: {
     explore: "Explore",
@@ -238,7 +238,7 @@ const es: Dict = {
   },
   footer: {
     blurb:
-      "Venta off-market de hoteles y restaurantes, consultoría hotelera y branding — además de una selección de villas, apartamentos y alquileres de lujo en el Marbella Club.",
+      "Venta off-market de hoteles y restaurantes, consultoría hotelera y branding, además de una selección de villas, apartamentos y alquileres de lujo en el Marbella Club.",
     portfolio: "Qué hacemos",
     locations: "Ubicaciones",
     contact: "Contacto",
@@ -257,7 +257,7 @@ const es: Dict = {
     start: "Iniciar una conversación",
     call: "Solicitar una llamada",
     talkTitle: "¿Prefiere hablar?",
-    talkBody: "Llámenos o escríbanos directamente. Sin centralita ni equipo comercial — una sola conversación.",
+    talkBody: "Llámenos o escríbanos directamente. Sin centralita ni equipo comercial. Una sola conversación.",
   },
   card: {
     offMarket: "Off-market",
@@ -307,7 +307,7 @@ const es: Dict = {
     locations: "Zonas de interés",
     locationOptions: ["Sotogrande", "Marbella", "Internacional"],
     message: "Cuéntenos qué está buscando",
-    messagePh: "Tipo de propiedad, requisitos, fechas o plazos — todo lo que nos ayude a encontrar lo adecuado.",
+    messagePh: "Tipo de propiedad, requisitos, fechas o plazos. Todo lo que nos ayude a encontrar lo adecuado.",
     privacy: "Estrictamente confidencial. Sus datos nunca se comparten con terceros ni se añaden a listas de marketing. Al enviar, acepta nuestra política de privacidad.",
     send: "Enviar consulta",
     sending: "Enviando…",
@@ -345,14 +345,14 @@ const es: Dict = {
     titleEmptyPrivate: "Las oportunidades se comparten en privado.",
     bodyRental: "Escríbanos con sus fechas y le confirmaremos disponibilidad y tarifas.",
     bodyResidential: "Algunas viviendas se publican al completo; otras se ofrecen en privado, con detalles tras una breve conversación.",
-    bodyDefault: "Cada ficha es deliberadamente breve. Los detalles completos — ubicación, fotografías, cuentas — se facilitan tras una breve conversación y un acuerdo de confidencialidad.",
+    bodyDefault: "Cada ficha es deliberadamente breve. Los detalles completos, como ubicación, fotografías y cuentas, se facilitan tras una breve conversación y un acuerdo de confidencialidad.",
     bodyEmpty: "Cuéntenos qué busca y le avisaremos en cuanto surja algo adecuado.",
     bookKicker: "Reservar una estancia",
     briefKicker: "Registre su búsqueda",
     bookTitle: "Indíquenos sus fechas.",
     briefTitle: "Cuéntenos qué está buscando.",
     bookBody: "Díganos cuándo le gustaría alojarse y cuántas personas, y le confirmaremos personalmente disponibilidad y tarifas.",
-    briefBody: "Si su búsqueda está registrada, será el primero en saberlo — incluidas las propiedades que no anunciamos. Nunca compartimos nada sin su consentimiento.",
+    briefBody: "Si su búsqueda está registrada, será el primero en saberlo, incluidas las propiedades que no anunciamos. Nunca compartimos nada sin su consentimiento.",
   },
   property: {
     offMarketBadge: "Off-market · Fotografías y dirección bajo acuerdo de confidencialidad",
@@ -383,7 +383,7 @@ const es: Dict = {
   contact: {
     kicker: "Consulta privada",
     title: "Basta una conversación.",
-    intro: "Cuéntenos todo lo que pueda — tipo de propiedad, zona, presupuesto y plazos. Cuanto más completa sea su búsqueda, antes encontraremos lo adecuado. Cada consulta se atiende personalmente.",
+    intro: "Cuéntenos todo lo que pueda: tipo de propiedad, zona, presupuesto y plazos. Cuanto más completa sea su búsqueda, antes encontraremos lo adecuado. Cada consulta se atiende personalmente.",
     telephone: "Teléfono",
     whatsapp: "WhatsApp",
     whatsappCta: "Escribir por WhatsApp",
@@ -397,7 +397,7 @@ const es: Dict = {
     fromLt: "Desde LT Properties Marbella",
     fromLtTitle: "Las mismas relaciones. Un horizonte más amplio.",
     fromLtBody:
-      "LT Properties Marbella construyó su reputación en la Milla de Oro, en Puente Romano y el Marbella Club, con alquileres vacacionales y ventas siempre gestionados personalmente. Thomson Calabria continúa ese trabajo — centrado en la venta off-market de hoteles y restaurantes, la consultoría hotelera y el branding, junto a una selección de residencias y alquileres de lujo.",
+      "LT Properties Marbella construyó su reputación en la Milla de Oro, en Puente Romano y el Marbella Club, con alquileres vacacionales y ventas siempre gestionados personalmente. Thomson Calabria continúa ese trabajo, centrado en la venta off-market de hoteles y restaurantes, la consultoría hotelera y el branding, junto a una selección de residencias y alquileres de lujo.",
   },
   locations: {
     explore: "Descubrir",

@@ -34,7 +34,7 @@ export default async function SiteLayout({
           "@context": "https://schema.org",
           "@type": "RealEstateAgent",
           name: "Thomson Calabria",
-          alternateName: "Thomson Calabria SL — International Realty / Consultancy",
+          alternateName: "Thomson Calabria SL, International Realty / Consultancy",
           url: site,
           logo: `${site}/icon.svg`,
           image: "https://kfgzhurkaybmuxkuolxc.supabase.co/storage/v1/object/public/media/site/hero-villa-sharp.jpg",

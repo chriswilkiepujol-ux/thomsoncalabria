@@ -31,7 +31,7 @@ export function PropertyForm({ property }: { property: Property | null }) {
         <h2 className="font-semibold">The essentials</h2>
         <div className="grid gap-5 md:grid-cols-2">
           <div className="md:col-span-2">
-            <label className="alabel">Title (for off-market: keep it anonymous — no address)</label>
+            <label className="alabel">Title (for off-market: keep it anonymous, no address)</label>
             <input name="title" className="afield" required defaultValue={property?.title} placeholder="Front-line penthouse, Puente Romano" />
           </div>
           <div>
@@ -104,7 +104,7 @@ export function PropertyForm({ property }: { property: Property | null }) {
           </div>
         </div>
         <div className="space-y-3">
-          <label className="alabel">Datos clave (Spanish labels — e.g. Dormitorios, Parcela, Habitaciones)</label>
+          <label className="alabel">Datos clave (Spanish labels, e.g. Dormitorios, Parcela, Habitaciones)</label>
           {factsEs.map((f, i) => (
             <div key={i} className="flex gap-3">
               <input className="afield" placeholder="Etiqueta" value={f.label} onChange={(e) => setFactsEs(factsEs.map((x, j) => (j === i ? { ...x, label: e.target.value } : x)))} />
@@ -131,7 +131,7 @@ export function PropertyForm({ property }: { property: Property | null }) {
         </label>
         <ImageField
           name="image_url"
-          label={offMarket ? "Mood image (a generic view — never the real property)" : "Main photo"}
+          label={offMarket ? "Mood image (a generic view, never the real property)" : "Main photo"}
           defaultValue={property?.image_url ?? ""}
         />
         {!offMarket && (
@@ -166,7 +166,7 @@ export function PropertyForm({ property }: { property: Property | null }) {
           <label className="flex items-center gap-2 pt-6 text-sm"><input type="checkbox" name="featured" defaultChecked={property?.featured} /> Featured on home</label>
           <label className="flex items-center gap-2 pt-6 text-sm"><input type="checkbox" name="published" defaultChecked={property?.published ?? true} /> Published</label>
           <div className="md:col-span-4">
-            <label className="alabel">Web address (slug) — leave blank to generate from title</label>
+            <label className="alabel">Web address (slug): leave blank to generate from title</label>
             <input name="slug" className="afield" defaultValue={property?.slug ?? ""} />
           </div>
         </div>

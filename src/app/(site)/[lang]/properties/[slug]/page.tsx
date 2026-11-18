@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     lang === "es"
       ? `${cat.singular}${om}${p.category === "rental" ? "" : ` ${t.forSale}`}`
       : `${om}${cat.singular}${p.category === "rental" ? "" : ` ${t.forSale}`}`;
-  const title = `${p.title} — ${kind} ${where} ${locationLabel(p.location, lang)}`;
+  const title = `${p.title}, ${kind} ${where} ${locationLabel(p.location, lang)}`;
   return {
     title: { absolute: `${title} | Thomson Calabria` },
     description: p.headline ?? p.description?.slice(0, 155),
@@ -108,7 +108,7 @@ export default async function PropertyPage({ params }: { params: Promise<{ lang:
                       rel="noopener"
                       className={`relative block overflow-hidden ${i === 0 ? "col-span-2 aspect-[16/10] md:row-span-2 md:aspect-auto" : "aspect-[4/3]"}`}
                     >
-                      <Image src={src} alt={`${p.title} — ${t.photo} ${i + 1}`} fill sizes="(max-width: 768px) 50vw, 33vw" className="object-cover transition-transform duration-500 hover:scale-105" />
+                      <Image src={src} alt={`${p.title}, ${t.photo} ${i + 1}`} fill sizes="(max-width: 768px) 50vw, 33vw" className="object-cover transition-transform duration-500 hover:scale-105" />
                     </a>
                   ))}
                 </div>

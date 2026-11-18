@@ -10,14 +10,14 @@ export const revalidate = 60;
 
 const TITLES: Record<Lang, { title: string; description: string }> = {
   en: {
-    title: "Thomson Calabria — Off-Market Hotels & Restaurants, Hospitality Consultancy | Marbella",
+    title: "Thomson Calabria | Off-Market Hotels & Restaurants, Hospitality Consultancy, Marbella",
     description:
-      "Off-market sales of hotels and restaurants, hospitality consultancy and hotel branding in Marbella, Sotogrande and beyond — plus select villas and luxury rentals at the Marbella Club.",
+      "Off-market sales of hotels and restaurants, hospitality consultancy and hotel branding in Marbella, Sotogrande and beyond, plus select villas and luxury rentals at the Marbella Club.",
   },
   es: {
-    title: "Thomson Calabria — Hoteles y restaurantes off-market, consultoría hotelera | Marbella",
+    title: "Thomson Calabria | Hoteles y restaurantes off-market, consultoría hotelera, Marbella",
     description:
-      "Venta off-market de hoteles y restaurantes, consultoría hotelera y branding en Marbella, Sotogrande y más allá — además de villas selectas y alquileres de lujo en el Marbella Club.",
+      "Venta off-market de hoteles y restaurantes, consultoría hotelera y branding en Marbella, Sotogrande y más allá, además de villas selectas y alquileres de lujo en el Marbella Club.",
   },
 };
 

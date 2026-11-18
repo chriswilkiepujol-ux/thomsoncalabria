@@ -3,7 +3,7 @@ import { createPublicClient } from "./supabase/public";
 export const BLOG_CATEGORIES = {
   "out-and-about": {
     label: "Out and About",
-    blurb: "Forthcoming events, restaurants and places worth knowing — from Sotogrande to Marbella, and London.",
+    blurb: "Forthcoming events, restaurants and places worth knowing, from Sotogrande to Marbella, and London.",
   },
   property: {
     label: "Property News",

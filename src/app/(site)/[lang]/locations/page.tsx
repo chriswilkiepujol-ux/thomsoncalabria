@@ -11,12 +11,12 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const lang: Lang = isLang(l) ? l : "en";
   return lang === "es"
     ? {
-        title: "Ubicaciones — Sotogrande, Marbella e internacional",
+        title: "Ubicaciones: Sotogrande, Marbella e internacional",
         description: "Dónde trabaja Thomson Calabria: Sotogrande, la Milla de Oro de Marbella y una selección de oportunidades off-market internacionales.",
         alternates: alternates(lang, "/locations"),
       }
     : {
-        title: "Locations — Sotogrande, Marbella & International",
+        title: "Locations: Sotogrande, Marbella & International",
         description: "Where Thomson Calabria works: Sotogrande, Marbella's Golden Mile, and a selection of off-market opportunities internationally.",
         alternates: alternates(lang, "/locations"),
       };

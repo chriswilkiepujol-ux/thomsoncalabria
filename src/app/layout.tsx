@@ -23,7 +23,7 @@ const SITE = process.env.NEXT_PUBLIC_SITE_URL ?? "https://thomsoncalabria.com";
 export const metadata: Metadata = {
   metadataBase: new URL(SITE),
   title: {
-    default: "Thomson Calabria — Luxury Property in Marbella & Sotogrande | Homes, Rentals, Hotels",
+    default: "Thomson Calabria | Luxury Property in Marbella & Sotogrande | Homes, Rentals, Hotels",
     template: "%s | Thomson Calabria",
   },
   description:

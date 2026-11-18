@@ -12,13 +12,13 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const lang: Lang = isLang(l) ? l : "en";
   return lang === "es"
     ? {
-        title: "Nosotros — Linda Thomson",
+        title: "Nosotros: Linda Thomson",
         description:
           "Linda Thomson fundó LT Properties Marbella en 2009. Thomson Calabria se centra hoy en la venta off-market de hoteles y restaurantes y en la consultoría hotelera.",
         alternates: alternates(lang, "/about"),
       }
     : {
-        title: "About — Linda Thomson",
+        title: "About Linda Thomson",
         description:
           "Linda Thomson founded LT Properties Marbella in 2009. Thomson Calabria today focuses on off-market hotel and restaurant sales and hospitality consultancy.",
         alternates: alternates(lang, "/about"),
